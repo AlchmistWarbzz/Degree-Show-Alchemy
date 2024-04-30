@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=3 uid="uid://t2g1ud48u5in"]
+
+[ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
+[ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
+[ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
+[ext_resource type="ArrayMesh" uid="uid://co5xyswyrwii8" path="res://Game Content/Assets/ModularKit/SM_Mod_Fence_001.res" id="4_an2h5"]
+[ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game Content/Assets/Assets_SM_GoalPost.res" id="5_p5toa"]
+[ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
+[ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="7_xkmc0"]
+[ext_resource type="ArrayMesh" uid="uid://pwdm8b7kmxkv" path="res://Game Content/Assets/ModularKit/SM_Mod_Stairs_001.res" id="8_jccra"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SmModFloor001" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 0)
+mesh = ExtResource("1_5vvnm")
+
+[node name="SmModFloor006" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 4.57607)
+mesh = ExtResource("1_5vvnm")
+
+[node name="Player" parent="." instance=ExtResource("2_0r2yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95986, 0, 7.32766)
+
+[node name="SmModFloor002" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor003" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 4.5668)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor007" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 8, -0.057, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor008" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 8, -0.057, 4.5668)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor013" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 12, -0.057, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor015" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 8, -0.057, -4)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor016" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 12, -0.057, -4)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor022" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 16, 0.943, -4.00016)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor023" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 16, 0.943, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor024" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 16, 0.943, 8.60009)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor025" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 16, 0.943, -12.5862)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor017" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 8, -0.057, -8)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor018" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 12, -0.057, -8)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor019" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 11.974, -0.057, -12)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor014" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 12, -0.057, 4.5668)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor020" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 8, -0.057, 8)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor021" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 12, -0.057, 8)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor004" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor005" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor009" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -8, -0.057, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor010" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -8, -0.057, 4.5668)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor011" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -12, -0.057, 0)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFloor012" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -12, -0.057, 4.5668)
+mesh = ExtResource("3_irspn")
+
+[node name="SmModFence001" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 0.5)
+mesh = ExtResource("4_an2h5")
+
+[node name="SmModFence002" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 4.5)
+mesh = ExtResource("4_an2h5")
+
+[node name="SmModFence003" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 8.5)
+mesh = ExtResource("4_an2h5")
+
+[node name="SmModFence004" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 4.5)
+mesh = ExtResource("4_an2h5")
+
+[node name="AssetsSmGoalPost" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -0.550759, 0, 1, 0, 1, 0, -2.40744e-08, 2, 0, 6.7)
+mesh = ExtResource("5_p5toa")
+
+[node name="SmModWall003" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
+mesh = ExtResource("6_k585g")
+
+[node name="SmModPillar001" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, -0.0647104, 0)
+mesh = ExtResource("7_xkmc0")
+
+[node name="SmModPillar002" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 6, -0.0647104, 0)
+mesh = ExtResource("7_xkmc0")
+
+[node name="SmModWall004" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.00021, -0.166427, 9.00857)
+mesh = ExtResource("6_k585g")
+
+[node name="SmModPillar003" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.00021, -0.0647109, 9.00857)
+mesh = ExtResource("7_xkmc0")
+
+[node name="SmModPillar004" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.99979, -0.0647109, 9.00857)
+mesh = ExtResource("7_xkmc0")
+
+[node name="SmModStairs001" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -8)
+mesh = ExtResource("8_jccra")
+
+[node name="SmModStairs002" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4.6)
+mesh = ExtResource("8_jccra")
