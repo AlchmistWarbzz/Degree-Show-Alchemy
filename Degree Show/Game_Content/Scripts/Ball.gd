@@ -5,7 +5,6 @@ var area3D
 func _ready():
 	kick(Vector3.ZERO)  # Provide the actual target vector here
 	area3D = $Area3D
-
 func kick(target: Vector3) -> void:
 	set_linear_velocity(Vector3.ZERO)
 	set_angular_velocity(Vector3.ZERO)
@@ -32,7 +31,7 @@ func kick(target: Vector3) -> void:
 	look_at(target)
 	
 	# Apply an impulse in the direction of the modified target vector
-	apply_central_impulse(get_global_transform().basis.z * -16)
+	apply_central_impulse(get_global_transform().basis.z * -32)
 
 func _on_timer_timeout():
 	pass # Replace with function body.

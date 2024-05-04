@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://Game_Content/Scripts/Script_Scenes/Area3D.gd" id="1_rtfwg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0yptj"]
+radius = 0.15
 
 [sub_resource type="TorusMesh" id="TorusMesh_1ytds"]
-inner_radius = 0.116
-outer_radius = 0.225
+inner_radius = 0.126
+outer_radius = 0.206
 rings = 69
 
 [node name="Area3D" type="Area3D"]

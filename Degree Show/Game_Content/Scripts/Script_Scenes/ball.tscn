@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Game_Content/Scripts/Ball.gd" id="1_p16jy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ofdhu"]
+radius = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmevj"]
 albedo_color = Color(0, 1, 1, 1)

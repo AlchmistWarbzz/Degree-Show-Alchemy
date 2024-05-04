@@ -7,6 +7,7 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_nptvo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pi1xy"]
+size = Vector3(1.98914, 1, 1.93213)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qoo15"]
 
@@ -21,7 +22,7 @@ sky = SubResource("Sky_kbgm0")
 script = ExtResource("1_7nb18")
 
 [node name="AssetsSmFeeder" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.945, 2, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.50327, 2, 0)
 mesh = ExtResource("1_qxhx0")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
@@ -29,14 +30,11 @@ transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 2, 8.60128, 0.32734, 0.0091230
 mesh = SubResource("PlaneMesh_nptvo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00877135, -0.0654679, -0.0172882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0087713, -0.0654681, -0.0172882)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0046165, -0.0818349, 0.0101995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0021584, -0.0818348, -0.0452204)
 shape = SubResource("BoxShape3D_pi1xy")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.341, 1.03894, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_flvyj")
@@ -44,5 +42,17 @@ environment = SubResource("Environment_flvyj")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, -0.70229, 0.711891, 0, -0.711891, -0.70229, 0, 0, 0)
 
-[node name="HandTrigger" parent="." instance=ExtResource("2_peywj")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.1109, 1.588, 0)
+[node name="Area3D3" parent="." instance=ExtResource("2_peywj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.981, 2.22031, 0)
+
+[node name="Area3D" parent="Area3D3" instance=ExtResource("2_peywj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502462, -0.770023, -0.508192)
+
+[node name="Area3D2" parent="Area3D3" instance=ExtResource("2_peywj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487987, -0.770023, -0.508192)
+
+[node name="Area3D4" parent="Area3D3" instance=ExtResource("2_peywj")]
+transform = Transform3D(3, -1.31134e-07, 1.91069e-15, 0, -1.31134e-07, -1, 1.31134e-07, 3, -4.37114e-08, 0, -1.40932, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2327, 1.84051, 0.23555)

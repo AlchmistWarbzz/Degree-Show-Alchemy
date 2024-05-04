@@ -35,4 +35,3 @@ func _input(event):
 			spawn_ball()
 
 
-
