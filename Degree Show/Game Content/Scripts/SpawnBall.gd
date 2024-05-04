@@ -6,7 +6,7 @@ var spawn_timer_elapsed = 0  # Time elapsed since last spawn
 
 func _ready():
 	# Load the Ball scene
-	ball_scene = preload("res://Game_Content/Scripts/Script_Scenes/ball.tscn")
+	ball_scene = preload("res://Game Content/Scripts/Script_Scenes/ball.tscn")
 
 func _process(_delta):
 	   # Update the spawn timer
