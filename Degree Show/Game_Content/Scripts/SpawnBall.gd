@@ -4,7 +4,6 @@ var ball_scene: PackedScene  # Reference to the Ball scene (PackedScene)
 var spawn_timer = 3  # Time interval between spawns (in seconds)
 var spawn_timer_elapsed = 0  # Time elapsed since last spawn
 
-
 func _ready():
 	# Load the Ball scene
 	ball_scene = preload("res://Game_Content/Scripts/Script_Scenes/ball.tscn")
@@ -36,5 +35,4 @@ func _input(event):
 			spawn_ball()
 
 
-func _on_timer_timeout():
-	pass # Replace with function body.
+

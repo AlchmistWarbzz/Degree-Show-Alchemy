@@ -45,4 +45,4 @@ environment = SubResource("Environment_flvyj")
 transform = Transform3D(1, 0, 0, 0, -0.70229, 0.711891, 0, -0.711891, -0.70229, 0, 0, 0)
 
 [node name="HandTrigger" parent="." instance=ExtResource("2_peywj")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.923, 1.588, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.1109, 1.588, 0)
