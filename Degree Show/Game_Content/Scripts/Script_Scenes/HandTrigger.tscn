@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://s41nxn2sv730"]
+
+[ext_resource type="Script" path="res://Game_Content/Scripts/Script_Scenes/Area3D.gd" id="1_rtfwg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p2c6m"]
+size = Vector3(2.05, 2.34, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_1ytds"]
+inner_radius = 0.591
+rings = 69
+
+[node name="Area3D" type="Area3D"]
+input_capture_on_drag = true
+script = ExtResource("1_rtfwg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_p2c6m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("TorusMesh_1ytds")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
