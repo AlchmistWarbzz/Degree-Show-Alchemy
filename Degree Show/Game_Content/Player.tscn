@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bndt6catsod58"]
+
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
-[ext_resource type="PackedScene" uid="uid://s41nxn2sv730" path="res://Game Content/Scripts/Script_Scenes/HandTrigger.tscn" id="4_8p8eq"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_vwq0j"]
+
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_vjvi8"]
 
 [node name="Player" type="Node3D"]
@@ -24,17 +23,11 @@ tracker = &"left_hand"
 
 [node name="FunctionTeleport" parent="XROrigin3D/LeftHand" instance=ExtResource("4_vwq0j")]
 
-[node name="Area3D" parent="XROrigin3D/LeftHand" instance=ExtResource("4_8p8eq")]
-transform = Transform3D(0.999783, 0.0208203, 0, -0.0208203, 0.999783, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_a6y6g")]
-
-[node name="MovementTurn" parent="XROrigin3D/RightHand" instance=ExtResource("8_vjvi8")]
-
-[node name="Area3D" parent="XROrigin3D/RightHand" instance=ExtResource("4_8p8eq")]
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]

@@ -1,27 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://t2g1ud48u5in"]
 
-[ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game_Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
-[ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game_Content/Player.tscn" id="2_0r2yx"]
-[ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game_Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
-[ext_resource type="ArrayMesh" uid="uid://co5xyswyrwii8" path="res://Game_Content/Assets/ModularKit/SM_Mod_Fence_001.res" id="4_an2h5"]
-[ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game_Content/Assets/Assets_SM_GoalPost.res" id="5_p5toa"]
-[ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game_Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
-[ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game_Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="7_xkmc0"]
-[ext_resource type="ArrayMesh" uid="uid://pwdm8b7kmxkv" path="res://Game_Content/Assets/ModularKit/SM_Mod_Stairs_001.res" id="8_jccra"]
-[ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game_Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
-[ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game_Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
-[ext_resource type="Script" path="res://Game_Content/Level/Saves.gd" id="11_4d2th"]
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game_Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1cdgx"]
 panorama = ExtResource("12_xxstv")
 
-[sub_resource type="Sky" id="Sky_velgi"]
 sky_material = SubResource("PanoramaSkyMaterial_1cdgx")
 
 [sub_resource type="Environment" id="Environment_3jbm2"]
 background_mode = 2
-sky = SubResource("Sky_velgi")
 
 [sub_resource type="BoxMesh" id="BoxMesh_3cwdk"]
 
@@ -33,7 +18,6 @@ sky = SubResource("Sky_velgi")
 environment = SubResource("Environment_3jbm2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.927745, 0.349696, -0.130392, -0.208683, 0.775713, 0.595585, 0.30942, -0.52534, 0.792639, 0, 0, 0)
 light_energy = 2.0
 
 [node name="1_8m reference" type="MeshInstance3D" parent="WorldEnvironment"]
@@ -494,7 +478,6 @@ mesh = ExtResource("5_p5toa")
 skeleton = NodePath("../..")
 
 [node name="SmModWall003" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
 mesh = ExtResource("6_k585g")
 skeleton = NodePath("../..")
 
@@ -592,7 +575,6 @@ mesh = ExtResource("5_p5toa")
 skeleton = NodePath("../..")
 
 [node name="SmModWall003" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
 mesh = ExtResource("6_k585g")
 skeleton = NodePath("../..")
 
