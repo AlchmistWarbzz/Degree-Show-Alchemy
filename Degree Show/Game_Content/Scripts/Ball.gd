@@ -10,8 +10,8 @@ func kick(target: Vector3) -> void:
 	set_angular_velocity(Vector3.ZERO)
 	
 	# Define the desired angle range (20 degrees) in radians
-	var desired_angle_range = deg_to_rad(120)  # Convert degrees to radians
-	var desired_angle_range2 = deg_to_rad(20)
+	var desired_angle_range = deg_to_rad(180)  # Convert degrees to radians
+	var desired_angle_range2 = deg_to_rad(0)
 	# Generate a random angle within the desired angle range
 	var random_angle = randf_range(desired_angle_range2, desired_angle_range)
 	
