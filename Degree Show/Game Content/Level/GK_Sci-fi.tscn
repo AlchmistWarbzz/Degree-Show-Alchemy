@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
 [ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
 [ext_resource type="ArrayMesh" uid="uid://co5xyswyrwii8" path="res://Game Content/Assets/ModularKit/SM_Mod_Fence_001.res" id="4_an2h5"]
+[ext_resource type="PackedScene" uid="uid://cuwiqbdrh1gyy" path="res://Game Content/Scripts/SubScenes/spawn_ball.tscn" id="5_3f1ry"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game Content/Assets/Assets_SM_GoalPost.res" id="5_p5toa"]
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
 [ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="7_xkmc0"]
@@ -14,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="13_g65cv"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
-[ext_resource type="Script" path="res://Game Content/Scripts/SpawnBall.gd" id="15_gykpp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1cdgx"]
 panorama = ExtResource("12_xxstv")
@@ -360,6 +360,9 @@ mesh = ExtResource("3_irspn")
 skeleton = NodePath("../..")
 
 [node name="PlayableArea" type="Node3D" parent="."]
+
+[node name="SpawnBall" parent="PlayableArea" instance=ExtResource("5_3f1ry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82215, 2.17476, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlayableArea"]
 
@@ -782,7 +785,3 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38036, 0, 0.168597)
 mesh = ExtResource("14_ajnyv")
 skeleton = NodePath("../..")
-
-[node name="BallSpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87107, 2.15169, 0)
-script = ExtResource("15_gykpp")

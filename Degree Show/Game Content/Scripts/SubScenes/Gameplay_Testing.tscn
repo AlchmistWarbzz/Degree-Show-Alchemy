@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Game Content/Scripts/SpawnBall.gd" id="1_7nb18"]
 [ext_resource type="ArrayMesh" uid="uid://doegt33joda62" path="res://Game Content/Assets/Assets_SM_Feeder.res" id="1_qxhx0"]
-[ext_resource type="PackedScene" uid="uid://s41nxn2sv730" path="res://Game Content/Scripts/Script_Scenes/HandTrigger.tscn" id="2_peywj"]
+[ext_resource type="PackedScene" uid="uid://s41nxn2sv730" path="res://Game Content/Scripts/SubScenes/HandTrigger.tscn" id="2_peywj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nptvo"]
 
