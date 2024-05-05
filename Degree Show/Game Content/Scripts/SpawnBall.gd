@@ -26,7 +26,7 @@ func spawn_ball():
 	add_child(ball_instance)
 	
 	# Set the position of the ball (adjust as needed)
-	ball_instance.global_transform.origin = Vector3(3.945, 2, 0)
+	ball_instance.global_transform.origin = Vector3(1.871, 2.152, 0)
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
