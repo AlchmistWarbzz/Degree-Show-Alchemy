@@ -10,13 +10,13 @@ func kick(target: Vector3) -> void:
 	set_angular_velocity(Vector3.ZERO)
 	
 	# Define the desired angle range (20 degrees) in radians
-	var desired_angle_range = deg_to_rad(180)  # Convert degrees to radians
-	var desired_angle_range2 = deg_to_rad(0)
+	var desired_angle_range = deg_to_rad(60)  # Convert degrees to radians
+	var desired_angle_range2 = deg_to_rad(120)
 	# Generate a random angle within the desired angle range
-	var random_angle = randf_range(desired_angle_range2, desired_angle_range)
+	var random_angle = randf_range(-desired_angle_range2, -desired_angle_range)
 	
 	# Set the target vector to move forward along the x-axis
-	target.x = 15  # Move forward along the x-axis
+	target.x = sin(random_angle)  # Move forward along the x-axis
 	
 	# Apply the random angle to the y-axis rotation
 	target.y = sin(random_angle)
@@ -31,7 +31,8 @@ func kick(target: Vector3) -> void:
 	look_at(target)
 	
 	# Apply an impulse in the direction of the modified target vector
-	apply_central_impulse(get_global_transform().basis.z * -32)
+	apply_central_impulse(get_global_transform().basis.x * -16)
 
 func _on_timer_timeout():
-	pass # Replace with function body.
+	print("KILL")
+	queue_free()

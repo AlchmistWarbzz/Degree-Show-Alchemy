@@ -28,6 +28,7 @@ mesh = SubResource("SphereMesh_q768u")
 skeleton = NodePath("../../..")
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
