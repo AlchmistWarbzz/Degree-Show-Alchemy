@@ -4,7 +4,6 @@ var area3D
 var isInsideArea = false
 
 func _ready():
-	#kick(Vector3.ZERO)  # Provide the actual target vector here
 	area3D = null
 	
 func _on_body_entered(area):
@@ -17,10 +16,10 @@ func _on_body_entered(area):
 			remove_child(rigidbody)
 			rigidbody.queue_free()
 
-#func _process(delta):
-	#if isInsideArea:
-		#if area3D:
-			#set_position(area3D.global_transform.origin)
+func _process(delta):
+	if isInsideArea:
+		if area3D:
+			set_position(area3D.global_transform.origin)
 
 func kick(target: Vector3) -> void:
 	set_linear_velocity(Vector3.ZERO)
@@ -35,7 +34,7 @@ func kick(target: Vector3) -> void:
 	var rotated_forward_vector = Basis().rotated(Vector3.UP, random_angle) * global_transform.basis.z.normalized()
 	
 	# Apply an impulse in the direction of the rotated forward vector
-	apply_central_impulse(rotated_forward_vector * 16)
+	apply_central_impulse(rotated_forward_vector * 12)
 
 func _on_timer_timeout():
 	print("KILL")

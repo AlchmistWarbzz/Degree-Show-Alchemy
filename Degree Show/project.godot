@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Degree Show"
-run/main_scene="res://Game Content/Level/TrainingFacility.tscn"
+run/main_scene="res://Game Content/Level/GK_Sci-fi.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
