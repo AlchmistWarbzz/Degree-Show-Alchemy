@@ -11,3 +11,4 @@ func _on_body_entered(body):
 		ball.set_angular_velocity(Vector3.ZERO)
 		# Disable gravity
 		ball.gravity_scale = 0
+		

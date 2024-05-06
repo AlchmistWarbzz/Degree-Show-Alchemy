@@ -1,37 +1,39 @@
 extends RigidBody3D
 
 var area3D
+var isInsideArea = false
 
 func _ready():
-	kick(Vector3.ZERO)  # Provide the actual target vector here
-	area3D = $Area3D
+	area3D = null
+	
+func _on_body_entered(area):
+	if area is Area3D:
+		area3D = area  # Assign the entered Area3D to area3D
+		isInsideArea = true
+		# Remove the RigidBody3D component
+		if has_node("RigidBody3D"):
+			var rigidbody = get_node("RigidBody3D")
+			remove_child(rigidbody)
+			rigidbody.queue_free()
+
+func _process(_delta):
+	if isInsideArea:
+		if area3D:
+			set_position(area3D.global_transform.origin)
+
 func kick(target: Vector3) -> void:
 	set_linear_velocity(Vector3.ZERO)
 	set_angular_velocity(Vector3.ZERO)
 	
-	# Define the desired angle range (20 degrees) in radians
-	var desired_angle_range = deg_to_rad(60)  # Convert degrees to radians
-	var desired_angle_range2 = deg_to_rad(120)
+	# Define the desired angle range (radians)
+	var desired_angle_range = deg_to_rad(10) # Convert degrees to radians
 	# Generate a random angle within the desired angle range
-	var random_angle = randf_range(-desired_angle_range2, -desired_angle_range)
+	var random_angle = randf_range(-desired_angle_range, desired_angle_range)
+	# Rotate the forward vector by the random angle
+	var rotated_forward_vector = Basis().rotated(Vector3.UP, random_angle) * global_transform.basis.z.normalized()
 	
-	# Set the target vector to move forward along the x-axis
-	target.x = sin(random_angle)  # Move forward along the x-axis
-	
-	# Apply the random angle to the y-axis rotation
-	target.y = sin(random_angle)
-	
-	# Apply the random angle to the z-axis rotation
-	target.z = cos(random_angle)
-	
-	# Normalize the target vector to maintain consistent speed
-	target = target.normalized()
-	
-	# Look at the modified target vector
-	look_at(target)
-	
-	# Apply an impulse in the direction of the modified target vector
-	apply_central_impulse(get_global_transform().basis.x * -16)
+	# Apply an impulse in the direction of the rotated forward vector
+	apply_central_impulse(rotated_forward_vector * 10)
 
 func _on_timer_timeout():
 	print("KILL")
