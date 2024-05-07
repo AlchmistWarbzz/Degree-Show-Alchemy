@@ -33,7 +33,7 @@ func kick(target: Vector3) -> void:
 	var rotated_forward_vector = Basis().rotated(Vector3.UP, random_angle) * global_transform.basis.z.normalized()
 	
 	# Apply an impulse in the direction of the rotated forward vector
-	apply_central_impulse(rotated_forward_vector * 10)
+	apply_central_impulse(rotated_forward_vector * 4)
 
 func _on_timer_timeout():
 	print("KILL")

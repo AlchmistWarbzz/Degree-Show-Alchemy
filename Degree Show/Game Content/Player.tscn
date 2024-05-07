@@ -38,3 +38,4 @@ tracker = &"right_hand"
 [node name="Area3D" parent="XROrigin3D/RightHand" instance=ExtResource("4_8p8eq")]
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
+enabled = false
