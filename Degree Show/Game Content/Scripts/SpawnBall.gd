@@ -32,29 +32,28 @@ func _process(_delta):
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
 		var to_player = player_pos - raycast.global_transform.origin
 		# Calculate the distance between raycast and player
-		var distance = to_player.length()
-		# If the distance is greater than the maximum allowed distance, move the raycast towards the player
-		if distance > radius:
-			var move_amount = min(speed * _delta, distance - radius)
-			raycast.global_translate(-to_player.normalized() * move_amount)
-		elif distance < min_distance:
-			var move_amount = min(speed * _delta, min_distance - distance)
-			raycast.global_translate(to_player.normalized() * move_amount)
+
+	
 
 
 func spawn_ball():
+
 	# Instantiate the Ball scene
 	var ball_instance = ball_scene.instantiate()
-	# Calculate the direction towards the player
-	var ball_position = raycast.global_transform.origin
-	var forward_direction = (player_pos - ball_position).normalized()
+	# Calculate launch position around the player
+	var random_Offset = randf_range(1, 2)
+	var launch_offset = Vector3(0, 0, random_Offset)  # Adjust this value for desired offset
+	var launch_position = player_pos + launch_offset
+	# Get the collision point and normal from the raycast
+	var collision_point = raycast.get_collision_point()
+	# Calculate direction towards the launch position
+	var direction_to_launch = (launch_position - collision_point).normalized()
 	# Add the ball instance to the scene
 	add_child(ball_instance)
-	# Apply impulse in the forward direction
+	# Apply impulse towards the player
 	var impulse_magnitude = 8  # Adjust this value to control the speed
-	ball_instance.apply_impulse(forward_direction * impulse_magnitude)
-	# Set the initial position of the ball
-	#ball_instance.apply_impulse(forward_direction * 4)
+	ball_instance.global_transform.origin = raycast.global_transform.origin
+	ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
