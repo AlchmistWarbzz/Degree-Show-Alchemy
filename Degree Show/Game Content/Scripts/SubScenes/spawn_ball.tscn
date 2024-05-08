@@ -1,14 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuwiqbdrh1gyy"]
+[gd_scene load_steps=3 format=3 uid="uid://cuwiqbdrh1gyy"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/SpawnBall.gd" id="1_5cnu6"]
+[ext_resource type="Script" path="res://Game Content/Scripts/SubScenes/RayCast3D.gd" id="2_ujbst"]
 
 [node name="SpawnBall" type="Node3D"]
 script = ExtResource("1_5cnu6")
 
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00401233, 0.0809343, 0.186406)
-gizmo_extents = 0.65
-
-[node name="Marker3D2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00401233, 0.0809343, -0.089875)
-gizmo_extents = 0.65
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -8.39, 0)
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+script = ExtResource("2_ujbst")

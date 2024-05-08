@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=24 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
+[ext_resource type="Script" path="res://Game Content/Scripts/GameController.gd" id="1_a0acl"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
 [ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
 [ext_resource type="ArrayMesh" uid="uid://co5xyswyrwii8" path="res://Game Content/Assets/ModularKit/SM_Mod_Fence_001.res" id="4_an2h5"]
+[ext_resource type="PackedScene" uid="uid://cptxo88fdy80i" path="res://Game Content/Scripts/SubScenes/no_aim.tscn" id="4_y1v0d"]
 [ext_resource type="PackedScene" uid="uid://cuwiqbdrh1gyy" path="res://Game Content/Scripts/SubScenes/spawn_ball.tscn" id="5_3f1ry"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game Content/Assets/Assets_SM_GoalPost.res" id="5_p5toa"]
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
@@ -35,6 +37,24 @@ size = Vector3(27.9985, 0, 20.5903)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="GameController" type="Node" parent="." groups=["Player"]]
+script = ExtResource("1_a0acl")
+
+[node name="SpawnBall" parent="GameController" instance=ExtResource("5_3f1ry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82215, 1.79701, 0)
+
+[node name="Player" parent="GameController" instance=ExtResource("2_0r2yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7.5)
+
+[node name="No Aim" parent="GameController" instance=ExtResource("4_y1v0d")]
+transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, -0.885861, 0, 4.81719)
+
+[node name="No Aim2" parent="GameController" instance=ExtResource("4_y1v0d")]
+transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, 5.81094, 0, 4.81719)
+
+[node name="No Aim3" parent="GameController" instance=ExtResource("4_y1v0d")]
+transform = Transform3D(-4.49315, 0, -8.74228e-08, 0, 1, 0, 3.92803e-07, 0, -1, 1.9417, 0, -0.378756)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jbm2")
 
@@ -45,15 +65,12 @@ light_energy = 2.0
 [node name="1_8m reference" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 1.85894, 1.10504, 0.0339384)
 mesh = SubResource("BoxMesh_3cwdk")
-skeleton = NodePath("../../Player")
+skeleton = NodePath("../../GameController/Player")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-16.5254, 0, 0, 0, -0.0211296, 0, 0, 0, -22.2605, 0, -0.0840728, 0)
 mesh = SubResource("BoxMesh_a1uqp")
 skeleton = NodePath("../1_8m reference2")
-
-[node name="Player" parent="." instance=ExtResource("2_0r2yx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7.5)
 
 [node name="OuterLeft" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -16, 0.943, -4.00016)
@@ -360,9 +377,6 @@ mesh = ExtResource("3_irspn")
 skeleton = NodePath("../..")
 
 [node name="PlayableArea" type="Node3D" parent="."]
-
-[node name="SpawnBall" parent="PlayableArea" instance=ExtResource("5_3f1ry")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82215, 2.17476, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlayableArea"]
 

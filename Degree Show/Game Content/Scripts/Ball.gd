@@ -2,10 +2,11 @@ extends RigidBody3D
 
 var area3D
 var isInsideArea = false
+var GameController
 
 func _ready():
 	area3D = null
-	
+	GameController = get_node("GameController") 
 func _on_body_entered(area):
 	if area is Area3D:
 		area3D = area  # Assign the entered Area3D to area3D
@@ -25,15 +26,19 @@ func kick(target: Vector3) -> void:
 	set_linear_velocity(Vector3.ZERO)
 	set_angular_velocity(Vector3.ZERO)
 	
-	# Define the desired angle range (radians)
-	var desired_angle_range = deg_to_rad(10) # Convert degrees to radians
-	# Generate a random angle within the desired angle range
-	var random_angle = randf_range(-desired_angle_range, desired_angle_range)
-	# Rotate the forward vector by the random angle
-	var rotated_forward_vector = Basis().rotated(Vector3.UP, random_angle) * global_transform.basis.z.normalized()
-	
+	## Define the desired angle range (radians)
+	#var desired_angle_range = deg_to_rad(10) # Convert degrees to radians
+	## Generate a random angle within the desired angle range
+	#var random_angle = randf_range(-desired_angle_range, desired_angle_range)
+	## Rotate the forward vector by the random angle
+	#var rotated_forward_vector = Basis().rotated(Vector3.UP, random_angle) * global_transform.basis.z.normalized()
+	var raycast = GameController.get_node("Raycast")  # Access RayCast from the spawner via GameController
+	if raycast and raycast.is_colliding():  
+		var away_direction = (global_transform.origin - raycast.get_collision_point()).normalized()
+		apply_impulse(global_transform.origin, away_direction * 16)
+
 	# Apply an impulse in the direction of the rotated forward vector
-	apply_central_impulse(rotated_forward_vector * 4)
+	#apply_central_impulse(rotated_forward_vector * 4)
 
 func _on_timer_timeout():
 	print("KILL")
