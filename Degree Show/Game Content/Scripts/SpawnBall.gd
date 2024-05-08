@@ -14,7 +14,7 @@ var radius = 5.0  # Maximum distance between raycast and player
 var speed = 1.0   # Speed of raycast movement
 var min_distance = -1  # Minimum distance between raycast and player
 
-var chance_to_spawn = 25
+var chance_to_spawn = 50
 func _ready():
 	# Load the Ball scene
 	ball_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
@@ -54,7 +54,7 @@ func spawn_junk():
 	var radius = 2.0  # Radius of the circular path
 	var min_angle = deg_to_rad(93)  # Minimum angle in radians
 	var max_angle = deg_to_rad(97)  # Maximum angle in radians
-	var height = randf_range(2.3, 2.7)
+	var height = randf_range(2.3, 2.5)
 	var angle = randf_range(min_angle, max_angle)
 	# Calculate launch offset using the adjusted angle
 	var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
@@ -70,7 +70,7 @@ func spawn_junk():
 	# Add the ball instance to the scene
 	add_child(junk_instance)
 	# Apply impulse towards the player
-	var impulse_magnitude = 3  # Adjust this value to control the speed
+	var impulse_magnitude = 2.3  # Adjust this value to control the speed
 	junk_instance.global_transform.origin = raycast.global_transform.origin
 	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
 	junk_instance.apply_impulse(direction_to_launch * impulse_magnitude)

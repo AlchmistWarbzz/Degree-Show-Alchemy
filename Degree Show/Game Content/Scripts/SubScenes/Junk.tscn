@@ -15,12 +15,13 @@ albedo_color = Color(1, 0.364706, 0.517647, 1)
 radius = 0.1
 height = 0.194
 
-[node name="Ball" type="RigidBody3D"]
+[node name="Junk" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 3
 collision_mask = 3
 mass = 0.26
 physics_material_override = SubResource("PhysicsMaterial_hmja0")
+gravity_scale = 0.7
 continuous_cd = true
 max_contacts_reported = 10
 contact_monitor = true
