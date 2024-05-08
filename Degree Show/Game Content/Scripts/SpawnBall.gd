@@ -1,7 +1,8 @@
 extends Node3D
 
 var ball_scene: PackedScene  # Reference to the Ball scene (PackedScene)
-var spawn_timer = 3  # Time interval between spawns (in seconds)
+var junk_scene: PackedScene  # Reference to the Ball scene (PackedScene)
+var spawn_timer = 2  # Time interval between spawns (in seconds)
 var spawn_timer_elapsed = 0  # Time elapsed since last spawn
 # Adjust these parameters to control the raycast's movement
 var raycast 
@@ -13,29 +14,66 @@ var radius = 5.0  # Maximum distance between raycast and player
 var speed = 1.0   # Speed of raycast movement
 var min_distance = -1  # Minimum distance between raycast and player
 
+var chance_to_spawn = 25
 func _ready():
 	# Load the Ball scene
 	ball_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
+	junk_scene = preload("res://Game Content/Scripts/SubScenes/Junk.tscn")
 	raycast = get_node("RayCast3D")
 	player = $"/root/GameController".player
-
+	
+	
 func _process(_delta):
 	# Update the spawn timer
+	
 	spawn_timer_elapsed += _delta
 	# Check if it's time to spawn a ball
+	
 	if spawn_timer_elapsed >= spawn_timer:
-		spawn_ball()
-		spawn_timer_elapsed = 0  # Reset the timer
+		var spawm_range = randf_range(1, 100)
+		if spawm_range < chance_to_spawn:
+			spawn_junk()
+			spawn_timer_elapsed = 0  # Reset the timer
+			print(spawm_range)
 	# Move the raycast around the player
+		else: 
+			spawn_ball()
+			print("junk")
+			spawn_timer_elapsed = 0  # Reset the timer
+			print(spawm_range)
 	if raycast:
 		#print($"/root/GameController".player.get_position())
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
 		var to_player = player_pos - raycast.global_transform.origin
 		# Calculate the distance between raycast and player
-
+	
 	
 # Define a function to calculate the launch offset
+func spawn_junk():
+	var junk_instance = junk_scene.instantiate()
+	var radius = 2.0  # Radius of the circular path
+	var min_angle = deg_to_rad(93)  # Minimum angle in radians
+	var max_angle = deg_to_rad(97)  # Maximum angle in radians
+	var height = randf_range(2.3, 2.7)
+	var angle = randf_range(min_angle, max_angle)
+	# Calculate launch offset using the adjusted angle
+	var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 
+	# Calculate launch position around the player
+	var launch_position = player_pos + launch_offset
+	
+	# Get the collision point and normal from the raycast
+	var collision_point = raycast.get_collision_point()
+	
+	# Calculate direction towards the launch position
+	var direction_to_launch = (launch_position - collision_point).normalized()
+	# Add the ball instance to the scene
+	add_child(junk_instance)
+	# Apply impulse towards the player
+	var impulse_magnitude = 3  # Adjust this value to control the speed
+	junk_instance.global_transform.origin = raycast.global_transform.origin
+	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
+	junk_instance.apply_impulse(direction_to_launch * impulse_magnitude)
 
 func spawn_ball():
 	# Instantiate the Ball scene

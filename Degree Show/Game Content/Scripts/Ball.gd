@@ -25,5 +25,5 @@ var spawner
 			#set_position(area3D.global_transform.origin)
 
 func _on_timer_timeout():
-	print("KILL")
+	#print("KILL")
 	queue_free()
