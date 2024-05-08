@@ -1,10 +1,10 @@
-[gd_scene load_steps=98 format=3 uid="uid://b1vpt2v5wx51v"]
+[gd_scene load_steps=100 format=3 uid="uid://b1vpt2v5wx51v"]
 
-[ext_resource type="Texture2D" uid="uid://df8emxt1c6suf" path="res://Import GLTF/Old (To be removed)/M_PitchDiffuse.png" id="1_afb63"]
-[ext_resource type="Texture2D" uid="uid://bva7nsnr4ewjx" path="res://Game Content/UI/Sprites/BDS Test.png" id="2_x8oow"]
-[ext_resource type="Texture2D" uid="uid://c8m8kb5ugqauh" path="res://Game Content/UI/Animations/Go_Trial Anim.png" id="3_n48jx"]
+[ext_resource type="Texture2D" uid="uid://cpcrygcqtodou" path="res://Import GLTF/Old (To be removed)/M_PitchDiffuse.png" id="1_afb63"]
+[ext_resource type="Texture2D" uid="uid://bbh4aw37f3meh" path="res://Game Content/UI/Sprites/BDS Test.png" id="2_x8oow"]
+[ext_resource type="Texture2D" uid="uid://bk11w7rj66td" path="res://Game Content/UI/Animations/Go_Trial Anim.png" id="3_n48jx"]
 [ext_resource type="Script" path="res://Game Content/UI/Go_Trial.gd" id="4_e1hx8"]
-[ext_resource type="Texture2D" uid="uid://dbn0v8jpvu32i" path="res://Game Content/UI/Animations/HowToPlay.jpg" id="5_rxn5b"]
+[ext_resource type="Texture2D" uid="uid://bht16rp46jcl5" path="res://Game Content/UI/Animations/HowToPlay.jpg" id="5_rxn5b"]
 [ext_resource type="Script" path="res://Game Content/Level/HowToPlay.gd" id="6_u823g"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="7_3vfn4"]
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="8_4vaof"]
@@ -14,9 +14,11 @@
 [ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="12_lb8c8"]
 [ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="13_oj4qj"]
 [ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="14_ybyxf"]
-[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="15_ixcdq"]
+[ext_resource type="Texture2D" uid="uid://djdrm6upv2650" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="15_ixcdq"]
 [ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="16_2q1x8"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="17_axl04"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="18_o7qm7"]
+[ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/gameMun.tscn" id="19_v4wk8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3qk1h"]
 
@@ -736,3 +738,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38036, 0, 0.168597)
 mesh = ExtResource("17_axl04")
 skeleton = NodePath("../..")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("18_o7qm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03026, 12.1598)
+scene = ExtResource("19_v4wk8")
+transparent = 0
