@@ -13,3 +13,4 @@ func _process(delta):
 
 func _on_button_pressed():
 	print("IT WORJKSDSFD NFSD HJSMMMMMMMMMMMMMMMMM")
+	get_tree().change_scene_to_file("res://Game Content/Level/GK_Sci-fi.tscn")

@@ -398,12 +398,12 @@ mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
 [node name="SmModFloor010" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-1.67, -1.50996e-07, 0, 2.52163e-07, -1, 0, 0, 0, 0.76, 5.2194, 4.4765, -0.0406268)
+transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 0.76, 5.2604, 3.95571, -0.0406268)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
 [node name="SmModFloor011" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-1.67, -1.50996e-07, 0, 2.52163e-07, -1, 0, 0, 0, 0.76, 5.2194, 4.4765, 4.53544)
+transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 0.76, 5.2604, 3.95571, 4.53544)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
@@ -423,32 +423,32 @@ mesh = ExtResource("6_k585g")
 skeleton = NodePath("../..")
 
 [node name="SmModWall006" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1, 0, -0.75, 0, -4.37114e-08, -1.15378, -0.166427, 5.96704)
+transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 5.92868)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../..")
 
 [node name="SmModWall008" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1, 0, -0.75, 0, -4.37114e-08, -1.15378, -0.166427, 8.97541)
+transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 8.93705)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../..")
 
 [node name="SmModWall007" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1, 0, -0.75, 0, -4.37114e-08, -1.15378, -0.166427, 2.99688)
+transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 2.95852)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../..")
 
 [node name="SmModWall009" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1, 0, 0.75, 0, -4.37114e-08, 5.12635, -0.166427, 3.00161)
+transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 2.92462)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../..")
 
 [node name="SmModWall010" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1, 0, 0.75, 0, -4.37114e-08, 5.12635, -0.166427, 6.00998)
+transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 5.93299)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../..")
 
 [node name="SmModWall011" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1, 0, 0.75, 0, -4.37114e-08, 5.12635, -0.166427, 0.0314453)
+transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, -0.0455434)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../..")
 
@@ -469,6 +469,7 @@ skeleton = NodePath("../..")
 
 [node name="SmModWall005" type="MeshInstance3D" parent="PlayableArea"]
 transform = Transform3D(-1, 0, -8.74228e-08, -1.6371e-09, 0.999825, 0.0187263, 8.74075e-08, 0.0187263, -0.999825, 1.99733, -0.038937, 9.22996)
+layers = 7
 mesh = ExtResource("10_0mkms")
 skeleton = NodePath("../..")
 
