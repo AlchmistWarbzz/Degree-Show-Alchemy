@@ -15,7 +15,7 @@ albedo_color = Color(0, 1, 1, 1)
 radius = 0.1
 height = 0.194
 
-[node name="Ball" type="RigidBody3D"]
+[node name="ball" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 3
 collision_mask = 3

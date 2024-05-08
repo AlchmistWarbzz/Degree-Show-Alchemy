@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
-[ext_resource type="Script" path="res://Game Content/Scripts/GameController.gd" id="2_52rao"]
+[ext_resource type="Script" path="res://Game Content/CheckBall.gd" id="2_ftcjj"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
 [ext_resource type="PackedScene" uid="uid://s41nxn2sv730" path="res://Game Content/Scripts/SubScenes/HandTrigger.tscn" id="4_8p8eq"]
@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_vjvi8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hatjg"]
-size = Vector3(1.15, 1.8, 0.305)
+size = Vector3(3.69, 2.59, 0.305)
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_nf6al")
 
 [node name="PlayerTrigger" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-script = ExtResource("2_52rao")
+script = ExtResource("2_ftcjj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.764543, 0)
@@ -56,3 +56,5 @@ laser_length = 1
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
 enabled = false
+
+[connection signal="body_entered" from="PlayerTrigger" to="PlayerTrigger" method="_on_body_entered"]

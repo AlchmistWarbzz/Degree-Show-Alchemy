@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=25 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="Script" path="res://Game Content/Scripts/GameController.gd" id="1_a0acl"]
@@ -15,8 +15,11 @@
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://ciitfvu6rvvsa" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_001.res" id="12_i42ob"]
-[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://djdrm6upv2650" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
+size = Vector3(2.375, 2.72845, 0.621948)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1cdgx"]
 panorama = ExtResource("12_xxstv")
@@ -54,6 +57,12 @@ transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, 
 
 [node name="No Aim3" parent="GameController" instance=ExtResource("4_y1v0d")]
 transform = Transform3D(-4.49315, 0, -8.74228e-08, 0, 1, 0, 3.92803e-07, 0, -1, 1.9417, 0, -0.378756)
+
+[node name="missed" type="Area3D" parent="GameController"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameController/missed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79163, 1.7528, 2.33576)
+shape = SubResource("BoxShape3D_rmuwd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jbm2")
@@ -533,3 +542,5 @@ font_size = 200
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5.5, 0)
 text = "0"
 font_size = 200
+
+[connection signal="body_entered" from="GameController/missed" to="GameController/No Aim2" method="_on_missed_body_entered"]
