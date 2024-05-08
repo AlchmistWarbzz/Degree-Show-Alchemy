@@ -28,30 +28,38 @@ func _process(_delta):
 		spawn_timer_elapsed = 0  # Reset the timer
 	# Move the raycast around the player
 	if raycast:
-		print($"/root/GameController".player.get_position())
+		#print($"/root/GameController".player.get_position())
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
 		var to_player = player_pos - raycast.global_transform.origin
 		# Calculate the distance between raycast and player
 
 	
+# Define a function to calculate the launch offset
 
 
 func spawn_ball():
-
 	# Instantiate the Ball scene
 	var ball_instance = ball_scene.instantiate()
+	# Define parameters for circular path
+	# Define parameters for circular path
+	var radius = 2.0  # Radius of the circular path
+	var min_angle = deg_to_rad(45)  # Minimum angle in radians
+	var max_angle = deg_to_rad(135)  # Maximum angle in radians
+	var angle = randf_range(min_angle, max_angle)  # Random angle within the specified range
+	var launch_offset = Vector3(radius * cos(angle), 3, radius * sin(angle))
+
 	# Calculate launch position around the player
-	var random_Offset = randf_range(1, 2)
-	var launch_offset = Vector3(0, 0, random_Offset)  # Adjust this value for desired offset
 	var launch_position = player_pos + launch_offset
+	
 	# Get the collision point and normal from the raycast
 	var collision_point = raycast.get_collision_point()
+	
 	# Calculate direction towards the launch position
 	var direction_to_launch = (launch_position - collision_point).normalized()
 	# Add the ball instance to the scene
 	add_child(ball_instance)
 	# Apply impulse towards the player
-	var impulse_magnitude = 8  # Adjust this value to control the speed
+	var impulse_magnitude = 3  # Adjust this value to control the speed
 	ball_instance.global_transform.origin = raycast.global_transform.origin
 	ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
 
