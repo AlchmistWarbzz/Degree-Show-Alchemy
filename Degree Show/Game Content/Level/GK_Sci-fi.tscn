@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=24 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="Script" path="res://Game Content/Scripts/GameController.gd" id="1_a0acl"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
 [ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
-[ext_resource type="ArrayMesh" uid="uid://co5xyswyrwii8" path="res://Game Content/Assets/ModularKit/SM_Mod_Fence_001.res" id="4_an2h5"]
 [ext_resource type="PackedScene" uid="uid://cptxo88fdy80i" path="res://Game Content/Scripts/SubScenes/no_aim.tscn" id="4_y1v0d"]
 [ext_resource type="PackedScene" uid="uid://cuwiqbdrh1gyy" path="res://Game Content/Scripts/SubScenes/spawn_ball.tscn" id="5_3f1ry"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game Content/Assets/Assets_SM_GoalPost.res" id="5_p5toa"]
@@ -15,8 +14,8 @@
 [ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
-[ext_resource type="Texture2D" uid="uid://djdrm6upv2650" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
-[ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="13_g65cv"]
+[ext_resource type="ArrayMesh" uid="uid://ciitfvu6rvvsa" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_001.res" id="12_i42ob"]
+[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1cdgx"]
@@ -398,29 +397,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 4.57607)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
-[node name="SmModFloor007" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 9.13027)
+[node name="SmModFloor010" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-1.67, -1.50996e-07, 0, 2.52163e-07, -1, 0, 0, 0, 0.76, 5.2194, 4.4765, -0.0406268)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
-[node name="SmModFence001" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 0.5)
-mesh = ExtResource("4_an2h5")
+[node name="SmModFloor011" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-1.67, -1.50996e-07, 0, 2.52163e-07, -1, 0, 0, 0, 0.76, 5.2194, 4.4765, 4.53544)
+mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
-[node name="SmModFence002" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 4.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence003" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 8.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence004" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 4.5)
-mesh = ExtResource("4_an2h5")
+[node name="SmModFloor007" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 9.13027)
+mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../..")
 
 [node name="AssetsSmGoalPost" type="MeshInstance3D" parent="PlayableArea"]
@@ -433,9 +422,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
 mesh = ExtResource("6_k585g")
 skeleton = NodePath("../..")
 
+[node name="SmModWall006" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-3.27835e-08, 0, 1, 0, 1, 0, -0.75, 0, -4.37114e-08, -1.15378, -0.166427, 5.96704)
+mesh = ExtResource("12_i42ob")
+skeleton = NodePath("../..")
+
+[node name="SmModWall008" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-3.27835e-08, 0, 1, 0, 1, 0, -0.75, 0, -4.37114e-08, -1.15378, -0.166427, 8.97541)
+mesh = ExtResource("12_i42ob")
+skeleton = NodePath("../..")
+
+[node name="SmModWall007" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-3.27835e-08, 0, 1, 0, 1, 0, -0.75, 0, -4.37114e-08, -1.15378, -0.166427, 2.99688)
+mesh = ExtResource("12_i42ob")
+skeleton = NodePath("../..")
+
+[node name="SmModWall009" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-3.27835e-08, 0, -1, 0, 1, 0, 0.75, 0, -4.37114e-08, 5.12635, -0.166427, 3.00161)
+mesh = ExtResource("12_i42ob")
+skeleton = NodePath("../..")
+
+[node name="SmModWall010" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-3.27835e-08, 0, -1, 0, 1, 0, 0.75, 0, -4.37114e-08, 5.12635, -0.166427, 6.00998)
+mesh = ExtResource("12_i42ob")
+skeleton = NodePath("../..")
+
+[node name="SmModWall011" type="MeshInstance3D" parent="PlayableArea"]
+transform = Transform3D(-3.27835e-08, 0, -1, 0, 1, 0, 0.75, 0, -4.37114e-08, 5.12635, -0.166427, 0.0314453)
+mesh = ExtResource("12_i42ob")
+skeleton = NodePath("../..")
+
 [node name="SmModPillar001" type="MeshInstance3D" parent="PlayableArea"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.644818, 0, 1, 0, -4.37114e-08, -2, -0.0647104, 0)
-mesh = ExtResource("7_xkmc0")
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -2.33458, -0.253207, -0.15481)
+mesh = ExtResource("14_ajnyv")
 skeleton = NodePath("../..")
 
 [node name="SmModPillar002" type="MeshInstance3D" parent="PlayableArea"]
@@ -483,202 +502,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 9.17208)
 mesh = ExtResource("3_irspn")
 skeleton = NodePath("../..")
 
-[node name="PlayableArea2" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.9764, 1.00052, 4.59714)
-
-[node name="SmModFloor001" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 0)
-mesh = ExtResource("1_5vvnm")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor006" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 4.57607)
-mesh = ExtResource("1_5vvnm")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor007" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 9.13027)
-mesh = ExtResource("1_5vvnm")
-skeleton = NodePath("../..")
-
-[node name="SmModFence001" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 0.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence002" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 4.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence003" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 8.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence004" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 4.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="AssetsSmGoalPost" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(-4.37114e-08, 0, -0.574423, 0, 1, 0, 1, 0, -2.51088e-08, 2, -0.0812783, 6.7)
-mesh = ExtResource("5_p5toa")
-skeleton = NodePath("../..")
-
-[node name="SmModWall003" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0.181696)
-mesh = ExtResource("6_k585g")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar001" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.644818, 0, 1, 0, -4.37114e-08, -2, -0.0647104, 0)
-mesh = ExtResource("7_xkmc0")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar002" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 0.644818, 0, -1, 0, 1.31134e-07, 6, -0.0647104, 0)
-mesh = ExtResource("7_xkmc0")
-skeleton = NodePath("../..")
-
-[node name="SmModWall004" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, -0.166, 9.009)
-mesh = ExtResource("9_m3b5j")
-skeleton = NodePath("../..")
-
-[node name="SmModWall005" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(-1, 0, -8.74228e-08, -1.6371e-09, 0.999825, 0.0187263, 8.74075e-08, 0.0187263, -0.999825, 1.99733, -0.038937, 9.22996)
-mesh = ExtResource("10_0mkms")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor002" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor003" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 4.5668)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor004" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor005" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor008" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 9.17208)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor009" type="MeshInstance3D" parent="PlayableArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 9.17208)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="PlayableArea3" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 27.99, 1.00052, 4.59714)
-
-[node name="SmModFloor001" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 0)
-mesh = ExtResource("1_5vvnm")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor006" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 4.57607)
-mesh = ExtResource("1_5vvnm")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor007" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 9.13027)
-mesh = ExtResource("1_5vvnm")
-skeleton = NodePath("../..")
-
-[node name="SmModFence001" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 0.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence002" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 0, 4.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence003" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 8.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="SmModFence004" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.7, 0, 4.5)
-mesh = ExtResource("4_an2h5")
-skeleton = NodePath("../..")
-
-[node name="AssetsSmGoalPost" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(-4.37114e-08, 0, -0.574423, 0, 1, 0, 1, 0, -2.51088e-08, 2, -0.0812783, 6.7)
-mesh = ExtResource("5_p5toa")
-skeleton = NodePath("../..")
-
-[node name="SmModWall003" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0.21871)
-mesh = ExtResource("6_k585g")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar001" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.644818, 0, 1, 0, -4.37114e-08, -2, -0.0647104, 0)
-mesh = ExtResource("7_xkmc0")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar002" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 0.644818, 0, -1, 0, 1.31134e-07, 6, -0.0647104, 0)
-mesh = ExtResource("7_xkmc0")
-skeleton = NodePath("../..")
-
-[node name="SmModWall004" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, -0.166, 9.009)
-mesh = ExtResource("9_m3b5j")
-skeleton = NodePath("../..")
-
-[node name="SmModWall005" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(-1, 0, -8.74228e-08, -1.6371e-09, 0.999825, 0.0187263, 8.74075e-08, 0.0187263, -0.999825, 1.99733, -0.038937, 9.22996)
-mesh = ExtResource("10_0mkms")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor002" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor003" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 4.5668)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor004" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor005" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor008" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 9.17208)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor009" type="MeshInstance3D" parent="PlayableArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 9.17208)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 6.5, 0)
 text = "SAVES: "
@@ -686,7 +509,7 @@ font_size = 100
 
 [node name="Label3D2" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.5, 0)
-text = "MISSES: "
+text = "GOALS: "
 font_size = 100
 
 [node name="Label3D3" type="Label3D" parent="."]
@@ -709,97 +532,3 @@ font_size = 200
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5.5, 0)
 text = "0"
 font_size = 200
-
-[node name="Waiting Room" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4529, 0.834158, -8.66938)
-
-[node name="SmModFloor002" type="MeshInstance3D" parent="Waiting Room"]
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor003" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor004" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFrame001" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, 4)
-mesh = ExtResource("9_m3b5j")
-skeleton = NodePath("../..")
-
-[node name="SmModWall002" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.9, 0, 4)
-mesh = ExtResource("13_g65cv")
-skeleton = NodePath("../..")
-
-[node name="SmModWall003" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.9, 0, 0)
-mesh = ExtResource("13_g65cv")
-skeleton = NodePath("../..")
-
-[node name="SmModWall004" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0.1)
-mesh = ExtResource("6_k585g")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar002" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44906, 0, 0.168597)
-mesh = ExtResource("14_ajnyv")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar003" type="MeshInstance3D" parent="Waiting Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38036, 0, 0.168597)
-mesh = ExtResource("14_ajnyv")
-skeleton = NodePath("../..")
-
-[node name="Waiting Room2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4818, 0.834158, -8.66938)
-
-[node name="SmModFloor002" type="MeshInstance3D" parent="Waiting Room2"]
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor003" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFloor004" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-mesh = ExtResource("3_irspn")
-skeleton = NodePath("../..")
-
-[node name="SmModFrame001" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, 4)
-mesh = ExtResource("9_m3b5j")
-skeleton = NodePath("../..")
-
-[node name="SmModWall002" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.9, 0, 4)
-mesh = ExtResource("13_g65cv")
-skeleton = NodePath("../..")
-
-[node name="SmModWall003" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.9, 0, 0)
-mesh = ExtResource("13_g65cv")
-skeleton = NodePath("../..")
-
-[node name="SmModWall004" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0.1)
-mesh = ExtResource("6_k585g")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar002" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44906, 0, 0.168597)
-mesh = ExtResource("14_ajnyv")
-skeleton = NodePath("../..")
-
-[node name="SmModPillar003" type="MeshInstance3D" parent="Waiting Room2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38036, 0, 0.168597)
-mesh = ExtResource("14_ajnyv")
-skeleton = NodePath("../..")
