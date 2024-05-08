@@ -43,10 +43,11 @@ func spawn_ball():
 	# Define parameters for circular path
 	# Define parameters for circular path
 	var radius = 2.0  # Radius of the circular path
-	var min_angle = deg_to_rad(45)  # Minimum angle in radians
-	var max_angle = deg_to_rad(135)  # Maximum angle in radians
+	var min_angle = deg_to_rad(90)  # Minimum angle in radians
+	var max_angle = deg_to_rad(100)  # Maximum angle in radians
+	var height = randf_range(2.3, 2.6)
 	var angle = randf_range(min_angle, max_angle)  # Random angle within the specified range
-	var launch_offset = Vector3(radius * cos(angle), 3, radius * sin(angle))
+	var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 
 	# Calculate launch position around the player
 	var launch_position = player_pos + launch_offset
