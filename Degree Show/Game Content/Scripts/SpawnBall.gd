@@ -42,8 +42,8 @@ func spawn_ball():
 	var ball_instance = ball_scene.instantiate()
 	# Define parameters for circular path
 	var radius = 2.0  # Radius of the circular path
-	var min_angle = deg_to_rad(80)  # Minimum angle in radians
-	var max_angle = deg_to_rad(110)  # Maximum angle in radians
+	var min_angle = deg_to_rad(85)  # Minimum angle in radians
+	var max_angle = deg_to_rad(105)  # Maximum angle in radians
 	var excluded_angle_min = deg_to_rad(90)  # Excluded angle minimum in radians
 	var excluded_angle_max = deg_to_rad(100)  # Excluded angle maximum in radians
 
