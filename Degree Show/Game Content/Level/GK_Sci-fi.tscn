@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=25 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="Script" path="res://Game Content/Scripts/GameController.gd" id="1_a0acl"]
@@ -11,10 +11,11 @@
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
 [ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="7_xkmc0"]
 [ext_resource type="ArrayMesh" uid="uid://pwdm8b7kmxkv" path="res://Game Content/Assets/ModularKit/SM_Mod_Stairs_001.res" id="8_jccra"]
+[ext_resource type="Script" path="res://Game Content/Level/Floor.gd" id="8_lr44h"]
 [ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://djdrm6upv2650" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="13_g65cv"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
 
@@ -33,7 +34,7 @@ sky = SubResource("Sky_v33si")
 [sub_resource type="BoxMesh" id="BoxMesh_a1uqp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7flxx"]
-size = Vector3(27.9985, 0, 20.5903)
+size = Vector3(27.999, 1.47214, 20.59)
 
 [node name="Node3D" type="Node3D"]
 
@@ -379,9 +380,12 @@ skeleton = NodePath("../..")
 [node name="PlayableArea" type="Node3D" parent="."]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlayableArea"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("8_lr44h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04077, 0, 2.2937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04077, -0.736558, 2.2937)
 shape = SubResource("BoxShape3D_7flxx")
 
 [node name="SmModFloor001" type="MeshInstance3D" parent="PlayableArea"]

@@ -74,8 +74,8 @@ func spawn_ball():
 	# Apply impulse towards the player
 	var impulse_magnitude = 3  # Adjust this value to control the speed
 	ball_instance.global_transform.origin = raycast.global_transform.origin
-	ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
-	#ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
+	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
+	ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_D:

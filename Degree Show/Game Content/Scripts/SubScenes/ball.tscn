@@ -17,6 +17,8 @@ height = 0.194
 
 [node name="Ball" type="RigidBody3D"]
 disable_mode = 2
+collision_layer = 3
+collision_mask = 3
 mass = 0.26
 physics_material_override = SubResource("PhysicsMaterial_hmja0")
 continuous_cd = true
