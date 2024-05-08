@@ -37,8 +37,8 @@ tracker = &"left_hand"
 
 [node name="FunctionTeleport" parent="XROrigin3D/LeftHand" instance=ExtResource("4_vwq0j")]
 
-[node name="Area3D" parent="XROrigin3D/LeftHand" instance=ExtResource("4_8p8eq")]
-transform = Transform3D(0.999783, 0.0208203, 0, -0.0208203, 0.999783, 0, 0, 0, 1, 0, 0, 0)
+[node name="playerarea" parent="XROrigin3D/LeftHand" instance=ExtResource("4_8p8eq")]
+transform = Transform3D(0.999783, 0.0208203, 0, -0.0208203, 0.999783, 0, 0, 0, 1, -0.024955, -0.0506546, 0.14668)
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
@@ -48,9 +48,11 @@ tracker = &"right_hand"
 
 [node name="MovementTurn" parent="XROrigin3D/RightHand" instance=ExtResource("8_vjvi8")]
 
-[node name="Area3D" parent="XROrigin3D/RightHand" instance=ExtResource("4_8p8eq")]
+[node name="playerarea" parent="XROrigin3D/RightHand" instance=ExtResource("4_8p8eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, -0.051, 0.147)
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" instance=ExtResource("8_cv80x")]
+enabled = false
 show_laser = 2
 laser_length = 1
 

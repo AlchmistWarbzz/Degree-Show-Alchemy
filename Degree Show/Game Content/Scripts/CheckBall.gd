@@ -23,7 +23,7 @@ func _on_body_entered(body):
 			if name == "missed":
 				print("MISSED")
 				score = score - 1
-			else:
+			elif name == "playerarea":
 				ball = body
 				score = score + 1
 				print("Entered ball")

@@ -19,7 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
-size = Vector3(2.375, 2.72845, 0.621948)
+size = Vector3(6.66394, 4.76266, 0.621948)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1cdgx"]
 panorama = ExtResource("12_xxstv")
@@ -58,10 +58,11 @@ transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, 
 transform = Transform3D(-4.49315, 0, -8.74228e-08, 0, 1, 0, 3.92803e-07, 0, -1, 1.9417, 0, -0.378756)
 
 [node name="missed" type="Area3D" parent="GameController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8982, 1.19831, 4.85685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8982, 1.19831, 9.00898)
 script = ExtResource("5_x4qth")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameController/missed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.529236, 1.01711, 0)
 shape = SubResource("BoxShape3D_rmuwd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
