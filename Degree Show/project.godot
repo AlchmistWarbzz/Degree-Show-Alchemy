@@ -41,6 +41,7 @@ Enter={
 [layer_names]
 
 3d_physics/layer_1="Ball"
+3d_physics/layer_2="Floor"
 
 [physics]
 
