@@ -1,12 +1,12 @@
 [gd_scene load_steps=25 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
-[ext_resource type="Script" path="res://Game Content/Scripts/GameController.gd" id="1_a0acl"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
 [ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
 [ext_resource type="PackedScene" uid="uid://cptxo88fdy80i" path="res://Game Content/Scripts/SubScenes/no_aim.tscn" id="4_y1v0d"]
 [ext_resource type="PackedScene" uid="uid://cuwiqbdrh1gyy" path="res://Game Content/Scripts/SubScenes/spawn_ball.tscn" id="5_3f1ry"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game Content/Assets/Assets_SM_GoalPost.res" id="5_p5toa"]
+[ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="5_x4qth"]
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
 [ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="7_xkmc0"]
 [ext_resource type="ArrayMesh" uid="uid://pwdm8b7kmxkv" path="res://Game Content/Assets/ModularKit/SM_Mod_Stairs_001.res" id="8_jccra"]
@@ -15,7 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://ciitfvu6rvvsa" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_001.res" id="12_i42ob"]
-[ext_resource type="Texture2D" uid="uid://djdrm6upv2650" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
@@ -41,7 +41,6 @@ size = Vector3(27.999, 1.47214, 20.59)
 [node name="Node3D" type="Node3D"]
 
 [node name="GameController" type="Node" parent="." groups=["Player"]]
-script = ExtResource("1_a0acl")
 
 [node name="SpawnBall" parent="GameController" instance=ExtResource("5_3f1ry")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82215, 1.79701, 0)
@@ -59,9 +58,10 @@ transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, 
 transform = Transform3D(-4.49315, 0, -8.74228e-08, 0, 1, 0, 3.92803e-07, 0, -1, 1.9417, 0, -0.378756)
 
 [node name="missed" type="Area3D" parent="GameController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8982, 1.19831, 4.85685)
+script = ExtResource("5_x4qth")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameController/missed"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79163, 1.7528, 2.33576)
 shape = SubResource("BoxShape3D_rmuwd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -543,4 +543,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5.5, 0)
 text = "0"
 font_size = 200
 
-[connection signal="body_entered" from="GameController/missed" to="GameController/No Aim2" method="_on_missed_body_entered"]
+[connection signal="body_entered" from="GameController/missed" to="GameController/missed" method="_on_body_entered"]
