@@ -25,14 +25,17 @@ func _on_body_entered(body):
 				ball = body
 				print("Entered ball")
 				Global.score += 1
+				body.name = "balls"
 				var direction = global_transform.origin - ball.global_transform.origin
 				# Reflect the ball's velocity around the normal of the collision surface
 				var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())
 				# Apply the reflected velocity to the ball
-				ball.set_linear_velocity(reflection * ball.linear_velocity.length()) 
+				ball.set_linear_velocity(reflection * ball.linear_velocity.length())
+				 
 		elif body.name == "junk":
 			print("Entered is junk")
 			Global.score -= 1
+			body.name = "junkD"
 			
 
 
