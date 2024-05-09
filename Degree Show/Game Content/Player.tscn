@@ -11,23 +11,22 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_vjvi8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hatjg"]
-size = Vector3(3.69, 2.59, 0.305)
+size = Vector3(0.365, 2.33748, 0.305)
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_nf6al")
-
-[node name="PlayerTrigger" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-script = ExtResource("2_dgorw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.764543, 0)
-shape = SubResource("BoxShape3D_hatjg")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="PlayerTrigger" type="Area3D" parent="XROrigin3D/XRCamera3D"]
+script = ExtResource("2_dgorw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/PlayerTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.890803, 0)
+shape = SubResource("BoxShape3D_hatjg")
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -59,4 +58,4 @@ laser_length = 1
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
 enabled = false
 
-[connection signal="body_entered" from="PlayerTrigger" to="PlayerTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="XROrigin3D/XRCamera3D/PlayerTrigger" to="XROrigin3D/XRCamera3D/PlayerTrigger" method="_on_body_entered"]
