@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://b1vpt2v5wx51v"]
+[gd_scene load_steps=100 format=3 uid="uid://b1vpt2v5wx51v"]
 
 [ext_resource type="Texture2D" uid="uid://df8emxt1c6suf" path="res://Import GLTF/Old (To be removed)/M_PitchDiffuse.png" id="1_afb63"]
 [ext_resource type="Texture2D" uid="uid://bva7nsnr4ewjx" path="res://Game Content/UI/Sprites/BDS Test.png" id="2_x8oow"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="15_ixcdq"]
 [ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="16_2q1x8"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="17_axl04"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="18_o7qm7"]
+[ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/gameMun.tscn" id="19_v4wk8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3qk1h"]
 
@@ -736,3 +738,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38036, 0, 0.168597)
 mesh = ExtResource("17_axl04")
 skeleton = NodePath("../..")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("18_o7qm7")]
+transform = Transform3D(-0.996192, 0, 0.0871906, 0, 1, 0, -0.0871906, 0, -0.996192, 2.41727, 2.08351, 2.2927)
+scene = ExtResource("19_v4wk8")
+viewport_size = Vector2(1119, 699)
+transparent = 0

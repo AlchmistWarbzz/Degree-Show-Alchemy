@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dix4xjpqvt7rf"]
+[gd_scene load_steps=6 format=3 uid="uid://dix4xjpqvt7rf"]
 
-[ext_resource type="Script" path="res://Game Content/Scripts/Ball.gd" id="1_su4nq"]
+[ext_resource type="Script" path="res://Game Content/Scripts/Ball.gd" id="1_mq61k"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hmja0"]
+bounce = 5.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ofdhu"]
 radius = 0.1
@@ -12,14 +15,16 @@ albedo_color = Color(0, 1, 1, 1)
 radius = 0.1
 height = 0.194
 
-[node name="Ball" type="RigidBody3D"]
+[node name="ball" type="RigidBody3D"]
 disable_mode = 2
+collision_layer = 3
+collision_mask = 3
 mass = 0.26
-gravity_scale = 0.3
+physics_material_override = SubResource("PhysicsMaterial_hmja0")
 continuous_cd = true
 max_contacts_reported = 10
 contact_monitor = true
-script = ExtResource("1_su4nq")
+script = ExtResource("1_mq61k")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_ofdhu")
@@ -30,6 +35,7 @@ mesh = SubResource("SphereMesh_q768u")
 skeleton = NodePath("../../..")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

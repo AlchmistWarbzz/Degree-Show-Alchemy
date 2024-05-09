@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 OrchestratorNodeFactory="*res://addons/orchestrator/orchestrator_node_factory.gd"
 Orchestrator="*res://addons/orchestrator/orchestrator.gd"
+GameController="*res://Game Content/Scripts/GameController.gd"
+Global="*res://Game Content/Scripts/Global.gd"
 
 [dotnet]
 
@@ -40,6 +42,11 @@ Enter={
 [layer_names]
 
 3d_physics/layer_1="Ball"
+3d_physics/layer_2="Floor"
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
 
 [rendering]
 
