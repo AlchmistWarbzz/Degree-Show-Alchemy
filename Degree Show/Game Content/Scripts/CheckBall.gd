@@ -21,10 +21,12 @@ func _on_body_entered(body):
 			if name == "missed":
 				print("MISSED")
 				Global.score -= 1
+				Global.goals += 1
 			elif name == "playerarea":
 				ball = body
 				print("Entered ball")
 				Global.score += 1
+				Global.saves += 1
 				body.name = "balls"
 				var direction = global_transform.origin - ball.global_transform.origin
 				# Reflect the ball's velocity around the normal of the collision surface
@@ -33,9 +35,11 @@ func _on_body_entered(body):
 				ball.set_linear_velocity(reflection * ball.linear_velocity.length())
 				 
 		elif body.name == "junk":
-			print("Entered is junk")
-			Global.score -= 1
-			body.name = "junkD"
+			if name != "missed":
+				print("Entered is junk")
+				Global.score -= 1
+				Global.hits += 1
+				body.name = "junkD"
 			
 
 

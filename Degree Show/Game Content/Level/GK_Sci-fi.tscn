@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=28 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
@@ -11,13 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://crokhlqjmoow0" path="res://Game Content/Level/Score.tscn" id="6_jbvtd"]
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
 [ext_resource type="ArrayMesh" uid="uid://hx7urat4mrxd" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_001.res" id="7_xkmc0"]
+[ext_resource type="PackedScene" uid="uid://dgswnf5ukk4we" path="res://Game Content/UI/FinalStats.tscn" id="7_ys6ej"]
 [ext_resource type="ArrayMesh" uid="uid://pwdm8b7kmxkv" path="res://Game Content/Assets/ModularKit/SM_Mod_Stairs_001.res" id="8_jccra"]
 [ext_resource type="Script" path="res://Game Content/Level/Floor.gd" id="8_lr44h"]
 [ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://ciitfvu6rvvsa" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_001.res" id="12_i42ob"]
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="14_ajnyv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
@@ -70,6 +71,11 @@ shape = SubResource("BoxShape3D_rmuwd")
 [node name="Viewport2Din3D" parent="GameController" instance=ExtResource("5_walll")]
 transform = Transform3D(1.76448, 0, 0, 0, 1.52078, -0.192289, 0, 0.407492, 0.717631, 2.30752, 3.02659, 0.0794482)
 scene = ExtResource("6_jbvtd")
+viewport_size = Vector2(1280, 720)
+
+[node name="Viewport2Din3D2" parent="GameController" instance=ExtResource("5_walll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92603, 1.95009, 6.23481)
+scene = ExtResource("7_ys6ej")
 viewport_size = Vector2(1280, 720)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

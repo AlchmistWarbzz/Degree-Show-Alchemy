@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=13 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_vwq0j"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_cv80x"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_vjvi8"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="9_j4b2q"]
+[ext_resource type="PackedScene" uid="uid://dgswnf5ukk4we" path="res://Game Content/UI/FinalStats.tscn" id="10_qtkma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hatjg"]
 size = Vector3(0.365, 2.33748, 0.305)
@@ -54,6 +56,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, -0.051, 0.147)
 enabled = false
 show_laser = 2
 laser_length = 1
+
+[node name="Viewport2Din3D" parent="XROrigin3D/RightHand" instance=ExtResource("9_j4b2q")]
+transform = Transform3D(-0.218134, -0.0575479, -0.974221, 0.25008, 0.961632, -0.112798, 0.943333, -0.268238, -0.195373, -0.0533341, 0.154129, 0.236354)
+screen_size = Vector2(0.3, 0.2)
+collision_layer = 5242880
+scene = ExtResource("10_qtkma")
+viewport_size = Vector2(1280, 720)
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
 enabled = false

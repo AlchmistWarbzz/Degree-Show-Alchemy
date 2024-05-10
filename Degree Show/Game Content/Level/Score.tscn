@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crokhlqjmoow0"]
 
-[ext_resource type="Script" path="res://Game Content/Level/Label.gd" id="1_4n5qk"]
 [ext_resource type="Texture2D" uid="uid://cqm7rvupkvwhw" path="res://Game Content/UI/Sprites/Block.png" id="1_k827o"]
+[ext_resource type="Script" path="res://Game Content/Level/LabelScore.gd" id="2_xot2x"]
 
 [node name="Score" type="Control"]
 layout_mode = 3
@@ -22,6 +22,7 @@ scale = Vector2(0.3625, 0.355)
 texture = ExtResource("1_k827o")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -6.0
 offset_top = -5.0
 offset_right = 371.0
@@ -32,4 +33,4 @@ theme_override_font_sizes/font_size = 200
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_4n5qk")
+script = ExtResource("2_xot2x")
