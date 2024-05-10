@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgswnf5ukk4we"]
+
+[ext_resource type="Script" path="res://Game Content/Level/LabelTimer.gd" id="1_208wq"]
+[ext_resource type="Texture2D" uid="uid://cqm7rvupkvwhw" path="res://Game Content/UI/Sprites/Block.png" id="1_hgf0i"]
+[ext_resource type="Script" path="res://Game Content/Level/LabelSaves.gd" id="2_wclmd"]
+[ext_resource type="Script" path="res://Game Content/Level/LabelGoals.gd" id="3_1re17"]
+[ext_resource type="Script" path="res://Game Content/Level/LabelHits.gd" id="4_5nh4b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.177
+anchor_bottom = 1.225
+offset_right = -203.904
+offset_bottom = -146.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Block" type="Sprite2D" parent="."]
+position = Vector2(624, 320)
+texture = ExtResource("1_hgf0i")
+
+[node name="Time" type="Label" parent="."]
+offset_left = 581.0
+offset_top = -36.0
+offset_right = 695.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+script = ExtResource("1_208wq")
+
+[node name="Saves" type="Label" parent="."]
+offset_left = 580.0
+offset_top = 132.0
+offset_right = 694.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+script = ExtResource("2_wclmd")
+
+[node name="Goals" type="Label" parent="."]
+offset_left = 582.0
+offset_top = 298.0
+offset_right = 696.0
+offset_bottom = 571.0
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+script = ExtResource("3_1re17")
+
+[node name="Hits" type="Label" parent="."]
+offset_left = 582.0
+offset_top = 460.0
+offset_right = 696.0
+offset_bottom = 733.0
+theme_override_font_sizes/font_size = 150
+text = "0
+"
+script = ExtResource("4_5nh4b")
