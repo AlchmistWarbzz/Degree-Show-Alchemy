@@ -58,7 +58,7 @@ show_laser = 2
 laser_length = 1
 
 [node name="Viewport2Din3D" parent="XROrigin3D/RightHand" instance=ExtResource("9_j4b2q")]
-transform = Transform3D(-0.218134, -0.0575479, -0.974221, 0.25008, 0.961632, -0.112798, 0.943333, -0.268238, -0.195373, -0.0533341, 0.154129, 0.236354)
+transform = Transform3D(-1.81058e-08, -8.9407e-08, 1, -0.707107, 0.707107, 2.98023e-08, -0.707107, -0.707107, -5.96046e-08, -0.0143185, 0.175455, 0.164322)
 screen_size = Vector2(0.3, 0.2)
 collision_layer = 5242880
 scene = ExtResource("10_qtkma")

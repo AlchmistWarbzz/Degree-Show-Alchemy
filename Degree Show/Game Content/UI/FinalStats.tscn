@@ -20,6 +20,7 @@ position = Vector2(624, 320)
 texture = ExtResource("1_hgf0i")
 
 [node name="Time" type="Label" parent="."]
+layout_mode = 0
 offset_left = 581.0
 offset_top = -36.0
 offset_right = 695.0
@@ -30,6 +31,7 @@ text = "0
 script = ExtResource("1_208wq")
 
 [node name="Saves" type="Label" parent="."]
+layout_mode = 0
 offset_left = 580.0
 offset_top = 132.0
 offset_right = 694.0
@@ -40,6 +42,7 @@ text = "0
 script = ExtResource("2_wclmd")
 
 [node name="Goals" type="Label" parent="."]
+layout_mode = 0
 offset_left = 582.0
 offset_top = 298.0
 offset_right = 696.0
@@ -50,6 +53,7 @@ text = "0
 script = ExtResource("3_1re17")
 
 [node name="Hits" type="Label" parent="."]
+layout_mode = 0
 offset_left = 582.0
 offset_top = 460.0
 offset_right = 696.0
