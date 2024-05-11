@@ -14,12 +14,13 @@ rings = 69
 script = ExtResource("1_i3kkg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000131488, -0.00671434, -0.000952482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000131488, -0.00671434, -0.15027)
 shape = SubResource("SphereShape3D_0yptj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.000131488, -0.00671434, -0.000952482)
 mesh = SubResource("TorusMesh_1ytds")
+skeleton = NodePath("../CollisionShape3D2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
