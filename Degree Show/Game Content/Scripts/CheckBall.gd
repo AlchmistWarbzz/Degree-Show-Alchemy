@@ -36,13 +36,6 @@ func _on_body_entered(body):
 				# Apply the reflected velocity to the ball
 				ball.set_linear_velocity(reflection * ball.linear_velocity.length())
 				 
-		elif body.name == "junk":
-			if name != "missed":
-				print("Entered is junk")
-				Global.score -= 1
-				Global.hits += 1
-				Global.time += 20
-				body.name = "junkD"
 			
 
 
