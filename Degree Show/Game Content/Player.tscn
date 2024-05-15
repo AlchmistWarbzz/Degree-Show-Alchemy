@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=14 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
@@ -14,6 +14,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hatjg"]
 size = Vector3(0.365, 2.33748, 0.305)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kgd1r"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_nf6al")
@@ -58,11 +60,15 @@ show_laser = 2
 laser_length = 1
 
 [node name="Viewport2Din3D" parent="XROrigin3D/RightHand" instance=ExtResource("9_j4b2q")]
-transform = Transform3D(-1.81058e-08, -8.9407e-08, 1, -0.707107, 0.707107, 2.98023e-08, -0.707107, -0.707107, -5.96046e-08, -0.0143185, 0.175455, 0.164322)
+transform = Transform3D(0.117363, 0.101317, 0.987907, -0.0268016, -0.994097, 0.105135, 0.992728, -0.0388164, -0.113954, 0.0873428, -0.0389037, 0.31745)
 screen_size = Vector2(0.3, 0.2)
 collision_layer = 5242880
 scene = ExtResource("10_qtkma")
 viewport_size = Vector2(1280, 720)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
+transform = Transform3D(0.00098795, -0.018565, 0.0230801, 0.000107771, 0.178843, -0.006926, -0.000111087, 0.00839691, 0.198543, 0.081454, -0.0465468, 0.269129)
+mesh = SubResource("BoxMesh_kgd1r")
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
 enabled = false

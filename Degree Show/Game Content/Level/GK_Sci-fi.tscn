@@ -113,7 +113,7 @@ points = PackedVector3Array(0, -1, 0, 0, 0, 0, 4, -1, 0, 0, -1, 3.99995, 0, 0, 3
 [node name="GameController" type="Node" parent="." groups=["Player"]]
 
 [node name="SpawnBall" parent="GameController" instance=ExtResource("5_3f1ry")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82215, 1.79701, 0.288492)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82215, 1.79701, -2.38183)
 
 [node name="Player" parent="GameController" instance=ExtResource("2_0r2yx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7.5)
@@ -136,7 +136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13768, 0.0245445, 0)
 shape = SubResource("BoxShape3D_rmuwd")
 
 [node name="Viewport2Din3D" parent="GameController" instance=ExtResource("5_walll")]
-transform = Transform3D(1.76448, 0, 0, 0, 1.52078, -0.192289, 0, 0.407492, 0.717631, 2.30752, 3.02659, 0.0794482)
+transform = Transform3D(1.76448, 0, 0, 0, 1.52078, -0.192289, 0, 0.407492, 0.717631, 2.30752, 3.02659, -2.67356)
 scene = ExtResource("6_jbvtd")
 viewport_size = Vector2(1280, 720)
 
@@ -148,7 +148,7 @@ transform = Transform3D(0.927745, 0.349696, -0.130392, -0.208683, 0.775713, 0.59
 light_energy = 2.0
 
 [node name="1_8m reference" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 1.85894, 1.10504, 0.0339384)
+transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 1.85894, 1.10504, -2.6447)
 mesh = SubResource("BoxMesh_3cwdk")
 skeleton = NodePath("../../GameController/Player")
 
@@ -161,11 +161,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 8, -0.057, 0)
 [node name="PlayableArea" type="Node3D" parent="."]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.86177)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModFloor001" type="MeshInstance3D" parent="PlayableArea/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 0)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../../..")
 
@@ -174,24 +174,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_3xmlw")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.41857)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModFloor006" type="MeshInstance3D" parent="PlayableArea/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 4.57607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.57607)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 4.57607)
+transform = Transform3D(1.316, 0, 0, 0, 1.316, 0, 0, 0, 1, 0, 0, 4.57607)
 shape = SubResource("ConvexPolygonShape3D_e1bc6")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.36984)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModFloor010" type="MeshInstance3D" parent="PlayableArea/StaticBody3D3"]
-transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 0.76, 5.2604, 3.95571, -0.0406268)
+transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 1, 5.2604, 3.95571, -0.0406268)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../../..")
 
@@ -200,6 +202,7 @@ transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 0.76, 
 shape = SubResource("ConvexPolygonShape3D_o3hr4")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.98868)
 collision_layer = 3
 collision_mask = 3
 
@@ -208,7 +211,7 @@ transform = Transform3D(-1, -1.50996e-07, 0, 1.50996e-07, -1, 0, 0, 0, 1, 5.2604
 shape = SubResource("ConvexPolygonShape3D_akw0l")
 
 [node name="SmModFloor011" type="MeshInstance3D" parent="PlayableArea/StaticBody3D4"]
-transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 0.76, 5.2604, 3.95571, 4.53544)
+transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 1, 5.2604, 3.95571, 4.53544)
 mesh = ExtResource("1_5vvnm")
 skeleton = NodePath("../../..")
 
@@ -226,11 +229,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 9.13027)
 shape = SubResource("ConvexPolygonShape3D_0t2gq")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.18849)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall003" type="MeshInstance3D" parent="PlayableArea/StaticBody3D6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 1.25772)
 mesh = ExtResource("6_k585g")
 skeleton = NodePath("../../..")
 
@@ -239,20 +243,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
 shape = SubResource("ConvexPolygonShape3D_c8365")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.92013)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall006" type="MeshInstance3D" parent="PlayableArea/StaticBody3D7"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 5.92868)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -0.457578, -1.08772, 5.92868)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../../..")
 
 [node name="@CollisionShape3D@58996" type="CollisionShape3D" parent="PlayableArea/StaticBody3D7"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 5.92868)
+transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 5.92868)
 shape = SubResource("ConvexPolygonShape3D_fkcu0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D7"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 5.92868)
+transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 5.92868)
 shape = SubResource("ConvexPolygonShape3D_7gkmd")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="PlayableArea"]
@@ -260,84 +265,88 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall008" type="MeshInstance3D" parent="PlayableArea/StaticBody3D8"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 8.93705)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -0.457578, -1.08772, 8.93705)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../../..")
 
 [node name="@CollisionShape3D@59647" type="CollisionShape3D" parent="PlayableArea/StaticBody3D8"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 8.93705)
+transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 8.93705)
 shape = SubResource("ConvexPolygonShape3D_dxx8h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D8"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 8.93705)
+transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 8.93705)
 shape = SubResource("ConvexPolygonShape3D_w5sy3")
 
 [node name="StaticBody3D9" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.92151)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall007" type="MeshInstance3D" parent="PlayableArea/StaticBody3D9"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 2.95852)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -0.457578, -1.08772, 2.95852)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../../..")
 
 [node name="@CollisionShape3D@59959" type="CollisionShape3D" parent="PlayableArea/StaticBody3D9"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 2.95852)
+transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 2.95852)
 shape = SubResource("ConvexPolygonShape3D_2m4l4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D9"]
-transform = Transform3D(-3.27835e-08, 0, 1, 0, 1.1, 0, -0.75, 0, -4.37114e-08, -0.457578, -1.08772, 2.95852)
+transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 2.95852)
 shape = SubResource("ConvexPolygonShape3D_qo30l")
 
 [node name="StaticBody3D10" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90472)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall009" type="MeshInstance3D" parent="PlayableArea/StaticBody3D10"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 2.92462)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 4.5242, -1.07243, 2.92462)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../../..")
 
 [node name="@CollisionShape3D@60271" type="CollisionShape3D" parent="PlayableArea/StaticBody3D10"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 2.92462)
+transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, 2.92462)
 shape = SubResource("ConvexPolygonShape3D_10t4g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D10"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 2.92462)
+transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, 2.92462)
 shape = SubResource("ConvexPolygonShape3D_4iar5")
 
 [node name="StaticBody3D11" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.970323)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall010" type="MeshInstance3D" parent="PlayableArea/StaticBody3D11"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 5.93299)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 4.5242, -1.07243, 5.93299)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../../..")
 
 [node name="@CollisionShape3D@60583" type="CollisionShape3D" parent="PlayableArea/StaticBody3D11"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 5.93299)
+transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, 5.93299)
 shape = SubResource("ConvexPolygonShape3D_rank0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D11"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, 5.93299)
+transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, 5.93299)
 shape = SubResource("ConvexPolygonShape3D_f3wxv")
 
 [node name="StaticBody3D12" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.92859)
 collision_layer = 3
 collision_mask = 3
 
 [node name="SmModWall011" type="MeshInstance3D" parent="PlayableArea/StaticBody3D12"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, -0.0455434)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 4.5242, -1.07243, -0.0455434)
 mesh = ExtResource("12_i42ob")
 skeleton = NodePath("../../..")
 
 [node name="@CollisionShape3D@60895" type="CollisionShape3D" parent="PlayableArea/StaticBody3D12"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, -0.0455434)
+transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, -0.0455434)
 shape = SubResource("ConvexPolygonShape3D_f0p1v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D12"]
-transform = Transform3D(-3.27835e-08, 0, -1, 0, 1.1, 0, 0.75, 0, -4.37114e-08, 4.5242, -1.07243, -0.0455434)
+transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, -0.0455434)
 shape = SubResource("ConvexPolygonShape3D_cuu0q")
 
 [node name="Goal" type="Area3D" parent="PlayableArea"]
@@ -382,6 +391,20 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 0)
 shape = SubResource("ConvexPolygonShape3D_r1f4m")
 
+[node name="StaticBody3D24" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.61771)
+collision_layer = 3
+collision_mask = 3
+
+[node name="SmModFloor002" type="MeshInstance3D" parent="PlayableArea/StaticBody3D24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 0)
+mesh = ExtResource("3_irspn")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 0)
+shape = SubResource("ConvexPolygonShape3D_r1f4m")
+
 [node name="StaticBody3D18" type="StaticBody3D" parent="PlayableArea"]
 collision_layer = 3
 collision_mask = 3
@@ -405,6 +428,20 @@ mesh = ExtResource("3_irspn")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
+shape = SubResource("ConvexPolygonShape3D_8uomx")
+
+[node name="StaticBody3D23" type="StaticBody3D" parent="PlayableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.60542)
+collision_layer = 3
+collision_mask = 3
+
+[node name="SmModFloor004" type="MeshInstance3D" parent="PlayableArea/StaticBody3D23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
+mesh = ExtResource("3_irspn")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
 shape = SubResource("ConvexPolygonShape3D_8uomx")
 
