@@ -18,7 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="16_2q1x8"]
 [ext_resource type="ArrayMesh" uid="uid://byfygp1iaex3o" path="res://Game Content/Assets/ModularKit/SM_Mod_Pillar_002.res" id="17_axl04"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="18_o7qm7"]
-[ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/gameMun.tscn" id="19_v4wk8"]
+[ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/StartGameMenu.tscn" id="19_v4wk8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3qk1h"]
 

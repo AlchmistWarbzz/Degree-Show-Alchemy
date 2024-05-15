@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqasb7iimw3a8"]
+[gd_scene load_steps=2 format=3 uid="uid://b2pcno7xltklh"]
 
-[ext_resource type="Script" path="res://GAmeMen.gd" id="1_e0luu"]
+[ext_resource type="Script" path="res://GAmeMen.gd" id="1_v6a1k"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_e0luu")
+script = ExtResource("1_v6a1k")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -13,16 +13,23 @@ offset_bottom = 647.0
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 1145.0
-offset_bottom = 645.0
+offset_right = 1153.0
+offset_bottom = 649.0
 color = Color(0.172549, 1, 1, 0.305882)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
-layout_mode = 0
-offset_left = 322.0
-offset_top = 152.0
-offset_right = 722.0
-offset_bottom = 338.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -93.0
+offset_right = 200.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
 tooltip_text = "Start Game?
 "
 
@@ -35,6 +42,6 @@ alignment = 1
 layout_mode = 2
 tooltip_text = "Tasdfpamd 
 "
-text = "Start GAme"
+text = "Try Again"
 
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
