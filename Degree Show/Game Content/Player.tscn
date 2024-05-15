@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=15 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
 [ext_resource type="PackedScene" uid="uid://s41nxn2sv730" path="res://Game Content/Scripts/SubScenes/HandTrigger.tscn" id="4_8p8eq"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_vwq0j"]
+[ext_resource type="PackedScene" uid="uid://cb33rojt1cakx" path="res://Game Content/UI/BallTypes.tscn" id="7_bnusx"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_cv80x"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_vjvi8"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="9_j4b2q"]
@@ -42,6 +43,17 @@ tracker = &"left_hand"
 
 [node name="playerarea" parent="XROrigin3D/LeftHand" instance=ExtResource("4_8p8eq")]
 transform = Transform3D(0.999783, 0.0208203, 0, -0.0208203, 0.999783, 0, 0, 0, 1, -0.024955, -0.0506546, 0.14668)
+
+[node name="Viewport2Din3D" parent="XROrigin3D/LeftHand" instance=ExtResource("9_j4b2q")]
+transform = Transform3D(-0.117363, 0.101317, -0.987907, 0.0268013, -0.994097, -0.105136, -0.992728, -0.0388164, 0.113954, -0.0460517, -0.0518486, 0.300787)
+screen_size = Vector2(0.3, 0.2)
+collision_layer = 5242880
+scene = ExtResource("7_bnusx")
+viewport_size = Vector2(1280, 720)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
+transform = Transform3D(0.00098795, -0.018565, 0.0230801, 0.000107771, 0.178843, -0.006926, -0.000111087, 0.00839691, 0.198543, -0.0454888, -0.0603945, 0.283403)
+mesh = SubResource("BoxMesh_kgd1r")
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)

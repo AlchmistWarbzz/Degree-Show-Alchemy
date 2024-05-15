@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgswnf5ukk4we"]
+[gd_scene load_steps=5 format=3 uid="uid://dgswnf5ukk4we"]
 
 [ext_resource type="Script" path="res://Game Content/Level/LabelTimer.gd" id="1_208wq"]
-[ext_resource type="Texture2D" uid="uid://cqm7rvupkvwhw" path="res://Game Content/UI/Sprites/Block.png" id="1_hgf0i"]
 [ext_resource type="Script" path="res://Game Content/Level/LabelSaves.gd" id="2_wclmd"]
 [ext_resource type="Script" path="res://Game Content/Level/LabelGoals.gd" id="3_1re17"]
 [ext_resource type="Script" path="res://Game Content/Level/LabelHits.gd" id="4_5nh4b"]
@@ -14,11 +13,6 @@ offset_right = -203.904
 offset_bottom = -146.8
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Block" type="Sprite2D" parent="."]
-position = Vector2(434, 325)
-scale = Vector2(1.08, 0.805)
-texture = ExtResource("1_hgf0i")
 
 [node name="Time" type="Label" parent="."]
 layout_mode = 1
