@@ -9,9 +9,7 @@ var forward_direction = Vector3(0, 0, 1)  # Default forward direction
 var player 
 var player_pos
 # Define constants
-var radius = 5.0  # Maximum distance between raycast and player
-var speed = 1.0   # Speed of raycast movement
-var min_distance = -1  # Minimum distance between raycast and player
+var radius = 2.0  # Maximum distance between raycast and player
 
 var chance_to_spawn = 50
 func _ready():
@@ -27,28 +25,23 @@ func _process(_delta):
 	# Check if it's time to spawn a ball
 	
 	if spawn_timer_elapsed >= spawn_timer:
-		var spawm_range = randf_range(1, 100)
-		if spawm_range < chance_to_spawn:
-			spawn_timer_elapsed = 0  # Reset the timer
+		spawn_ball()
+		spawn_timer_elapsed = 0  # Reset the timer
+		
+		#var spawm_range = randf_range(1, 100)
+		#if spawm_range < chance_to_spawn:
+			#spawn_timer_elapsed = 0  # Reset the timer
 	# Move the raycast around the player
-		else: 
-			spawn_ball()
-			spawn_timer_elapsed = 0  # Reset the timer
-			print(spawm_range)
+		
+
 	if raycast:
 		#print($"/root/GameController".player.get_position())
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
-		var to_player = player_pos - raycast.global_transform.origin
-		# Calculate the distance between raycast and player
-	
-	
-# Define a function to calculate the launch offset
 
 func spawn_ball():
 	# Instantiate the Ball scene
 	var ball_instance = ball_scene.instantiate()
 	# Define parameters for circular path
-	var radius = 2.0  # Radius of the circular path
 	var min_angle = deg_to_rad(85)  # Minimum angle in radians
 	var max_angle = deg_to_rad(105)  # Maximum angle in radians
 	var excluded_angle_min = deg_to_rad(90)  # Excluded angle minimum in radians
