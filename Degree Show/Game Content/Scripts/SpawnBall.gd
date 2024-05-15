@@ -49,8 +49,16 @@ func _process(_delta):
 
 func spawn_ball():
 	# Instantiate the Ball scene
-	var random_index = randi() % ball_scene.size()
-	var ball_instance = ball_scene[random_index].instantiate()
+	var random_value = randf()
+
+	var ball_instances: PackedScene
+	if random_value < 0.6:
+		ball_instances = normal_scene
+	elif random_value < 0.8:
+		ball_instances = curve_scene
+	else:
+		ball_instances = gravity_scene
+	var ball_instance = ball_instances.instantiate()
 	# Define parameters for circular path
 	var min_angle = deg_to_rad(85)  # Minimum angle in radians
 	var max_angle = deg_to_rad(105)  # Maximum angle in radians
