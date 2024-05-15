@@ -16,15 +16,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Block" type="Sprite2D" parent="."]
-position = Vector2(624, 320)
+position = Vector2(434, 325)
+scale = Vector2(1.08, 0.805)
 texture = ExtResource("1_hgf0i")
 
 [node name="Time" type="Label" parent="."]
-layout_mode = 0
-offset_left = 581.0
-offset_top = -36.0
-offset_right = 695.0
-offset_bottom = 237.0
+layout_mode = 1
+offset_left = 27.0
+offset_top = -13.0
+offset_right = 141.0
+offset_bottom = 260.0
 theme_override_font_sizes/font_size = 150
 text = "0
 "
@@ -32,10 +33,10 @@ script = ExtResource("1_208wq")
 
 [node name="Saves" type="Label" parent="."]
 layout_mode = 0
-offset_left = 580.0
-offset_top = 132.0
-offset_right = 694.0
-offset_bottom = 405.0
+offset_left = 25.0
+offset_top = 137.0
+offset_right = 139.0
+offset_bottom = 410.0
 theme_override_font_sizes/font_size = 150
 text = "0
 "
@@ -43,10 +44,10 @@ script = ExtResource("2_wclmd")
 
 [node name="Goals" type="Label" parent="."]
 layout_mode = 0
-offset_left = 582.0
-offset_top = 298.0
-offset_right = 696.0
-offset_bottom = 571.0
+offset_left = 25.0
+offset_top = 288.0
+offset_right = 139.0
+offset_bottom = 561.0
 theme_override_font_sizes/font_size = 150
 text = "0
 "
@@ -54,10 +55,10 @@ script = ExtResource("3_1re17")
 
 [node name="Hits" type="Label" parent="."]
 layout_mode = 0
-offset_left = 582.0
-offset_top = 460.0
-offset_right = 696.0
-offset_bottom = 733.0
+offset_left = 23.0
+offset_top = 450.0
+offset_right = 137.0
+offset_bottom = 723.0
 theme_override_font_sizes/font_size = 150
 text = "0
 "
