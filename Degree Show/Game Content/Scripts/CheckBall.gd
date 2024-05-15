@@ -18,11 +18,12 @@ func _process(_delta):
 func _on_body_entered(body):
 	if body is RigidBody3D:
 		if body.name == "ball":
-			if Global.hithand == false:
-				if name == "missed":
-					print("MISSED")
-					Global.score -= 1
-					Global.goals += 1
+			#if Global.hithand == false:
+			if name == "missed":
+				print("MISSED")
+				Global.score -= 1
+				Global.goals += 1
+				body.name = "balls"
 			elif name == "playerarea":
 				ball = body
 				print("Entered ball")
@@ -30,14 +31,14 @@ func _on_body_entered(body):
 				Global.saves += 1
 				Global.time += 20
 				body.name = "balls"
-				Global.hithand = true
 				var direction = global_transform.origin - ball.global_transform.origin
 				# Reflect the ball's velocity around the normal of the collision surface
 				var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())
 				# Apply the reflected velocity to the ball
 				ball.set_linear_velocity(reflection * ball.linear_velocity.length())
 			elif name == "Goal":
-				ball.set_physics_process(false)
+				#ball.set_physics_process(false)
+				ball.queue_free()
 				print("hit")
 				
 				

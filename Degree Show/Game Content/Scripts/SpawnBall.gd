@@ -39,7 +39,6 @@ func _process(_delta):
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
 
 func spawn_ball():
-	Global.hithand = false
 	# Instantiate the Ball scene
 	var ball_instance = ball_scene.instantiate()
 	# Define parameters for circular path
