@@ -39,6 +39,7 @@ func _process(_delta):
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
 
 func spawn_ball():
+	Global.hithand = false
 	# Instantiate the Ball scene
 	var ball_instance = ball_scene.instantiate()
 	# Define parameters for circular path
@@ -76,4 +77,5 @@ func spawn_ball():
 	ball_instance.global_transform.origin = raycast.global_transform.origin
 	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
 	ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
+	
 
