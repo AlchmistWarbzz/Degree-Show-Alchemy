@@ -82,7 +82,7 @@ func spawn_ball():
 	# Add the ball instance to the scene
 	add_child(ball_instance)
 	# Apply impulse towards the player
-	var impulse_magnitude = 3  # Adjust this value to control the speed
+	var impulse_magnitude = 4  # Adjust this value to control the speed
 	ball_instance.global_transform.origin = raycast.global_transform.origin
 	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
 	ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
