@@ -13,7 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://ciitfvu6rvvsa" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_001.res" id="12_i42ob"]
-[ext_resource type="Texture2D" uid="uid://bed7qo1jop1lp" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
 size = Vector3(4.00089, 3.613, 0.622)
@@ -344,7 +344,7 @@ shape = SubResource("ConvexPolygonShape3D_cuu0q")
 script = ExtResource("5_x4qth")
 
 [node name="SmModWall004" type="MeshInstance3D" parent="PlayableArea/Goal"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, -0.166, 9.009)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, -0.166, 9.009)
 mesh = ExtResource("9_m3b5j")
 skeleton = NodePath("../../..")
 
