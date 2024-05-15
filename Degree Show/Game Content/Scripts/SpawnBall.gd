@@ -62,8 +62,8 @@ func spawn_ball():
 	# Define parameters for circular path
 	var min_angle = deg_to_rad(85)  # Minimum angle in radians
 	var max_angle = deg_to_rad(105)  # Maximum angle in radians
-	var excluded_angle_min = deg_to_rad(90)  # Excluded angle minimum in radians
-	var excluded_angle_max = deg_to_rad(100)  # Excluded angle maximum in radians
+	var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
+	var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 
 	# Calculate the valid range for the random angle
 	var valid_min_angle = min_angle
@@ -75,7 +75,7 @@ func spawn_ball():
 	if angle >= excluded_angle_min:
 		angle += excluded_angle_max - excluded_angle_min
 	print("angle" , angle)
-	var height = 2.0 + randf_range(-0.1, 0.2)
+	var height = 1.93 + randf_range(0, 0.3)
 	# Calculate launch offset using the adjusted angle
 	var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 
