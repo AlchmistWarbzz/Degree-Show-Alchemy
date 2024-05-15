@@ -75,7 +75,7 @@ func spawn_ball():
 	if angle >= excluded_angle_min:
 		angle += excluded_angle_max - excluded_angle_min
 	print("angle" , angle)
-	var height = 2.0 + randf_range(-0.1, 0.3)
+	var height = 2.0 + randf_range(-0.1, 0.2)
 	# Calculate launch offset using the adjusted angle
 	var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 
