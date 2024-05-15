@@ -1,23 +1,30 @@
 extends Node3D
 
-var ball_scene: PackedScene  # Reference to the Ball scene (PackedScene)
+var normal_scene: PackedScene  # Reference to the Ball scene (PackedScene)
+var gravity_scene: PackedScene  # Reference to the Ball scene (PackedScene)
+var curve_scene: PackedScene  # Reference to the Ball scene (PackedScene)
 var spawn_timer = 2  # Time interval between spawns (in seconds)
 var spawn_timer_elapsed = 0  # Time elapsed since last spawn
 # Adjust these parameters to control the raycast's movement
 var raycast 
-var forward_direction = Vector3(0, 0, 1)  # Default forward direction
 var player 
 var player_pos
-# Define constants
 var radius = 2.0  # Maximum distance between raycast and player
+var ball_scene = []
 
 var chance_to_spawn = 50
 func _ready():
 	# Load the Ball scene
-	ball_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
+	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
+	gravity_scene = preload("res://Game Content/Scripts/SubScenes/gravity.tscn")
+	curve_scene = preload("res://Game Content/Scripts/SubScenes/curve.tscn")
 	raycast = get_node("RayCast3D")
 	player = $"/root/GameController".player
-	
+	ball_scene = [
+		normal_scene,
+		gravity_scene,
+		curve_scene
+	]
 func _process(_delta):
 	# Update the spawn timer
 	
@@ -38,9 +45,12 @@ func _process(_delta):
 		#print($"/root/GameController".player.get_position())
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
 
+	
+
 func spawn_ball():
 	# Instantiate the Ball scene
-	var ball_instance = ball_scene.instantiate()
+	var random_index = randi() % ball_scene.size()
+	var ball_instance = ball_scene[random_index].instantiate()
 	# Define parameters for circular path
 	var min_angle = deg_to_rad(85)  # Minimum angle in radians
 	var max_angle = deg_to_rad(105)  # Maximum angle in radians
