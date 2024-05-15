@@ -5,6 +5,7 @@ var saves = 0
 var goals = 0
 var hits = 0
 var time = 100
+var hithand = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
