@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=47 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="5_x4qth"]
 [ext_resource type="PackedScene" uid="uid://crokhlqjmoow0" path="res://Game Content/Level/Score.tscn" id="6_jbvtd"]
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="6_k585g"]
+[ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/StartGameMenu.tscn" id="7_bh4eu"]
 [ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
@@ -138,6 +139,12 @@ shape = SubResource("BoxShape3D_rmuwd")
 [node name="Viewport2Din3D" parent="GameController" instance=ExtResource("5_walll")]
 transform = Transform3D(1.76448, 0, 0, 0, 1.52078, -0.192289, 0, 0.407492, 0.717631, 2.30752, 3.02659, -2.67356)
 scene = ExtResource("6_jbvtd")
+viewport_size = Vector2(1280, 720)
+
+[node name="Viewport2Din3D2" parent="GameController" instance=ExtResource("5_walll")]
+transform = Transform3D(1.76448, 7.10543e-15, -5.96046e-08, 8.73573e-15, 1.57443, -3.42727e-07, -1.78814e-07, 2.38419e-07, 0.742946, 2.09566, 1.8203, 6.92742)
+screen_size = Vector2(1, 0.6)
+scene = ExtResource("7_bh4eu")
 viewport_size = Vector2(1280, 720)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -31,7 +31,7 @@ func _process(_delta):
 	spawn_timer_elapsed += _delta
 	# Check if it's time to spawn a ball
 	
-	if spawn_timer_elapsed >= spawn_timer:
+	if Global.startgame == true:
 		spawn_ball()
 		spawn_timer_elapsed = 0  # Reset the timer
 		

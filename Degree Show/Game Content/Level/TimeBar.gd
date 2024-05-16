@@ -14,6 +14,7 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	$".".value = Global.time
-	Global.time -= 1
+	if Global.startgame == true:
+		$".".value = Global.time
+		Global.time -= 1
 	# Replace with function body.
