@@ -80,7 +80,7 @@ func spawn_ball():
 			launch(speed)
 		elif ball_instances == gravity_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
-			gravity(ball_instance, 0.5, 1.1)
+			gravity(ball_instance, 0.3, 0.6)
 			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
 			
 			launch(speed * speed_offset)
@@ -89,10 +89,10 @@ func spawn_ball():
 	
 func gravity(ball_instance, min, max):
 	var gravity = randf_range(min, max)
-	var height_offset = randf_range(0.7, 1.4)
-	if gravity <= 0.7:
-		height + height_offset
-		speed_offset = randf_range(1.2, 1.3)
+	#var height_offset = randf_range(0.7, 1.4)
+	if gravity <= 0.5:
+		#height + height_offset
+		speed_offset = randf_range(0.5, 0.8)
 	else: 
 		speed_offset = randf_range(0.8, 1)
 	ball_instance.gravity_scale = gravity
