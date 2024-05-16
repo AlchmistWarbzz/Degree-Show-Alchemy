@@ -11,7 +11,10 @@ var player
 var player_pos
 var radius = 2.0  # Maximum distance between raycast and player
 var ball_scene = []
-
+var min_angle = deg_to_rad(85)  # Minimum angle in radians
+var max_angle = deg_to_rad(105)  # Maximum angle in radians
+var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
+var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 var chance_to_spawn = 50
 func _ready():
 	# Load the Ball scene
@@ -61,11 +64,16 @@ func spawn_ball():
 			ball_instances = gravity_scene
 		var ball_instance = ball_instances.instantiate()
 	# Define parameters for circular path
-		var min_angle = deg_to_rad(85)  # Minimum angle in radians
-		var max_angle = deg_to_rad(105)  # Maximum angle in radians
-		var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
-		var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
-
+		if ball_instances == normal_scene:
+			min_angle = deg_to_rad(85)  # Minimum angle in radians
+			max_angle = deg_to_rad(105)  # Maximum angle in radians
+			excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
+			excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
+		elif  ball_instances == curve_scene:
+			min_angle = deg_to_rad(50)  # Minimum angle in radians
+			max_angle = deg_to_rad(130)  # Maximum angle in radians
+			excluded_angle_min = deg_to_rad(60)  # Excluded angle minimum in radians
+			excluded_angle_max = deg_to_rad(120)
 	# Calculate the valid range for the random angle
 		var valid_min_angle = min_angle
 		var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)
