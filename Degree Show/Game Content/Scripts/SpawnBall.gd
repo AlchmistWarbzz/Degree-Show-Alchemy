@@ -74,6 +74,11 @@ func spawn_ball():
 			max_angle = deg_to_rad(130)  # Maximum angle in radians
 			excluded_angle_min = deg_to_rad(60)  # Excluded angle minimum in radians
 			excluded_angle_max = deg_to_rad(120)
+		elif ball_instances == gravity_scene:
+			min_angle = deg_to_rad(85)  # Minimum angle in radians
+			max_angle = deg_to_rad(105)  # Maximum angle in radians
+			excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
+			excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 	# Calculate the valid range for the random angle
 		var valid_min_angle = min_angle
 		var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)

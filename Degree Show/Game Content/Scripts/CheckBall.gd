@@ -54,5 +54,5 @@ func rebound_to_player(body):
 		player_pos = $"/root/GameController".player.get_position()
 		var player_direction = (player_pos - ball.global_transform.origin).normalized()
 		# Set a fixed speed or keep the current speed of the ball
-		var speed = ball.linear_velocity.length()
+		var speed = ball.linear_velocity.length() * 0.8
 		ball.set_linear_velocity(player_direction * speed)
