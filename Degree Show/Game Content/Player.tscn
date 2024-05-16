@@ -67,7 +67,6 @@ tracker = &"right_hand"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, -0.051, 0.147)
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" instance=ExtResource("8_cv80x")]
-enabled = false
 show_laser = 2
 laser_length = 1
 

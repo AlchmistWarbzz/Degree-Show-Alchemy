@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://crokhlqjmoow0"]
+[gd_scene load_steps=3 format=3 uid="uid://crokhlqjmoow0"]
 
 [ext_resource type="Texture2D" uid="uid://cqm7rvupkvwhw" path="res://Game Content/UI/Sprites/Block.png" id="1_k827o"]
-[ext_resource type="Script" path="res://Game Content/Level/LabelScore.gd" id="2_xot2x"]
 [ext_resource type="Script" path="res://Game Content/Level/TimeBar.gd" id="3_g3ekn"]
 
 [node name="Score" type="Control"]
@@ -15,33 +14,6 @@ offset_right = 1.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Block" type="Sprite2D" parent="."]
-modulate = Color(0.239216, 0.827451, 1, 1)
-position = Vector2(582, 329)
-scale = Vector2(0.3625, 0.355)
-texture = ExtResource("1_k827o")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -188.5
-offset_top = -136.5
-offset_right = 188.5
-offset_bottom = 136.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 200
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_xot2x")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 1

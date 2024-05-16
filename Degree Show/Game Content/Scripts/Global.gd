@@ -7,6 +7,7 @@ var hits = 0
 var time = 100
 var startgame = false
 var gameover = false
+var timereset = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,9 +18,6 @@ func _process(delta):
 	if time < 0:
 		startgame = false
 		gameover = true
-	if startgame == true:
-		saves = 0
-		goals = 0
-		time = 100
+	
 
 

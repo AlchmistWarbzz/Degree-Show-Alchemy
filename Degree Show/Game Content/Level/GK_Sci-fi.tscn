@@ -144,6 +144,7 @@ viewport_size = Vector2(1280, 720)
 [node name="Viewport2Din3D2" parent="GameController" instance=ExtResource("5_walll")]
 transform = Transform3D(1.76448, 7.10543e-15, -5.96046e-08, 8.73573e-15, 1.57443, -3.42727e-07, -1.78814e-07, 2.38419e-07, 0.742946, 2.09566, 1.8203, 6.92742)
 screen_size = Vector2(1, 0.6)
+collision_layer = 5242888
 scene = ExtResource("7_bh4eu")
 viewport_size = Vector2(1280, 720)
 

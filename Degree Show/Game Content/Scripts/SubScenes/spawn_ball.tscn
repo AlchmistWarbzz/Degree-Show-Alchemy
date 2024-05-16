@@ -9,6 +9,7 @@ script = ExtResource("1_5cnu6")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -20, 0)
+collision_mask = 9
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 0, 0)
 script = ExtResource("2_ujbst")
