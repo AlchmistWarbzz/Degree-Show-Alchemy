@@ -19,6 +19,7 @@ var chance_to_spawn = 50
 var launch_offset
 var angle
 var speed
+var speed_offset
 var ball_instance
 var ball_instances: PackedScene 
 var height = 1.93 + randf_range(0, 0.3)
@@ -61,9 +62,9 @@ func spawn_ball():
 	# Instantiate the Ball scene
 	if Global.startgame == true:
 		var random_value = randf()
-		if random_value < 0.6:
+		if random_value < 0.1:
 			ball_instances = normal_scene
-		elif random_value < 0.8:
+		elif random_value < 0:
 			ball_instances = curve_scene
 		else:
 			ball_instances = gravity_scene
@@ -71,25 +72,36 @@ func spawn_ball():
 	# Define parameters for circular path
 		if ball_instances == normal_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude)
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
 			launch(speed)
 		elif  ball_instances == curve_scene:
 			launch_offset = set_angle(50, 130, 60, 120)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude)
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
 			launch(speed)
 		elif ball_instances == gravity_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
-			gravity(ball_instance, gravity)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude)
-			launch(speed * 0.8)
+			gravity(ball_instance, 0.5, 1.1)
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
+			
+			launch(speed * speed_offset)
 	# Launch the ball
 	
 	
-func gravity(ball_instance, gravity):
+func gravity(ball_instance, min, max):
+	var gravity = randf_range(min, max)
+	var height_offset = randf_range(0.7, 1.4)
+	if gravity <= 0.7:
+		height + height_offset
+		speed_offset = randf_range(1.2, 1.3)
+	else: 
+		speed_offset = randf_range(0.8, 1)
 	ball_instance.gravity_scale = gravity
-	
-func aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude):
-	
+	print("gravity ", gravity)
+	return height
+	return gravity
+	return speed_offset
+
+func aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height):
 	var launch_position = player_pos + launch_offset
 	# Get the collision point and normal from the raycast
 	var collision_point = raycast.get_collision_point()
@@ -118,5 +130,6 @@ func set_angle(min, max, emin, emax):
 	if angle >= excluded_angle_min:
 		angle += excluded_angle_max - excluded_angle_min
 	print("angle" , angle)
+	print("height ", height)
 	launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 	return launch_offset
