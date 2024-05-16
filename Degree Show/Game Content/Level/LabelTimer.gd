@@ -13,6 +13,10 @@ func _process(delta: float) -> void:
 	if !is_stopped:
 		time_elapsed += delta
 		self.text = str("Time :",time_elapsed).pad_decimals(2)
+	if Global.startgame == true:
+		time_elapsed = 0.0
+	if Global.gameover == true:
+		stop() 
 		
 func reset() -> void:
 	time_elapsed = 0.0

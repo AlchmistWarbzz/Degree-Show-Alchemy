@@ -45,14 +45,14 @@ tracker = &"left_hand"
 transform = Transform3D(0.999783, 0.0208203, 0, -0.0208203, 0.999783, 0, 0, 0, 1, -0.024955, -0.0506546, 0.14668)
 
 [node name="Viewport2Din3D" parent="XROrigin3D/LeftHand" instance=ExtResource("9_j4b2q")]
-transform = Transform3D(-0.117363, 0.101317, -0.987907, 0.0268013, -0.994097, -0.105136, -0.992728, -0.0388164, 0.113954, -0.0460517, -0.0518486, 0.300787)
+transform = Transform3D(-0.117363, -0.157825, -0.980468, 0.0268013, -0.987435, 0.155737, -0.992728, -0.00800012, 0.120117, -0.0460517, -0.0518486, 0.300787)
 screen_size = Vector2(0.3, 0.2)
 collision_layer = 5242880
 scene = ExtResource("7_bnusx")
 viewport_size = Vector2(1280, 720)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
-transform = Transform3D(0.00098795, -0.018565, 0.0230801, 0.000107771, 0.178843, -0.006926, -0.000111087, 0.00839691, 0.198543, -0.0454888, -0.0603945, 0.283403)
+transform = Transform3D(0.000980981, 0.0280936, 0.0230801, -0.000153057, 0.17777, -0.006926, -0.000119376, 0.00293553, 0.198543, -0.0454888, -0.0603945, 0.283403)
 mesh = SubResource("BoxMesh_kgd1r")
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
