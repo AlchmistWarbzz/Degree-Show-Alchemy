@@ -8,8 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	#print("Time: ", Global.time)
+	print("Time: ", Global.time)
 
 
 
@@ -17,4 +16,7 @@ func _on_timer_timeout():
 	if Global.startgame == true:
 		$".".value = Global.time
 		Global.time -= 1
+		
+		
+
 	# Replace with function body.

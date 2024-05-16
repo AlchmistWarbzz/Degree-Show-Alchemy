@@ -11,12 +11,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !is_stopped:
-		time_elapsed += delta
-		self.text = str("Time :",time_elapsed).pad_decimals(2)
-	if Global.startgame == true:
-		time_elapsed = 0.0
-	if Global.gameover == true:
-		stop() 
+		if Global.startgame == true:
+			if Global.timereset == false:
+				time_elapsed += delta
+				self.text = str("Time :",time_elapsed).pad_decimals(0)
+			if Global.timereset == true:
+				time_elapsed = 0.0
+				Global.timereset = false
+	
+		
 		
 func reset() -> void:
 	time_elapsed = 0.0

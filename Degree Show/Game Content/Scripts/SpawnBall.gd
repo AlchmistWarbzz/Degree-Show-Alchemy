@@ -31,7 +31,7 @@ func _process(_delta):
 	spawn_timer_elapsed += _delta
 	# Check if it's time to spawn a ball
 	
-	if Global.startgame == true:
+	if spawn_timer_elapsed >= spawn_timer :
 		spawn_ball()
 		spawn_timer_elapsed = 0  # Reset the timer
 		
@@ -49,50 +49,51 @@ func _process(_delta):
 
 func spawn_ball():
 	# Instantiate the Ball scene
-	var random_value = randf()
+	if Global.startgame == true:
+		var random_value = randf()
 
-	var ball_instances: PackedScene
-	if random_value < 0.6:
-		ball_instances = normal_scene
-	elif random_value < 0.8:
-		ball_instances = curve_scene
-	else:
-		ball_instances = gravity_scene
-	var ball_instance = ball_instances.instantiate()
+		var ball_instances: PackedScene
+		if random_value < 0.6:
+			ball_instances = normal_scene
+		elif random_value < 0.8:
+			ball_instances = curve_scene
+		else:
+			ball_instances = gravity_scene
+		var ball_instance = ball_instances.instantiate()
 	# Define parameters for circular path
-	var min_angle = deg_to_rad(85)  # Minimum angle in radians
-	var max_angle = deg_to_rad(105)  # Maximum angle in radians
-	var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
-	var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
+		var min_angle = deg_to_rad(85)  # Minimum angle in radians
+		var max_angle = deg_to_rad(105)  # Maximum angle in radians
+		var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
+		var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 
 	# Calculate the valid range for the random angle
-	var valid_min_angle = min_angle
-	var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)
+		var valid_min_angle = min_angle
+		var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)
 
 	# Generate a random angle within the valid range
-	var angle = randf_range(valid_min_angle, valid_max_angle)
+		var angle = randf_range(valid_min_angle, valid_max_angle)
 	# If the random angle falls within the excluded range, adjust it
-	if angle >= excluded_angle_min:
-		angle += excluded_angle_max - excluded_angle_min
-	print("angle" , angle)
-	var height = 1.93 + randf_range(0, 0.3)
+		if angle >= excluded_angle_min:
+			angle += excluded_angle_max - excluded_angle_min
+		print("angle" , angle)
+		var height = 1.93 + randf_range(0, 0.3)
 	# Calculate launch offset using the adjusted angle
-	var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
+		var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 
 	# Calculate launch position around the player
-	var launch_position = player_pos + launch_offset
+		var launch_position = player_pos + launch_offset
 	
 	# Get the collision point and normal from the raycast
-	var collision_point = raycast.get_collision_point()
+		var collision_point = raycast.get_collision_point()
 	
 	# Calculate direction towards the launch position
-	var direction_to_launch = (launch_position - collision_point).normalized()
+		var direction_to_launch = (launch_position - collision_point).normalized()
 	# Add the ball instance to the scene
-	add_child(ball_instance)
+		add_child(ball_instance)
 	# Apply impulse towards the player
-	var impulse_magnitude = 4  # Adjust this value to control the speed
-	ball_instance.global_transform.origin = raycast.global_transform.origin
+		var impulse_magnitude = 4  # Adjust this value to control the speed
+		ball_instance.global_transform.origin = raycast.global_transform.origin
 	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
-	ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
+		ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
 	
 
