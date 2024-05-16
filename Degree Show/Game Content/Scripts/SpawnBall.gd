@@ -22,7 +22,7 @@ var speed
 var ball_instance
 var ball_instances: PackedScene 
 var height = 1.93 + randf_range(0, 0.3)
-
+var impulse_magnitude = 4  # Adjust this value to control the speed
 func _ready():
 	# Load the Ball scene
 	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
@@ -71,19 +71,24 @@ func spawn_ball():
 	# Define parameters for circular path
 		if ball_instances == normal_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
-
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude)
+			launch(speed)
 		elif  ball_instances == curve_scene:
 			launch_offset = set_angle(50, 130, 60, 120)
-
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude)
+			launch(speed)
 		elif ball_instances == gravity_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
+			gravity(ball_instance)
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude)
+			launch(speed * 0.8)
 	# Launch the ball
-	launch(player_pos, launch_offset, ball_instance)
+	
 	
 func gravity(ball_instance):
 	ball_instance.gravity_scale = 0.5
 	
-func launch(player_pos, launch_offset, ball_instance):
+func aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude):
 	
 	var launch_position = player_pos + launch_offset
 	# Get the collision point and normal from the raycast
@@ -92,10 +97,11 @@ func launch(player_pos, launch_offset, ball_instance):
 	# Calculate direction towards the launch position
 	var direction_to_launch = (launch_position - collision_point).normalized()
 	# Add the ball instance to the scene
-	add_child(ball_instance)
-	# Apply impulse towards the player
-	var impulse_magnitude = 4  # Adjust this value to control the speed
 	speed = direction_to_launch * impulse_magnitude
+	return speed
+	
+func launch(speed):
+	add_child(ball_instance)
 	ball_instance.global_transform.origin = raycast.global_transform.origin
 	ball_instance.apply_impulse(speed)
 
