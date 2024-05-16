@@ -18,7 +18,7 @@ var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 var chance_to_spawn = 50
 var launch_offset
 var angle
-var height
+var height = 1.93 + randf_range(0, 0.3)
 func _ready():
 	# Load the Ball scene
 	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
@@ -68,35 +68,13 @@ func spawn_ball():
 		var ball_instance = ball_instances.instantiate()
 	# Define parameters for circular path
 		if ball_instances == normal_scene:
-			min_angle = deg_to_rad(85)  # Minimum angle in radians
-			max_angle = deg_to_rad(105)  # Maximum angle in radians
-			excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
-			excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
+			launch_offset = set_angle(85, 105, 89, 101)
+
 		elif  ball_instances == curve_scene:
-			min_angle = deg_to_rad(50)  # Minimum angle in radians
-			max_angle = deg_to_rad(130)  # Maximum angle in radians
-			excluded_angle_min = deg_to_rad(60)  # Excluded angle minimum in radians
-			excluded_angle_max = deg_to_rad(120)
+			launch_offset = set_angle(50, 130, 60, 120)
+
 		elif ball_instances == gravity_scene:
-			set_angle(85, 105, 89, 101)
-			#min_angle = deg_to_rad(85)  # Minimum angle in radians
-			#max_angle = deg_to_rad(105)  # Maximum angle in radians
-			#excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
-			#excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
-	# Calculate the valid range for the random angle
-		var valid_min_angle = min_angle
-		var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)
-
-	# Generate a random angle within the valid range
-		var angle = randf_range(valid_min_angle, valid_max_angle)
-	# If the random angle falls within the excluded range, adjust it
-		if angle >= excluded_angle_min:
-			angle += excluded_angle_max - excluded_angle_min
-		print("angle" , angle)
-		var height = 1.93 + randf_range(0, 0.3)
-	# Calculate launch offset using the adjusted angle
-		#var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
-
+			launch_offset = set_angle(85, 105, 89, 101)
 	# Calculate launch position around the player
 		var launch_position = player_pos + launch_offset
 	
@@ -123,5 +101,13 @@ func set_angle(min, max, emin, emax):
 	max_angle = deg_to_rad(max)  # Maximum angle in radians
 	excluded_angle_min = deg_to_rad(emin)  # Excluded angle minimum in radians
 	excluded_angle_max = deg_to_rad(emax)  # Excluded angle maximum in radians
+	var valid_min_angle = min_angle
+	var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)
+	# Generate a random angle within the valid range
+	angle = randf_range(valid_min_angle, valid_max_angle)
+	# If the random angle falls within the excluded range, adjust it
+	if angle >= excluded_angle_min:
+		angle += excluded_angle_max - excluded_angle_min
+	print("angle" , angle)
 	launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 	return launch_offset
