@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://crokhlqjmoow0"]
 
-[ext_resource type="Texture2D" uid="uid://cqm7rvupkvwhw" path="res://Game Content/UI/Sprites/Block.png" id="1_k827o"]
+[ext_resource type="Texture2D" uid="uid://dqcjiep4joius" path="res://Game Content/UI/Sprites/TimerBar.jpg" id="1_740va"]
 [ext_resource type="Script" path="res://Game Content/Level/TimeBar.gd" id="3_g3ekn"]
 
 [node name="Score" type="Control"]
@@ -22,13 +22,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -418.0
-offset_top = -399.5
-offset_right = 382.0
-offset_bottom = 400.5
+offset_left = -603.0
+offset_top = -331.5
+offset_right = 677.0
+offset_bottom = 389.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_progress = ExtResource("1_k827o")
+value = 100.0
+texture_progress = ExtResource("1_740va")
+tint_progress = Color(1, 1, 0, 1)
 script = ExtResource("3_g3ekn")
 
 [node name="Timer" type="Timer" parent="TextureProgressBar"]
