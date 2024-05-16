@@ -16,6 +16,9 @@ var max_angle = deg_to_rad(105)  # Maximum angle in radians
 var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
 var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 var chance_to_spawn = 50
+var launch_offset
+var angle
+var height
 func _ready():
 	# Load the Ball scene
 	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
@@ -75,10 +78,11 @@ func spawn_ball():
 			excluded_angle_min = deg_to_rad(60)  # Excluded angle minimum in radians
 			excluded_angle_max = deg_to_rad(120)
 		elif ball_instances == gravity_scene:
-			min_angle = deg_to_rad(85)  # Minimum angle in radians
-			max_angle = deg_to_rad(105)  # Maximum angle in radians
-			excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
-			excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
+			set_angle(85, 105, 89, 101)
+			#min_angle = deg_to_rad(85)  # Minimum angle in radians
+			#max_angle = deg_to_rad(105)  # Maximum angle in radians
+			#excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
+			#excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 	# Calculate the valid range for the random angle
 		var valid_min_angle = min_angle
 		var valid_max_angle = max_angle - (excluded_angle_max - excluded_angle_min)
@@ -91,7 +95,7 @@ func spawn_ball():
 		print("angle" , angle)
 		var height = 1.93 + randf_range(0, 0.3)
 	# Calculate launch offset using the adjusted angle
-		var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
+		#var launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
 
 	# Calculate launch position around the player
 		var launch_position = player_pos + launch_offset
@@ -109,4 +113,15 @@ func spawn_ball():
 	#ball_instance.move_and_collide(direction_to_launch * impulse_magnitude)
 		ball_instance.apply_impulse(direction_to_launch * impulse_magnitude)
 	
-
+func gravity(ball_instance):
+	ball_instance.gravity_scale = 0.5
+	
+func launch():
+	pass
+func set_angle(min, max, emin, emax):
+	min_angle = deg_to_rad(min)  # Minimum angle in radians
+	max_angle = deg_to_rad(max)  # Maximum angle in radians
+	excluded_angle_min = deg_to_rad(emin)  # Excluded angle minimum in radians
+	excluded_angle_max = deg_to_rad(emax)  # Excluded angle maximum in radians
+	launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
+	return launch_offset
