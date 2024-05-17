@@ -90,7 +90,7 @@ func spawn_ball():
 		if ball_instances == speed_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
 			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
-			addspeed(ball_instance, 1.1, 1.2)
+			addspeed(ball_instance, 1.2, 1.4)
 			launch(speed * speed_offset)
 	
 func addspeed(ball_instance, min, max):
