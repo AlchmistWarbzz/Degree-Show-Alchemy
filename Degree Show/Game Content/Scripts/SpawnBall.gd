@@ -3,6 +3,7 @@ extends Node3D
 var normal_scene: PackedScene  # Reference to the Ball scene (PackedScene)
 var gravity_scene: PackedScene  # Reference to the Ball scene (PackedScene)
 var curve_scene: PackedScene  # Reference to the Ball scene (PackedScene)
+var speed_scene: PackedScene
 var spawn_timer = 2  # Time interval between spawns (in seconds)
 var spawn_timer_elapsed = 0  # Time elapsed since last spawn
 # Adjust these parameters to control the raycast's movement
@@ -29,6 +30,7 @@ func _ready():
 	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
 	gravity_scene = preload("res://Game Content/Scripts/SubScenes/gravity.tscn")
 	curve_scene = preload("res://Game Content/Scripts/SubScenes/curve.tscn")
+	speed_scene = preload("res://Game Content/Scripts/SubScenes/speed.tscn")
 	raycast = get_node("RayCast3D")
 	player = $"/root/GameController".player
 	ball_scene = [
@@ -64,8 +66,10 @@ func spawn_ball():
 		var random_value = randf()
 		if random_value < 0.6:
 			ball_instances = normal_scene
-		elif random_value < 8:
+		elif random_value < 0.8:
 			ball_instances = curve_scene
+		elif random_value < 0.9:
+			ball_instances = speed_scene
 		else:
 			ball_instances = gravity_scene
 		ball_instance = ball_instances.instantiate()
@@ -82,11 +86,16 @@ func spawn_ball():
 			launch_offset = set_angle(75, 115, 80, 110)
 			gravity(ball_instance, 0.1, 0.4)
 			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
-			
 			launch(speed * speed_offset)
-	# Launch the ball
+		if ball_instances == speed_scene:
+			launch_offset = set_angle(85, 105, 89, 101)
+			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
+			addspeed(ball_instance, 1.1, 1.2)
+			launch(speed * speed_offset)
 	
-	
+func addspeed(ball_instance, min, max):
+	speed_offset = randf_range(min, max)
+	return speed_offset
 func gravity(ball_instance, min, max):
 	var gravity = randf_range(min, max)
 	var height_offset = randf_range(1.8, 2.5)
