@@ -62,9 +62,9 @@ func spawn_ball():
 	# Instantiate the Ball scene
 	if Global.startgame == true:
 		var random_value = randf()
-		if random_value < 0.1:
+		if random_value < 0.6:
 			ball_instances = normal_scene
-		elif random_value < 0:
+		elif random_value < 8:
 			ball_instances = curve_scene
 		else:
 			ball_instances = gravity_scene
