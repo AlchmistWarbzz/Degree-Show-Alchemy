@@ -15,7 +15,6 @@ func _process(delta):
 	
 
 func _on_button_pressed():
-	print("IT WORJKSDSFD NFSD HJSMMMMMMMMMMMMMMMMM")
 	Global.startgame = true
 	Global.gameover = false
 	self.visible = false
