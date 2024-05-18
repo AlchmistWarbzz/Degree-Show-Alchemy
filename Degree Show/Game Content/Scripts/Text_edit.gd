@@ -21,7 +21,7 @@ func _process(delta):
 
 func _on_text_changed(text):
 	print("Submitted text:", text)
-	var trial_length_int = int(text)
+	var trial_length_int = float(text)
 	print("Parsed integer:", trial_length_int)
-	LevelManager.trial_length = text
-	print("LevelManager.trial_length:", LevelManager.trial_length)
+	Global.player_height = text
+	print("Player height:", Global.player_height)
