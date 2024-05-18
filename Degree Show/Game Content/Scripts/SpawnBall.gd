@@ -22,7 +22,8 @@ var angle
 var speed_offset
 var ball_instance
 var ball_instances: PackedScene 
-var player_height = 1.93 + randf_range(0, 0.3)
+var player_height 
+var height_offset = 0
 var impulse_magnitude = 4  # Adjust this value to control the speed
 var speed
 func _ready():
@@ -76,41 +77,48 @@ func spawn_ball():
 		ball_instance = ball_instances.instantiate()
 	# Define parameters for circular path
 		if ball_instances == normal_scene:
+			setheight(0)
 			launch_offset = set_angle(85, 105, 89, 101)
 			aim_towrad_player()
 			launch(speed)
+			print("player height - ", player_height)
 		elif  ball_instances == curve_scene:
+			setheight(0)
 			launch_offset = set_angle(45, 135, 55, 125)
 			aim_towrad_player()
 			launch(speed)
+			print("player height - ", player_height)
 		elif ball_instances == gravity_scene:
 			gravity(0.1, 0.4)
+			setheight(height_offset)
 			launch_offset = set_angle(75, 115, 80, 110)
 			aim_towrad_player()
 			launch(speed * speed_offset)
+			height_offset = 0
+			print("player height - ", player_height)
 		if ball_instances == speed_scene:
+			setheight(0)
 			launch_offset = set_angle(85, 105, 89, 101)
 			aim_towrad_player()
 			addspeed(1.2, 1.4)
 			launch(speed * speed_offset)
+			print("player height - ", player_height)
 	
 func addspeed(Smin, Smax):
 	speed_offset = randf_range(Smin, Smax)
 	return speed_offset
 func gravity(Gmin, Gmax):
 	var gravity_scale = randf_range(Gmin, Gmax)
-	var height_offset
+	
 	if gravity_scale <= 0.5:
-		height_offset = randf_range(0.1, 0.3)
-		player_height = player_height + height_offset
+		height_offset = randf_range(0.1, 0.2)
 		speed_offset = randf_range(0.5, 0.7)
 	#elif gravity_scale <= 0.6: 
 		#height_offset = randf_range(1.8, 2.5)
 		#player_height = player_height + height_offset
 	ball_instance.gravity_scale = gravity_scale
 	print("gravity ", gravity)
-	return player_height 
-	return speed_offset
+	return height_offset 
 	
 
 func aim_towrad_player():
@@ -143,3 +151,7 @@ func set_angle(Amin, Amax, emin, emax):
 		angle += excluded_angle_max - excluded_angle_min
 	launch_offset = Vector3(radius * cos(angle), player_height, radius * sin(angle))
 	return launch_offset
+
+func setheight(offset):
+	player_height = 1.93 + randf_range(0.0, 0.3) + offset
+	return player_height
