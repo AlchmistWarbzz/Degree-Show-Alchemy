@@ -23,5 +23,5 @@ func _on_text_changed(text):
 	print("Submitted text:", text)
 	var trial_length_int = float(text)
 	print("Parsed integer:", trial_length_int)
-	Global.player_height = text
+	Global.player_height = text / 10
 	print("Player height:", Global.player_height)
