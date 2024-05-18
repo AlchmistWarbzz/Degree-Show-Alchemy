@@ -19,13 +19,14 @@ var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
 var chance_to_spawn = 50
 var launch_offset
 var angle
-var speed
 var speed_offset
 var ball_instance
 var ball_instances: PackedScene 
-var height = 1.93 + randf_range(0, 0.3)
+var player_height = 1.93 + randf_range(0, 0.3)
 var impulse_magnitude = 4  # Adjust this value to control the speed
+var speed
 func _ready():
+	
 	# Load the Ball scene
 	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
 	gravity_scene = preload("res://Game Content/Scripts/SubScenes/gravity.tscn")
@@ -76,43 +77,43 @@ func spawn_ball():
 	# Define parameters for circular path
 		if ball_instances == normal_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
+			aim_towrad_player()
 			launch(speed)
 		elif  ball_instances == curve_scene:
-			launch_offset = set_angle(50, 130, 60, 120)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
+			launch_offset = set_angle(45, 135, 55, 125)
+			aim_towrad_player()
 			launch(speed)
 		elif ball_instances == gravity_scene:
+			gravity(0.1, 0.4)
 			launch_offset = set_angle(75, 115, 80, 110)
-			gravity(ball_instance, 0.1, 0.4)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
+			aim_towrad_player()
 			launch(speed * speed_offset)
 		if ball_instances == speed_scene:
 			launch_offset = set_angle(85, 105, 89, 101)
-			aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height)
-			addspeed(ball_instance, 1.2, 1.4)
+			aim_towrad_player()
+			addspeed(1.2, 1.4)
 			launch(speed * speed_offset)
 	
-func addspeed(ball_instance, min, max):
-	speed_offset = randf_range(min, max)
+func addspeed(Smin, Smax):
+	speed_offset = randf_range(Smin, Smax)
 	return speed_offset
-func gravity(ball_instance, min, max):
-	var gravity = randf_range(min, max)
-	var height_offset = randf_range(1.8, 2.5)
-	if gravity <= 0.5:
-		height_offset = randf_range(2.5, 2.7)
-		height + height_offset
+func gravity(Gmin, Gmax):
+	var gravity_scale = randf_range(Gmin, Gmax)
+	var height_offset
+	if gravity_scale <= 0.5:
+		height_offset = randf_range(0.1, 0.3)
+		player_height = player_height + height_offset
 		speed_offset = randf_range(0.5, 0.7)
-	else: 
-		height_offset = randf_range(1.8, 2.5)
-		height + height_offset +.3
-	ball_instance.gravity_scale = gravity
+	#elif gravity_scale <= 0.6: 
+		#height_offset = randf_range(1.8, 2.5)
+		#player_height = player_height + height_offset
+	ball_instance.gravity_scale = gravity_scale
 	print("gravity ", gravity)
-	return height
-	return gravity
+	return player_height 
 	return speed_offset
+	
 
-func aim_towrad_player(player_pos, launch_offset, ball_instance, impulse_magnitude, height):
+func aim_towrad_player():
 	var launch_position = player_pos + launch_offset
 	# Get the collision point and normal from the raycast
 	var collision_point = raycast.get_collision_point()
@@ -128,9 +129,9 @@ func launch(speed):
 	ball_instance.global_transform.origin = raycast.global_transform.origin
 	ball_instance.apply_impulse(speed)
 
-func set_angle(min, max, emin, emax):
-	min_angle = deg_to_rad(min)  # Minimum angle in radians
-	max_angle = deg_to_rad(max)  # Maximum angle in radians
+func set_angle(Amin, Amax, emin, emax):
+	min_angle = deg_to_rad(Amin)  # Minimum angle in radians
+	max_angle = deg_to_rad(Amax)  # Maximum angle in radians
 	excluded_angle_min = deg_to_rad(emin)  # Excluded angle minimum in radians
 	excluded_angle_max = deg_to_rad(emax)  # Excluded angle maximum in radians
 	var valid_min_angle = min_angle
@@ -140,7 +141,5 @@ func set_angle(min, max, emin, emax):
 	# If the random angle falls within the excluded range, adjust it
 	if angle >= excluded_angle_min:
 		angle += excluded_angle_max - excluded_angle_min
-	print("angle" , angle)
-	print("height ", height)
-	launch_offset = Vector3(radius * cos(angle), height, radius * sin(angle))
+	launch_offset = Vector3(radius * cos(angle), player_height, radius * sin(angle))
 	return launch_offset
