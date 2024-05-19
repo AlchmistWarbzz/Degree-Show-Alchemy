@@ -20,8 +20,8 @@ func _process(delta):
 
 
 func _on_text_changed(text):
-	print("Submitted text:", text)
-	var trial_length_int = float(text)
-	print("Parsed integer:", trial_length_int)
+	#print("Submitted text:", text)
+	var input_height = float(text)
+	#print("Parsed integer:", input_height)
 	Global.player_height = text
 	print("Player height:", Global.player_height)
