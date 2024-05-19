@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=51 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="5_x4qth"]
 [ext_resource type="PackedScene" uid="uid://crokhlqjmoow0" path="res://Game Content/Level/Score.tscn" id="6_jbvtd"]
 [ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/StartGameMenu.tscn" id="7_bh4eu"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="8_dnnbj"]
 [ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
 [ext_resource type="ArrayMesh" uid="uid://cfiax3h2vj1q" path="res://Game Content/Assets/ModularKit/New model/Modkit_Bridge.res" id="9_nqqyu"]
 [ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
@@ -18,7 +19,7 @@
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="11_qg38g"]
 [ext_resource type="Material" uid="uid://bn8hue15ey1jp" path="res://Game Content/Materials/Highlights_colour.tres" id="12_4lvhp"]
 [ext_resource type="ArrayMesh" uid="uid://b17rpi3dnii6m" path="res://Game Content/Assets/ModularKit/New model/Modkit_Window.res" id="12_nnifb"]
-[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://b65ejw064yulc" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="Material" uid="uid://b1y00iecrmsiy" path="res://Game Content/Materials/Window_Emissive.tres" id="15_xklx4"]
 [ext_resource type="Material" uid="uid://c5eygnetew5lv" path="res://Game Content/Materials/Glass.tres" id="17_fqi3o"]
 
@@ -126,6 +127,8 @@ transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, 
 [node name="No Aim3" parent="GameController" instance=ExtResource("4_y1v0d")]
 transform = Transform3D(-4.49315, 0, -8.74228e-08, 0, 1, 0, 3.92803e-07, 0, -1, 1.9417, 0, -0.378756)
 
+[node name="CanvasLayer" parent="GameController" instance=ExtResource("7_bh4eu")]
+
 [node name="missed" type="Area3D" parent="GameController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88561, 1.15809, 8.77769)
 script = ExtResource("5_x4qth")
@@ -145,6 +148,9 @@ screen_size = Vector2(1, 0.6)
 collision_layer = 5242888
 scene = ExtResource("7_bh4eu")
 viewport_size = Vector2(1280, 720)
+
+[node name="VirtualKeyboard" parent="GameController/Viewport2Din3D2" instance=ExtResource("8_dnnbj")]
+transform = Transform3D(0.29, 0, 4.44089e-15, -5.32907e-15, 0.29, 5.21541e-08, -7.10543e-15, -2.98023e-08, 0.29, 0, -0.284662, 0.197806)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jbm2")

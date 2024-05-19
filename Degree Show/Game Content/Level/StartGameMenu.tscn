@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqasb7iimw3a8"]
+[gd_scene load_steps=3 format=3 uid="uid://cqasb7iimw3a8"]
 
 [ext_resource type="Script" path="res://GAmeMen.gd" id="1_e0luu"]
+[ext_resource type="Script" path="res://Game Content/Scripts/Text_edit.gd" id="2_oolat"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_e0luu")
@@ -249,5 +250,7 @@ alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+script = ExtResource("2_oolat")
 
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/LineEdit" to="MarginContainer/VBoxContainer/LineEdit" method="_on_text_changed"]

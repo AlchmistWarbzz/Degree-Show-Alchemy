@@ -5,7 +5,7 @@ var saves = 0
 var goals = 0
 var hits = 0
 var time = 100 
-var player_height
+var player_height: float
 var startgame = false
 var gameover = false
 var timereset = false
