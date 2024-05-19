@@ -127,8 +127,6 @@ transform = Transform3D(-1.96402e-07, 0, 1, 0, 1, 0, -4.49315, 0, -4.37114e-08, 
 [node name="No Aim3" parent="GameController" instance=ExtResource("4_y1v0d")]
 transform = Transform3D(-4.49315, 0, -8.74228e-08, 0, 1, 0, 3.92803e-07, 0, -1, 1.9417, 0, -0.378756)
 
-[node name="CanvasLayer" parent="GameController" instance=ExtResource("7_bh4eu")]
-
 [node name="missed" type="Area3D" parent="GameController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88561, 1.15809, 8.77769)
 script = ExtResource("5_x4qth")
@@ -136,6 +134,8 @@ script = ExtResource("5_x4qth")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameController/missed"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13768, 0.0245445, 0)
 shape = SubResource("BoxShape3D_rmuwd")
+
+[node name="CanvasLayer" parent="GameController" instance=ExtResource("7_bh4eu")]
 
 [node name="Viewport2Din3D" parent="GameController" instance=ExtResource("5_walll")]
 transform = Transform3D(1.84394, 0, 0, 0, 0.381655, 0, 0, 0, 0.893762, 1.92201, 3.3457, -2.97318)
