@@ -84,7 +84,7 @@ func spawn_ball():
 			print("player height - ", player_height)
 		elif  ball_instances == curve_scene:
 			setheight(0)
-			launch_offset = set_angle(45, 135, 55, 125)
+			launch_offset = set_angle(45, 140, 48, 135)
 			aim_towrad_player()
 			launch(speed)
 			print("player height - ", player_height)
@@ -111,7 +111,7 @@ func gravity(Gmin, Gmax):
 	var gravity_scale = randf_range(Gmin, Gmax)
 	
 	if gravity_scale <= 0.5:
-		height_offset = randf_range(0.1, 0.2)
+		height_offset = randf_range(0, 0.1)
 		speed_offset = randf_range(0.5, 0.7)
 	#elif gravity_scale <= 0.6: 
 		#height_offset = randf_range(1.8, 2.5)
