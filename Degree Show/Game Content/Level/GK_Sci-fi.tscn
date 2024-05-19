@@ -135,8 +135,6 @@ script = ExtResource("5_x4qth")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13768, 0.0245445, 0)
 shape = SubResource("BoxShape3D_rmuwd")
 
-[node name="CanvasLayer" parent="GameController" instance=ExtResource("7_bh4eu")]
-
 [node name="Viewport2Din3D" parent="GameController" instance=ExtResource("5_walll")]
 transform = Transform3D(1.84394, 0, 0, 0, 0.381655, 0, 0, 0, 0.893762, 1.92201, 3.3457, -2.97318)
 scene = ExtResource("6_jbvtd")
