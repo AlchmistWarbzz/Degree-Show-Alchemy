@@ -242,8 +242,10 @@ func _process(delta):
 	else:
 		# This is no longer needed
 		set_process(false)
-
-
+	if Global.startgame == true:
+		self.visible = false
+	if Global.startgame == false:
+		self.visible = true
 ## Set screen size property
 func set_screen_size(new_size: Vector2) -> void:
 	screen_size = new_size
