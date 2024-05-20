@@ -1,8 +1,6 @@
-[gd_scene load_steps=51 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=42 format=3 uid="uid://t2g1ud48u5in"]
 
-[ext_resource type="ArrayMesh" uid="uid://boe4d365lme55" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_001.res" id="1_5vvnm"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
-[ext_resource type="ArrayMesh" uid="uid://ddj7ndeeu3ut3" path="res://Game Content/Assets/ModularKit/SM_Mod_Floor_002.res" id="3_irspn"]
 [ext_resource type="PackedScene" uid="uid://cptxo88fdy80i" path="res://Game Content/Scripts/SubScenes/no_aim.tscn" id="4_y1v0d"]
 [ext_resource type="PackedScene" uid="uid://cuwiqbdrh1gyy" path="res://Game Content/Scripts/SubScenes/spawn_ball.tscn" id="5_3f1ry"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_walll"]
@@ -10,18 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://crokhlqjmoow0" path="res://Game Content/Level/Score.tscn" id="6_jbvtd"]
 [ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/StartGameMenu.tscn" id="7_bh4eu"]
 [ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="8_dnnbj"]
-[ext_resource type="ArrayMesh" uid="uid://c012eefxfr41b" path="res://Game Content/Assets/ModularKit/SM_Mod_Frame_001.res" id="9_m3b5j"]
 [ext_resource type="ArrayMesh" uid="uid://cfiax3h2vj1q" path="res://Game Content/Assets/ModularKit/New model/Modkit_Bridge.res" id="9_nqqyu"]
-[ext_resource type="ArrayMesh" uid="uid://b73ado2n3gqid" path="res://Game Content/Assets/ModularKit/SM_Mod_Door_001.res" id="10_0mkms"]
-[ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="10_nhou1"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://bfjiboeairj5l" path="res://Game Content/Assets/ModularKit/New model/Modkit_Wall_L.res" id="11_p2bne"]
-[ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="11_qg38g"]
-[ext_resource type="Material" uid="uid://bn8hue15ey1jp" path="res://Game Content/Materials/Highlights_colour.tres" id="12_4lvhp"]
 [ext_resource type="ArrayMesh" uid="uid://b17rpi3dnii6m" path="res://Game Content/Assets/ModularKit/New model/Modkit_Window.res" id="12_nnifb"]
 [ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
-[ext_resource type="Material" uid="uid://b1y00iecrmsiy" path="res://Game Content/Materials/Window_Emissive.tres" id="15_xklx4"]
-[ext_resource type="Material" uid="uid://c5eygnetew5lv" path="res://Game Content/Materials/Glass.tres" id="17_fqi3o"]
+[ext_resource type="ArrayMesh" uid="uid://csr3thsgaxn03" path="res://Game Content/Assets/ModularKit/New model/Modkit_Goal.res" id="13_cehqg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
 size = Vector3(4.00089, 3.613, 0.622)
@@ -92,9 +84,6 @@ points = PackedVector3Array(4.00794, 2.65873, -0.55706, 4.00794, 2.65873, -0.874
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpw6g"]
 size = Vector3(8.075, 1.469, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7vjoc"]
-points = PackedVector3Array(2.24396, 3.27343, 0.0746994, 2.24396, 1.68734, 0.0746994, 2.32357, 0.31145, 0.0711776, 2.32357, 1.61044, -1.69426e-05, 2.24396, 3.27343, -0.153016, -2.24442, 3.27343, 0.0746994, 2.32357, 0, 0.0711776, 0.703256, 1.31501, 0.0746994, 2.32357, 1.61044, -0.078322, 2.32357, 0.31145, -0.149517, 2.24396, 1.68734, -0.153016, -2.24442, 3.27343, -0.153016, -2.32357, 1.61044, -1.69426e-05, -2.32357, 0.31145, 0.0711776, -2.24442, 1.68734, 0.0746994, 2.32357, 0, -0.149517, -0.000454903, 1.31469, 0.0746994, -2.32357, 0, 0.0711776, 0.703256, 1.31501, -0.153016, -2.24442, 1.68734, -0.153016, -2.32357, 0.31145, -0.149517, -2.32357, 1.61044, -0.078322, -0.703711, 1.31501, 0.0746994, -0.000454903, 1.31469, -0.153016, -2.32357, 0, -0.149517, -0.703711, 1.31501, -0.153016)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8uomx"]
 points = PackedVector3Array(0, -1, 0, 0, 0, 0, 4, -1, 0, 0, -1, 3.99995, 0, 0, 3.99995, 4, 0, 0, 3.99961, -1, 3.99995, 3.99961, 0, 3.99995)
@@ -173,9 +162,6 @@ collision_mask = 3
 [node name="SmModFloor001" type="MeshInstance3D" parent="PlayableArea/StaticBody3D"]
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 0)
@@ -190,9 +176,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.57607)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D2"]
 transform = Transform3D(1.316, 0, 0, 0, 1.316, 0, 0, 0, 1, 0, 0, 4.57607)
@@ -207,9 +190,6 @@ collision_mask = 3
 transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 1, 5.2604, 3.95571, -0.0406268)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D3"]
 transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 0.76, 5.2604, 3.95571, -0.0406268)
@@ -228,9 +208,6 @@ shape = SubResource("ConvexPolygonShape3D_akw0l")
 transform = Transform3D(-1.68, -1.50996e-07, 0, 2.53673e-07, -1, 0, 0, 0, 1, 5.2604, 3.95571, 4.53544)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="PlayableArea"]
 collision_layer = 3
@@ -238,7 +215,7 @@ collision_mask = 3
 
 [node name="SmModFloor007" type="MeshInstance3D" parent="PlayableArea/StaticBody3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.76, 0, 0, 9.13027)
-mesh = ExtResource("1_5vvnm")
+mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D5"]
@@ -254,10 +231,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 1.25772)
 mesh = ExtResource("11_p2bne")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
@@ -272,10 +245,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 1.25772)
 mesh = ExtResource("11_p2bne")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.166427, 0)
@@ -290,11 +259,6 @@ collision_mask = 3
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -0.457578, -1.08772, 5.92868)
 mesh = ExtResource("12_nnifb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
-surface_material_override/4 = ExtResource("17_fqi3o")
 
 [node name="@CollisionShape3D@58996" type="CollisionShape3D" parent="PlayableArea/StaticBody3D7"]
 transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 5.92868)
@@ -313,11 +277,6 @@ collision_mask = 3
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -0.457578, -1.08772, 8.93705)
 mesh = ExtResource("12_nnifb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
-surface_material_override/4 = ExtResource("17_fqi3o")
 
 [node name="@CollisionShape3D@59647" type="CollisionShape3D" parent="PlayableArea/StaticBody3D8"]
 transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 8.93705)
@@ -336,11 +295,6 @@ collision_mask = 3
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -0.457578, -1.08772, 2.95852)
 mesh = ExtResource("12_nnifb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
-surface_material_override/4 = ExtResource("17_fqi3o")
 
 [node name="@CollisionShape3D@59959" type="CollisionShape3D" parent="PlayableArea/StaticBody3D9"]
 transform = Transform3D(-4.37114e-08, 0, 1.333, 0, 1.467, 0, -1, 0, -5.82673e-08, -0.457578, -1.08772, 2.95852)
@@ -359,11 +313,6 @@ collision_mask = 3
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 4.5242, -1.07243, 2.92462)
 mesh = ExtResource("12_nnifb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
-surface_material_override/4 = ExtResource("17_fqi3o")
 
 [node name="@CollisionShape3D@60271" type="CollisionShape3D" parent="PlayableArea/StaticBody3D10"]
 transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, 2.92462)
@@ -382,11 +331,6 @@ collision_mask = 3
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 4.5242, -1.07243, 5.93299)
 mesh = ExtResource("12_nnifb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
-surface_material_override/4 = ExtResource("17_fqi3o")
 
 [node name="@CollisionShape3D@60583" type="CollisionShape3D" parent="PlayableArea/StaticBody3D11"]
 transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, 5.93299)
@@ -405,11 +349,6 @@ collision_mask = 3
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 4.5242, -1.07243, -0.0455434)
 mesh = ExtResource("12_nnifb")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
-surface_material_override/3 = ExtResource("15_xklx4")
-surface_material_override/4 = ExtResource("17_fqi3o")
 
 [node name="@CollisionShape3D@60895" type="CollisionShape3D" parent="PlayableArea/StaticBody3D12"]
 transform = Transform3D(-4.37114e-08, 0, -1.333, 0, 1.467, 0, 1, 0, -5.82673e-08, 4.5242, -1.07243, -0.0455434)
@@ -424,7 +363,7 @@ script = ExtResource("5_x4qth")
 
 [node name="SmModWall004" type="MeshInstance3D" parent="PlayableArea/Goal"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, -0.166, 9.009)
-mesh = ExtResource("9_m3b5j")
+mesh = ExtResource("13_cehqg")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/Goal"]
@@ -438,16 +377,6 @@ shape = SubResource("BoxShape3D_jpw6g")
 [node name="Goal" type="Area3D" parent="PlayableArea/Goal"]
 script = ExtResource("5_x4qth")
 
-[node name="SmModWall005" type="MeshInstance3D" parent="PlayableArea/Goal/Goal"]
-transform = Transform3D(-1, 0, -8.74228e-08, -1.6371e-09, 0.999825, 0.0187263, 8.74075e-08, 0.0187263, -0.999825, 1.99733, -0.038937, 9.22996)
-layers = 7
-mesh = ExtResource("10_0mkms")
-skeleton = NodePath("../../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/Goal/Goal"]
-transform = Transform3D(-1, 0, -8.74228e-08, -1.6371e-09, 0.999825, 0.0187263, 8.74075e-08, 0.0187263, -0.999825, 1.99733, -0.038937, 9.22996)
-shape = SubResource("ConvexPolygonShape3D_7vjoc")
-
 [node name="StaticBody3D19" type="StaticBody3D" parent="PlayableArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0491437, -0.428367, -3.69904)
 collision_layer = 3
@@ -457,9 +386,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D19"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
@@ -474,9 +400,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D20"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
@@ -491,9 +414,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 0)
@@ -508,9 +428,6 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
 mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_nhou1")
-surface_material_override/1 = ExtResource("11_qg38g")
-surface_material_override/2 = ExtResource("12_4lvhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 4.5668)
@@ -522,7 +439,7 @@ collision_mask = 3
 
 [node name="SmModFloor008" type="MeshInstance3D" parent="PlayableArea/StaticBody3D21"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, -0.057, 9.17208)
-mesh = ExtResource("3_irspn")
+mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D21"]
@@ -535,7 +452,7 @@ collision_mask = 3
 
 [node name="SmModFloor009" type="MeshInstance3D" parent="PlayableArea/StaticBody3D22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, -0.057, 9.17208)
-mesh = ExtResource("3_irspn")
+mesh = ExtResource("9_nqqyu")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayableArea/StaticBody3D22"]
