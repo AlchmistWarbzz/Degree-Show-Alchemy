@@ -70,7 +70,7 @@ func spawn_ball():
 			ball_instances = normal_scene
 		elif random_value < 0.8:
 			ball_instances = curve_scene
-		elif random_value < 0.9:
+		elif random_value < 0.95:
 			ball_instances = speed_scene
 		else:
 			ball_instances = gravity_scene
@@ -91,7 +91,7 @@ func spawn_ball():
 		elif ball_instances == gravity_scene:
 			gravity(0.1, 0.4)
 			setheight(height_offset)
-			launch_offset = set_angle(75, 115, 80, 110)
+			launch_offset = set_angle(85, 105, 89, 101)
 			aim_towrad_player()
 			launch(speed * speed_offset)
 			height_offset = 0
@@ -153,5 +153,5 @@ func set_angle(Amin, Amax, emin, emax):
 	return launch_offset
 
 func setheight(offset):
-	player_height = Global.player_height + randf_range(0.0, 0.3) + offset
+	player_height = Global.player_height + randf_range(0.3, 0.5) + offset
 	return player_height

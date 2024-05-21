@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=50 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
 [ext_resource type="PackedScene" uid="uid://cptxo88fdy80i" path="res://Game Content/Scripts/SubScenes/no_aim.tscn" id="4_y1v0d"]
@@ -7,19 +7,18 @@
 [ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="5_x4qth"]
 [ext_resource type="PackedScene" uid="uid://crokhlqjmoow0" path="res://Game Content/Level/Score.tscn" id="6_jbvtd"]
 [ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/StartGameMenu.tscn" id="7_bh4eu"]
-[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="8_dnnbj"]
 [ext_resource type="ArrayMesh" uid="uid://cfiax3h2vj1q" path="res://Game Content/Assets/ModularKit/New model/Modkit_Bridge.res" id="9_nqqyu"]
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://bfjiboeairj5l" path="res://Game Content/Assets/ModularKit/New model/Modkit_Wall_L.res" id="11_p2bne"]
 [ext_resource type="ArrayMesh" uid="uid://b17rpi3dnii6m" path="res://Game Content/Assets/ModularKit/New model/Modkit_Window.res" id="12_nnifb"]
-[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://csr3thsgaxn03" path="res://Game Content/Assets/ModularKit/New model/Modkit_Goal.res" id="13_cehqg"]
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="13_uvo44"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="14_my4n2"]
 [ext_resource type="Material" uid="uid://bn8hue15ey1jp" path="res://Game Content/Materials/Highlights_colour.tres" id="15_i74hl"]
 [ext_resource type="Material" uid="uid://b1y00iecrmsiy" path="res://Game Content/Materials/Window_Emissive.tres" id="16_htjhb"]
 [ext_resource type="Material" uid="uid://c5eygnetew5lv" path="res://Game Content/Materials/Glass.tres" id="17_um7xr"]
-[ext_resource type="Texture2D" uid="uid://dqcjiep4joius" path="res://Game Content/UI/Sprites/TimerBar.jpg" id="20_f8fwq"]
+[ext_resource type="Texture2D" uid="uid://btdgfbbunpwlo" path="res://Game Content/UI/Sprites/TimerBar.jpg" id="20_f8fwq"]
 [ext_resource type="ArrayMesh" uid="uid://tvgrwwlo138d" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_002.res" id="21_a5j7c"]
 [ext_resource type="ArrayMesh" uid="uid://bs2by34gsuh27" path="res://Game Content/Assets/ModularKit/SM_Mod_Wall_003.res" id="22_wftvm"]
 
@@ -35,6 +34,7 @@ sky_material = SubResource("PanoramaSkyMaterial_1cdgx")
 [sub_resource type="Environment" id="Environment_3jbm2"]
 background_mode = 2
 sky = SubResource("Sky_v33si")
+sdfgi_enabled = true
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3xmlw"]
 points = PackedVector3Array(3.99995, -0.0536423, 6, 3.99995, -0.500001, 6, 3.99995, -0.0536423, 0, 3.94631, -9.53674e-07, 6, 0, -0.500001, 6, 3.99995, -0.500001, 0, 3.94631, -9.53674e-07, 0, 0.0532491, -9.53674e-07, 6, 0, -0.0536423, 6, 0, -0.500001, 0, 0.0532491, -9.53674e-07, 0, 0, -0.0536423, 0)
@@ -145,15 +145,17 @@ collision_layer = 5242888
 scene = ExtResource("7_bh4eu")
 viewport_size = Vector2(1280, 720)
 
-[node name="VirtualKeyboard" parent="GameController/Viewport2Din3D2" instance=ExtResource("8_dnnbj")]
-transform = Transform3D(0.29, 0, 4.44089e-15, -5.32907e-15, 0.29, 8.56817e-08, -7.10543e-15, -2.98023e-08, 0.29, -0.0320865, -0.468442, 0.0829506)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jbm2")
+
+[node name="LightmapProbe" type="LightmapProbe" parent="WorldEnvironment"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.1, 0, -1, 0, -4.37114e-08, -1.16103, -0.515894, 5.00855)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.927745, 0.349696, -0.130392, -0.208683, 0.775713, 0.595585, 0.30942, -0.52534, 0.792639, 0.0101204, 4.76837e-07, 0.0141125)
 light_energy = 2.0
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="WorldEnvironment"]
 
 [node name="OuterLeft" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, -16, 0.943, -4.00016)
