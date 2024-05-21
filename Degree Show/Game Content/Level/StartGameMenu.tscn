@@ -35,9 +35,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -93.0
+offset_top = -48.0
 offset_right = 200.0
-offset_bottom = 93.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Start Game?
@@ -65,7 +65,7 @@ anchor_bottom = 0.5
 offset_left = -553.5
 offset_top = -161.5
 offset_right = -280.5
-offset_bottom = 303.5
+offset_bottom = -40.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.372549, 0.458824, 0.87451)
@@ -75,13 +75,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -74.5
-offset_top = 16.0
-offset_right = 74.5
-offset_bottom = 47.0
+offset_left = -55.0
+offset_top = 11.0
+offset_right = 57.0
+offset_bottom = 42.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 20
-text = "HOW TO PLAY:"
+text = "OBJECTIVE:"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/ColorRect/ColorRect"]
 layout_mode = 1
@@ -89,15 +89,12 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -129.5
-offset_top = 68.0
+offset_top = 42.0
 offset_right = 131.5
-offset_bottom = 590.0
+offset_bottom = 117.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 15
-text = "This is one of our many Goalkeeper Training Facilities. GTF for short. 
-Here is how the test will go:
-
-Once started, balls will be launched towards the goal behind you. It is your job to stop them from going in before the timer ahead of you reaches zero. Each ball will have new and exciting challenges to keep you on your toes and you will be able to see which ball comes next on your left forearm. You will also be able to keep track of your stats on your right forearm. Good Luck!"
+text = "Stop the balls from going inside the goal behind you using your hands to block them!"
 
 [node name="ColorRect" type="ColorRect" parent="Control/ColorRect/ColorRect"]
 layout_mode = 1
@@ -106,15 +103,127 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 696.0
-offset_top = -232.5
-offset_right = 969.0
-offset_bottom = 232.5
+offset_left = -136.5
+offset_top = 74.5
+offset_right = 137.5
+offset_bottom = 162.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.372549, 0.458824, 0.87451)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 8.0
+offset_right = 35.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "TIMER:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 40.0
+offset_right = 131.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+text = "Every save will add time onto the timer.
+"
+
+[node name="ColorRect2" type="ColorRect" parent="Control/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = 176.5
+offset_right = 137.5
+offset_bottom = 333.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.372549, 0.458824, 0.87451)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "SETUP:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 44.0
+offset_right = 131.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 14
+text = "Stand up straight, aim the right controller pointer at the start game button and press the right trigger where your index finger is to set your height and play!"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.0
+offset_top = 125.5
+offset_right = 141.0
+offset_bottom = 156.5
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Created by The Alchemy Lab"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -108.0
+offset_right = 109.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "GRAVITY"
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 279.0
+offset_top = -161.5
+offset_right = 552.0
+offset_bottom = 232.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.372549, 0.458824, 0.87451)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -127,18 +236,19 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 20
 text = "BALL TYPES:"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/ColorRect2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -125.5
-offset_top = 58.0
+offset_top = 63.0
 offset_right = 131.5
-offset_bottom = 580.0
+offset_bottom = 368.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 14
-text = "Every ball has a specific colour indicating what type of ability the ball will have. You can also see what ball type is next on your left forearm before each shot. 
+text = "Normal Ball:
+A regular ball with no changes
 
 Speed Ball:
 A ball with increased speed
@@ -146,81 +256,11 @@ A ball with increased speed
 Rebound Ball:
 A ball that will hit the wall first before heading towards goal
 
-Gravity Ball: WORK IN PROGRESS!!!!
+Gravity Ball:
 A ball with increased gravity will head towards the further reaches of the goal.
 "
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/ColorRect/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -683.5
-offset_top = 104.5
-offset_right = -145.5
-offset_bottom = 177.5
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.372549, 0.458824, 0.87451)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -35.0
-offset_top = 6.0
-offset_right = 35.0
-offset_bottom = 37.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "TIMER:"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -138.0
-offset_top = 38.0
-offset_right = 139.0
-offset_bottom = 88.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 14
-text = "Every save will add time onto the timer.
-"
-
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/ColorRect/ColorRect/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -268.0
-offset_top = 46.5
-offset_right = 270.0
-offset_bottom = 90.5
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.372549, 0.458824, 0.87451)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect/ColorRect/ColorRect/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -141.0
-offset_top = 6.0
-offset_right = 141.0
-offset_bottom = 37.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "Created by The Alchemy Lab"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Control/ColorRect"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -236,31 +276,16 @@ grow_vertical = 2
 tooltip_text = "Start Game?
 "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer2"]
 layout_mode = 2
 size_flags_stretch_ratio = 20.0
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="Control/ColorRect/MarginContainer2/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="Control/MarginContainer2/VBoxContainer"]
+visible = false
 layout_mode = 2
 alignment = 1
 script = ExtResource("2_oolat")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = 57.0
-offset_right = 120.0
-offset_bottom = 85.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "Input your height in cm"
-
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="text_changed" from="Control/ColorRect/MarginContainer2/VBoxContainer/LineEdit" to="Control/ColorRect/MarginContainer2/VBoxContainer/LineEdit" method="_on_text_changed"]
+[connection signal="text_changed" from="Control/MarginContainer2/VBoxContainer/LineEdit" to="Control/MarginContainer2/VBoxContainer/LineEdit" method="_on_text_changed"]
