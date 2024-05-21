@@ -22,5 +22,5 @@ func _on_button_pressed():
 	Global.goals = 0
 	Global.saves = 0
 	Global.timereset = true
-	
+	GetHeight.set_height()
 

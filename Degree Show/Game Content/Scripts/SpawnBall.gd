@@ -153,5 +153,5 @@ func set_angle(Amin, Amax, emin, emax):
 	return launch_offset
 
 func setheight(offset):
-	player_height = Global.player_height / 100 + randf_range(0.0, 0.3) + offset
+	player_height = Global.player_height + randf_range(0.0, 0.3) + offset
 	return player_height

@@ -22,6 +22,7 @@ OrchestratorNodeFactory="*res://addons/orchestrator/orchestrator_node_factory.gd
 Orchestrator="*res://addons/orchestrator/orchestrator.gd"
 GameController="*res://Game Content/Scripts/GameController.gd"
 Global="*res://Game Content/Scripts/Global.gd"
+GetHeight="*res://Game Content/Scripts/GetHeight.gd"
 
 [dotnet]
 
