@@ -146,7 +146,7 @@ scene = ExtResource("7_bh4eu")
 viewport_size = Vector2(1280, 720)
 
 [node name="VirtualKeyboard" parent="GameController/Viewport2Din3D2" instance=ExtResource("8_dnnbj")]
-transform = Transform3D(0.29, 0, 4.44089e-15, -5.32907e-15, 0.29, 7.82311e-08, -7.10543e-15, -2.98023e-08, 0.29, -0.0320866, -0.284662, 0.19781)
+transform = Transform3D(0.29, 0, 4.44089e-15, -5.32907e-15, 0.29, 8.56817e-08, -7.10543e-15, -2.98023e-08, 0.29, -0.0320865, -0.468442, 0.0829506)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jbm2")
