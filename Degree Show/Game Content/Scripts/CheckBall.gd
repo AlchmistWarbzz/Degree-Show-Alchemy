@@ -47,13 +47,15 @@ func checkball(body):
 		#ball.set_physics_process(false)
 		ball.queue_free()
 		print("hit")
-func rebound_to_player(body):
-	ball = body
-	if raycast:
-		#print($"/root/GameController".player.get_position())
-		player_pos = $"/root/GameController".player.get_position()
-		var player_direction = (player_pos - ball.global_transform.origin).normalized()
-		# Set a fixed speed or keep the current speed of the ball
-		var speed = ball.linear_velocity.length() * 0.3
-		ball.gravity_scale = 20
-		ball.set_linear_velocity(player_direction * speed)
+	
+#func rebound_to_player(body):
+	#ball = body
+	#ball.gravity_scale = 20
+	#if raycast:
+		##print($"/root/GameController".player.get_position())
+		#player_pos = $"/root/GameController".player.get_position()
+	#var player_direction = (player_pos - ball.global_transform.origin).normalized()
+	## Set a fixed speed or keep the current speed of the ball
+	#var speed = ball.linear_velocity.length() * 0.3
+	#
+	#ball.set_linear_velocity(player_direction * speed)
