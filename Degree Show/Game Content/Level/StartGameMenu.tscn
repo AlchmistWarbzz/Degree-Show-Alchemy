@@ -1,16 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqasb7iimw3a8"]
+[gd_scene load_steps=14 format=3 uid="uid://cqasb7iimw3a8"]
 
 [ext_resource type="Script" path="res://GAmeMen.gd" id="1_e0luu"]
 [ext_resource type="Script" path="res://Game Content/Scripts/Text_edit.gd" id="2_oolat"]
+[ext_resource type="Texture2D" uid="uid://3rbouyejc3k" path="res://Game Content/UI/SciFiScreen_BySOULDraws.png" id="3_wdl1b"]
+[ext_resource type="Texture2D" uid="uid://bvywdaa2pbqsm" path="res://Game Content/UI/ObjectiveScreen_BySOULDraws.png" id="4_d675g"]
+[ext_resource type="Texture2D" uid="uid://b3qfdylwsih5s" path="res://Game Content/UI/GravityBallLogo1_BySOULDraws.png" id="4_hnamr"]
+[ext_resource type="Texture2D" uid="uid://o2ni8f03oatg" path="res://Game Content/UI/TimerScreen_BySOULDraws.png" id="5_2ri62"]
+[ext_resource type="Texture2D" uid="uid://bcp7yyfeb0pi0" path="res://Game Content/UI/SetupScreen_BySOULDraws.png" id="6_p75hi"]
+[ext_resource type="Texture2D" uid="uid://chul2mx3th7dx" path="res://Game Content/UI/NormalBall_Icon_BySOULDraws.png" id="7_rkpda"]
+[ext_resource type="Texture2D" uid="uid://br3clko4b4srg" path="res://Game Content/UI/GlideBall_Icon_BySOULDraws.png" id="8_mmwed"]
+[ext_resource type="Texture2D" uid="uid://3o87e8rdk5hx" path="res://Game Content/UI/ReboundBall_Icon_BySOULDraws.png" id="8_yvr0u"]
+[ext_resource type="Texture2D" uid="uid://cwbrik8n5n8u1" path="res://Game Content/UI/SpeedBall_Icon_BySOULDraws.png" id="9_dbmwg"]
+[ext_resource type="Texture2D" uid="uid://dck7xqwimi445" path="res://Game Content/UI/TheAlchemyLabLogo_BySOULDraws.png" id="10_fftpl"]
+[ext_resource type="Texture2D" uid="uid://0uc40v30vsrw" path="res://Game Content/UI/PlayButton_BySOULDraws.png" id="13_55vo5"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_e0luu")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
+offset_top = -1.0
 offset_right = 1152.0
-offset_bottom = 647.0
+offset_bottom = 646.0
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
@@ -26,34 +39,6 @@ offset_bottom = 163.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.372549, 0.458824, 0.87451)
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -48.0
-offset_right = 200.0
-offset_bottom = 138.0
-grow_horizontal = 2
-grow_vertical = 2
-tooltip_text = "Start Game?
-"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer"]
-layout_mode = 2
-size_flags_stretch_ratio = 20.0
-alignment = 1
-
-[node name="Button" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Tasdfpamd 
-"
-theme_override_font_sizes/font_size = 35
-text = "Start Game"
 
 [node name="ColorRect" type="ColorRect" parent="Control/ColorRect"]
 layout_mode = 1
@@ -287,5 +272,138 @@ layout_mode = 2
 alignment = 1
 script = ExtResource("2_oolat")
 
-[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -561.0
+offset_top = -277.0
+offset_right = -157.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectiveScreenBySoulDraws" type="Sprite2D" parent="MarginContainer2"]
+position = Vector2(202, 117)
+scale = Vector2(0.158808, 0.158808)
+texture = ExtResource("4_d675g")
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -561.0
+offset_top = 51.0
+offset_right = -157.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectiveScreenBySoulDraws" type="Sprite2D" parent="MarginContainer4"]
+position = Vector2(202, 117)
+scale = Vector2(0.158808, 0.158808)
+texture = ExtResource("5_2ri62")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 158.0
+offset_top = -277.0
+offset_right = 562.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectiveScreenBySoulDraws" type="Sprite2D" parent="MarginContainer3"]
+position = Vector2(202, 117)
+scale = Vector2(0.158808, 0.158808)
+texture = ExtResource("6_p75hi")
+
+[node name="MarginContainer6" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 0.5
+offset_right = 209.0
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NormalBallIconBySoulDraws" type="Sprite2D" parent="MarginContainer6"]
+position = Vector2(287.68, 77.18)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("7_rkpda")
+
+[node name="ReboundBallIconBySoulDraws" type="Sprite2D" parent="MarginContainer6"]
+position = Vector2(444.68, 91.18)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("8_yvr0u")
+
+[node name="NormalBallIconBySoulDraws2" type="Sprite2D" parent="MarginContainer6"]
+position = Vector2(430.68, 224.18)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("8_mmwed")
+
+[node name="ReboundBallIconBySoulDraws2" type="Sprite2D" parent="MarginContainer6"]
+position = Vector2(279.68, 214.18)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("9_dbmwg")
+
+[node name="TheAlchemyLabLogoBySoulDraws" type="Sprite2D" parent="MarginContainer6"]
+position = Vector2(3, 239)
+scale = Vector2(0.0842285, 0.0842285)
+texture = ExtResource("10_fftpl")
+
+[node name="SciFiScreenBySoulDraws" type="Sprite2D" parent="MarginContainer6"]
+visible = false
+position = Vector2(203.042, -257.602)
+scale = Vector2(0.111775, 0.111775)
+texture = ExtResource("3_wdl1b")
+
+[node name="GravityBallLogo1BySoulDraws" type="Sprite2D" parent="MarginContainer6"]
+position = Vector2(-8.99998, 57.5)
+scale = Vector2(0.290039, 0.290039)
+texture = ExtResource("4_hnamr")
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 91.0
+offset_right = 1939.0
+offset_bottom = 710.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.115, 0.115)
+tooltip_text = "Start Game?
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer5"]
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Tasdfpamd 
+"
+theme_override_font_sizes/font_size = 35
+text = "
+"
+icon = ExtResource("13_55vo5")
+
 [connection signal="text_changed" from="Control/MarginContainer2/VBoxContainer/LineEdit" to="Control/MarginContainer2/VBoxContainer/LineEdit" method="_on_text_changed"]
+[connection signal="pressed" from="MarginContainer5/VBoxContainer/Button" to="." method="_on_button_pressed"]
