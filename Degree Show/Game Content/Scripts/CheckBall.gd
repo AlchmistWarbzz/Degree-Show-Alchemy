@@ -22,7 +22,7 @@ func _on_body_entered(body):
 			checkball(body)
 		elif body.name == "curve":
 				checkball(body)
-				 
+				
 			
 
 func checkball(body):
@@ -54,5 +54,6 @@ func rebound_to_player(body):
 		player_pos = $"/root/GameController".player.get_position()
 		var player_direction = (player_pos - ball.global_transform.origin).normalized()
 		# Set a fixed speed or keep the current speed of the ball
-		var speed = ball.linear_velocity.length() * 0.8
+		var speed = ball.linear_velocity.length() * 0.3
+		ball.gravity_scale = 20
 		ball.set_linear_velocity(player_direction * speed)
