@@ -33,11 +33,17 @@ func checkball(body):
 		body.name = "balls"
 	elif name == "playerarea":
 		ball = body
-		print("Entered ball")
-		Global.score += 1
-		Global.saves += 1
-		Global.time += 20
-		body.name = "balls"
+		#print("Entered ball")
+		if body.name == "curve":
+			Global.score += 1
+			Global.saves += 1
+			Global.time += 50
+			body.name = "balls"
+		else:
+			Global.score += 1
+			Global.saves += 1
+			Global.time += 20
+			body.name = "balls"
 		var direction = global_transform.origin - ball.global_transform.origin
 		# Reflect the ball's velocity around the normal of the collision surface
 		var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())

@@ -12,10 +12,10 @@ var player
 var player_pos
 var radius = 2.0  # Maximum distance between raycast and player
 var ball_scene = []
-var min_angle = deg_to_rad(85)  # Minimum angle in radians
-var max_angle = deg_to_rad(105)  # Maximum angle in radians
-var excluded_angle_min = deg_to_rad(89)  # Excluded angle minimum in radians
-var excluded_angle_max = deg_to_rad(101)  # Excluded angle maximum in radians
+var min_angle:float = 89  # Minimum angle in radians
+var max_angle:float = 101  # Maximum angle in radians
+var excluded_angle_min # Excluded angle minimum in radians
+var excluded_angle_max  # Excluded angle maximum in radians
 var chance_to_spawn = 50
 var launch_offset
 var angle
@@ -26,8 +26,11 @@ var player_height
 var height_offset = 0
 var impulse_magnitude = 4  # Adjust this value to control the speed
 var speed
+var qmin_angle
+var qmax_angle
+var timer = false
 func _ready():
-	
+	reset_angle()
 	# Load the Ball scene
 	normal_scene = preload("res://Game Content/Scripts/SubScenes/ball.tscn")
 	gravity_scene = preload("res://Game Content/Scripts/SubScenes/gravity.tscn")
@@ -42,14 +45,15 @@ func _ready():
 	]
 func _process(_delta):
 	# Update the spawn timer
-	
 	spawn_timer_elapsed += _delta
 	# Check if it's time to spawn a ball
 	
-	if spawn_timer_elapsed >= spawn_timer :
+	print("Next ball ", ball_instances)
+	if spawn_timer_elapsed >= spawn_timer:
 		spawn_ball()
 		spawn_timer_elapsed = 0  # Reset the timer
-		
+		timer_angle()
+		Global.next_ball = ball_instances
 		#var spawm_range = randf_range(1, 100)
 		#if spawm_range < chance_to_spawn:
 			#spawn_timer_elapsed = 0  # Reset the timer
@@ -59,18 +63,25 @@ func _process(_delta):
 	if raycast:
 		#print($"/root/GameController".player.get_position())
 		player_pos = $"/root/GameController".player.get_position()  # Function to get player position
+func reset_angle():
+	qmin_angle = 89 
+	qmax_angle = 100
 
-	
+func timer_angle():
+	qmin_angle -= 0.1 
+	qmax_angle += 0.1
 
 func spawn_ball():
 	# Instantiate the Ball scene
+	if Global.startgame == false:
+		reset_angle()
 	if Global.startgame == true:
 		var random_value = randf()
-		if random_value < 0.6:
+		if random_value < 0.7:
 			ball_instances = normal_scene
 		elif random_value < 0.8:
 			ball_instances = curve_scene
-		elif random_value < 0.95:
+		elif random_value < 0.9:
 			ball_instances = speed_scene
 		else:
 			ball_instances = gravity_scene
@@ -78,7 +89,7 @@ func spawn_ball():
 	# Define parameters for circular path
 		if ball_instances == normal_scene:
 			setheight(0)
-			launch_offset = set_angle(85, 105, 89, 101)
+			launch_offset = set_angle(qmin_angle, qmax_angle, 90, 99)
 			aim_towrad_player()
 			launch(speed)
 			print("player height - ", player_height)
@@ -91,16 +102,16 @@ func spawn_ball():
 		elif ball_instances == gravity_scene:
 			gravity(0.1, 0.4)
 			setheight(height_offset)
-			launch_offset = set_angle(85, 105, 89, 101)
+			launch_offset = set_angle(85, 105, 88, 101)
 			aim_towrad_player()
 			launch(speed * speed_offset)
 			height_offset = 0
 			print("player height - ", player_height)
 		if ball_instances == speed_scene:
 			setheight(0)
-			launch_offset = set_angle(85, 105, 89, 101)
+			launch_offset = set_angle(qmin_angle, qmax_angle, 89, 101)
 			aim_towrad_player()
-			addspeed(1.2, 1.4)
+			addspeed(1.1, 1.2)
 			launch(speed * speed_offset)
 			print("player height - ", player_height)
 	
@@ -111,14 +122,12 @@ func gravity(Gmin, Gmax):
 	var gravity_scale = randf_range(Gmin, Gmax)
 	
 	if gravity_scale <= 0.5:
-		height_offset = randf_range(0, 0.1)
 		speed_offset = randf_range(0.5, 0.7)
 	#elif gravity_scale <= 0.6: 
 		#height_offset = randf_range(1.8, 2.5)
 		#player_height = player_height + height_offset
 	ball_instance.gravity_scale = gravity_scale
-	print("gravity ", gravity)
-	return height_offset 
+	print("gravity ", gravity) 
 	
 
 func aim_towrad_player():
@@ -153,5 +162,5 @@ func set_angle(Amin, Amax, emin, emax):
 	return launch_offset
 
 func setheight(offset):
-	player_height = Global.player_height + randf_range(0.4, 0.5) + offset
+	player_height = Global.player_height + randf_range(0.3, 0.5) + offset
 	return player_height
