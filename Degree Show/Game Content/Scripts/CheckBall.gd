@@ -4,9 +4,14 @@ var ball
 var score = 0
 var highest_score = 0
 var player_pos
+# Access the controller
+var input_controller = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	# Access the input controller
+	if Engine.has_singleton("OVRInput"):
+		input_controller = Engine.get_singleton("OVRInput")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -49,19 +54,11 @@ func checkball(body):
 		var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())
 		# Apply the reflected velocity to the ball
 		ball.set_linear_velocity(reflection * ball.linear_velocity.length())
+	# Trigger vibration
+		if input_controller:
+			input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
 	elif name == "Goal":
 		#ball.set_physics_process(false)
 		ball.queue_free()
 		print("hit")
 	
-#func rebound_to_player(body):
-	#ball = body
-	#ball.gravity_scale = 20
-	#if raycast:
-		##print($"/root/GameController".player.get_position())
-		#player_pos = $"/root/GameController".player.get_position()
-	#var player_direction = (player_pos - ball.global_transform.origin).normalized()
-	## Set a fixed speed or keep the current speed of the ball
-	#var speed = ball.linear_velocity.length() * 0.3
-	#
-	#ball.set_linear_velocity(player_direction * speed)
