@@ -29,6 +29,7 @@ var speed
 var qmin_angle
 var qmax_angle
 var timer = false
+
 func _ready():
 	reset_angle()
 	# Load the Ball scene
@@ -50,10 +51,11 @@ func _process(_delta):
 	
 	print("Next ball ", ball_instances)
 	if spawn_timer_elapsed >= spawn_timer:
+		Global.next_ball = ball_instances
 		spawn_ball()
 		spawn_timer_elapsed = 0  # Reset the timer
 		timer_angle()
-		Global.next_ball = ball_instances
+		
 		#var spawm_range = randf_range(1, 100)
 		#if spawm_range < chance_to_spawn:
 			#spawn_timer_elapsed = 0  # Reset the timer
