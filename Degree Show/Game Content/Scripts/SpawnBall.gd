@@ -57,13 +57,15 @@ func _process(_delta):
 	Global.next_ball = ball_instances
 	# Print the next ball type
 	print("Next ball node: ", ball_scene_names.get(ball_instances, "Unknown Ball"))
-	
+	if Global.startgame == false:
+		reset_angle()
+	if Global.startgame == true:
 	# Check if it's time to spawn a ball
-	if spawn_timer_elapsed >= spawn_timer:
-		select_next_ball()
-		spawn_ball()
-		spawn_timer_elapsed = 0  # Reset the timer
-		timer_angle()
+		if spawn_timer_elapsed >= spawn_timer:
+			select_next_ball()
+			spawn_ball()
+			spawn_timer_elapsed = 0  # Reset the timer
+			timer_angle()
 
 	# Move the raycast around the player
 	if raycast:
@@ -78,10 +80,6 @@ func timer_angle():
 	qmax_angle += 0.1
 
 func select_next_ball():
-	
-	if Global.startgame == false:
-		reset_angle()
-	if Global.startgame == true:
 		var random_value = randf()
 		if random_value < 0.7:
 			ball_instances = normal_scene
@@ -109,7 +107,7 @@ func spawn_ball():
 		launch(speed)
 		print("player height - ", player_height)
 	elif ball_instances == gravity_scene:
-		gravity(0.1, 0.4)
+		gravity(0.2, 0.4)
 		setheight(height_offset)
 		launch_offset = set_angle(85, 105, 88, 101)
 		aim_towrad_player()

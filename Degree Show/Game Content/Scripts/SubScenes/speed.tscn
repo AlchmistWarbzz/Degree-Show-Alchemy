@@ -139,12 +139,6 @@ surface_material_override/1 = ExtResource("2_jd65f")
 surface_material_override/2 = ExtResource("2_jd65f")
 surface_material_override/3 = ExtResource("6_swry6")
 
-[node name="LightmapProbe" type="LightmapProbe" parent="CollisionShape3D3/Ball"]
-transform = Transform3D(-7.94753e-07, 0, 18.1818, 0, 20, 0, -18.1818, 0, -7.94753e-07, 0, -0.0591724, 0)
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="CollisionShape3D3/Ball"]
-transform = Transform3D(18.1818, 0, 0, 0, 18.1818, 0, 0, 0, 18.1818, 0, 0, 0)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
