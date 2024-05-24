@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://crokhlqjmoow0"]
 
-[ext_resource type="Texture2D" uid="uid://dqcjiep4joius" path="res://Game Content/UI/Sprites/TimerBar.jpg" id="1_740va"]
+[ext_resource type="Texture2D" uid="uid://3rbouyejc3k" path="res://Game Content/UI/SciFiScreen_BySOULDraws.png" id="1_o4rua"]
 [ext_resource type="Script" path="res://Game Content/Level/TimeBar.gd" id="3_g3ekn"]
 
 [node name="Score" type="Control"]
@@ -22,15 +22,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -603.0
-offset_top = -331.5
-offset_right = 677.0
-offset_bottom = 389.5
+offset_left = -1717.0
+offset_top = -1210.5
+offset_right = 1791.0
+offset_bottom = 1269.5
 grow_horizontal = 2
 grow_vertical = 2
 value = 100.0
-texture_progress = ExtResource("1_740va")
-tint_progress = Color(1, 1, 0, 1)
+texture_progress = ExtResource("1_o4rua")
 script = ExtResource("3_g3ekn")
 
 [node name="Timer" type="Timer" parent="TextureProgressBar"]
