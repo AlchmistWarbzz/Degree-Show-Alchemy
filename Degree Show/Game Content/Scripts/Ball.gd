@@ -22,3 +22,4 @@ func rebound_to_player():
 	# Apply the impulse to the ball
 	apply_impulse(Vector3.ZERO, impulse)
 
+

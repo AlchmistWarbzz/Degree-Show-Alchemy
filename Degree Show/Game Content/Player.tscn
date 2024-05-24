@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=12 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
-[ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="2_dgorw"]
 [ext_resource type="Script" path="res://Game Content/Scripts/GetHeight.gd" id="2_ry12l"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
@@ -11,9 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_cv80x"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="9_j4b2q"]
 [ext_resource type="PackedScene" uid="uid://dgswnf5ukk4we" path="res://Game Content/UI/FinalStats.tscn" id="10_qtkma"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hatjg"]
-size = Vector3(0.365, 2.33748, 0.305)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kgd1r"]
 
@@ -25,13 +21,6 @@ script = ExtResource("1_nf6al")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 script = ExtResource("2_ry12l")
-
-[node name="PlayerTrigger" type="Area3D" parent="XROrigin3D/XRCamera3D"]
-script = ExtResource("2_dgorw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/PlayerTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.890803, 0)
-shape = SubResource("BoxShape3D_hatjg")
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -79,5 +68,3 @@ mesh = SubResource("BoxMesh_kgd1r")
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
 enabled = false
-
-[connection signal="body_entered" from="XROrigin3D/XRCamera3D/PlayerTrigger" to="XROrigin3D/XRCamera3D/PlayerTrigger" method="_on_body_entered"]
