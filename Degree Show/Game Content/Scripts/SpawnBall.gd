@@ -109,7 +109,7 @@ func spawn_ball():
 		launch(speed)
 		print("player height - ", player_height)
 	elif ball_instances == gravity_scene:
-		gravity(0.2, 0.4)
+		gravity(0.3, 0.4)
 		setheight(height_offset)
 		launch_offset = set_angle(85, 105, 88, 101)
 		aim_towrad_player()
