@@ -21,36 +21,42 @@ texture = ExtResource("1_33r3y")
 
 [node name="Time" type="Label" parent="."]
 layout_mode = 1
-offset_left = 519.0
-offset_top = 131.0
-offset_right = 633.0
-offset_bottom = 404.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 150
-text = "0
+offset_left = 395.0
+offset_top = 155.0
+offset_right = 762.0
+offset_bottom = 428.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 125
+text = "TIME:
 "
 script = ExtResource("1_208wq")
 
 [node name="Saves" type="Label" parent="."]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 255.0
-offset_right = 634.0
-offset_bottom = 528.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 150
-text = "0
+offset_left = 354.0
+offset_top = 272.0
+offset_right = 804.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 125
+text = "SAVES:
 "
 script = ExtResource("2_wclmd")
 
 [node name="Goals" type="Label" parent="."]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 381.0
-offset_right = 635.0
-offset_bottom = 654.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 150
-text = "0
+offset_left = 337.0
+offset_top = 390.0
+offset_right = 833.0
+offset_bottom = 663.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 125
+text = "GOALS:
 "
 script = ExtResource("3_1re17")
