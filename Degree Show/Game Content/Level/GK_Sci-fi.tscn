@@ -802,8 +802,6 @@ viewport_size = Vector2(1280, 720)
 
 [node name="Viewport2Din3D3" parent="." instance=ExtResource("5_walll")]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("7_bh4eu")]
-
 [node name="GKSaveSound" parent="." instance=ExtResource("25_ge1wd")]
 
 [node name="BallSpawnSound" parent="." instance=ExtResource("26_b6631")]
