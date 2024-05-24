@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://derxa6kjb3cvx"]
+
+[ext_resource type="Texture2D" uid="uid://cwbrik8n5n8u1" path="res://Game Content/UI/SpeedBall_Icon_BySOULDraws.png" id="1_edcib"]
+[ext_resource type="Script" path="res://Game Content/UI/TickandCross.gd" id="1_tod5j"]
+[ext_resource type="Texture2D" uid="uid://3o87e8rdk5hx" path="res://Game Content/UI/ReboundBall_Icon_BySOULDraws.png" id="2_pk4u7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tod5j")
+
+[node name="SpeedBallIconBySoulDraws" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(532, 355)
+texture = ExtResource("1_edcib")
+
+[node name="ReboundBallIconBySoulDraws" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(532, 355)
+texture = ExtResource("2_pk4u7")
