@@ -59,10 +59,10 @@ func _process(_delta):
 	print("Next ball node: ", ball_scene_names.get(ball_instances, "Unknown Ball"))
 	if Global.startgame == false:
 		reset_angle()
+		first_ball()
 	if Global.startgame == true:
 	# Check if it's time to spawn a ball
 		if spawn_timer_elapsed >= spawn_timer:
-			select_next_ball()
 			spawn_ball()
 			spawn_timer_elapsed = 0  # Reset the timer
 			timer_angle()
@@ -90,7 +90,9 @@ func select_next_ball():
 		else:
 			ball_instances = gravity_scene
 		print("Selected ball type: ", ball_instances)
-
+		return ball_instances
+func first_ball():
+	ball_instances = normal_scene
 func spawn_ball():
 	ball_instance = ball_instances.instantiate()
 	# Define parameters for circular path
@@ -121,6 +123,7 @@ func spawn_ball():
 		addspeed(1.1, 1.2)
 		launch(speed * speed_offset)
 		print("player height - ", player_height)
+	select_next_ball()
 
 func addspeed(Smin, Smax):
 	speed_offset = randf_range(Smin, Smax)
