@@ -133,6 +133,9 @@ shape = SubResource("SphereShape3D_ofdhu")
 transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vcdd8")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("4_q020q")
+surface_material_override/1 = ExtResource("2_840ff")
+surface_material_override/2 = ExtResource("2_840ff")
 surface_material_override/3 = ExtResource("5_1tvlp")
 
 [node name="Timer" type="Timer" parent="."]
