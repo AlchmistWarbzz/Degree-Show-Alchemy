@@ -10,6 +10,8 @@ var startgame = false
 var gameover = false
 var timereset = false
 var next_ball
+var GK_save = false
+var ball_sound = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

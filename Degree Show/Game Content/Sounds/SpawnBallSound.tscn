@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://f223pdu1mefe"]
+
+[ext_resource type="AudioStream" uid="uid://b2xkd2qewlgxn" path="res://Game Content/Sounds/zapsplat_warfare_mortar_projectile_launch_003_25233.mp3" id="1_dq7da"]
+[ext_resource type="Script" path="res://Game Content/Sounds/SpawnBallSound.gd" id="1_vujiq"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_vujiq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_dq7da")
+volume_db = -44.685
+pitch_scale = 1.1

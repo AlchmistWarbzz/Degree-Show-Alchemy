@@ -66,6 +66,9 @@ func _process(_delta):
 			spawn_ball()
 			spawn_timer_elapsed = 0  # Reset the timer
 			timer_angle()
+			Global.ball_sound = true
+			await get_tree().create_timer(0.01).timeout
+			Global.ball_sound = false
 
 	# Move the raycast around the player
 	if raycast:
