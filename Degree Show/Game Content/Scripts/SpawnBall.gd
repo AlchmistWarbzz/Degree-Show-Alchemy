@@ -79,8 +79,8 @@ func reset_angle():
 	qmax_angle = 100
 
 func timer_angle():
-	qmin_angle -= 0.1 
-	qmax_angle += 0.1
+	qmin_angle -= 0.3
+	qmax_angle += 0.3
 
 func select_next_ball():
 		var random_value = randf()
@@ -135,10 +135,11 @@ func addspeed(Smin, Smax):
 func gravity(Gmin, Gmax):
 	var gravity_scale = randf_range(Gmin, Gmax)
 	if gravity_scale <= 0.5:
-		speed_offset = randf_range(0.5, 0.7)
+		height_offset = randf_range(0.1, 0.2)
+		speed_offset = randf_range(0.6, 0.7)
 	ball_instance.gravity_scale = gravity_scale
 	print("gravity ", gravity) 
-
+	return height_offset
 func aim_towrad_player():
 	var launch_position = player_pos + launch_offset
 	# Get the collision point and normal from the raycast
@@ -170,5 +171,5 @@ func set_angle(Amin, Amax, emin, emax):
 	return launch_offset
 
 func setheight(offset):
-	player_height = Global.player_height + randf_range(0.3, 0.5) + offset
+	player_height = Global.player_height + randf_range(0.4, 0.55) + offset
 	return player_height

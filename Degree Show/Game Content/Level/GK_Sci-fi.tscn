@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://bfjiboeairj5l" path="res://Game Content/Assets/ModularKit/New model/Modkit_Wall_L.res" id="11_p2bne"]
 [ext_resource type="ArrayMesh" uid="uid://b17rpi3dnii6m" path="res://Game Content/Assets/ModularKit/New model/Modkit_Window.res" id="12_nnifb"]
-[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://csr3thsgaxn03" path="res://Game Content/Assets/ModularKit/New model/Modkit_Goal.res" id="13_cehqg"]
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="13_uvo44"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="14_my4n2"]
@@ -134,13 +134,15 @@ script = ExtResource("5_x4qth")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13768, 0.0245445, 0)
 shape = SubResource("BoxShape3D_rmuwd")
 
+[node name="CanvasLayer" parent="GameController/missed" instance=ExtResource("7_bh4eu")]
+
 [node name="Viewport2Din3D" parent="GameController" instance=ExtResource("5_walll")]
 transform = Transform3D(1.84394, 0, 0, 0, 0.381655, 0, 0, 0, 0.893762, 1.92201, 3.20158, -2.59994)
 scene = ExtResource("6_jbvtd")
 viewport_size = Vector2(1280, 720)
 
 [node name="Viewport2Din3D2" parent="GameController" instance=ExtResource("5_walll")]
-transform = Transform3D(1.76448, -4.12956e-08, -6.21701e-08, -5.05824e-08, 1.34339, 0.387436, -1.71511e-07, -0.821042, 0.633926, 1.99188, 1.17019, 6.42807)
+transform = Transform3D(1.76448, -4.12956e-08, -6.21701e-08, -5.05824e-08, 1.34339, 0.387436, -1.71511e-07, -0.821042, 0.633926, 1.99188, 1.40293, 6.42807)
 screen_size = Vector2(1, 0.6)
 collision_layer = 5242888
 scene = ExtResource("7_bh4eu")
@@ -799,8 +801,6 @@ viewport_size = Vector2(1280, 720)
 transform = Transform3D(0.855471, 0, 0, 0, 0.783969, 0, 0, 0, 1, -0.0644907, 1.94169, -2.74257)
 scene = ExtResource("23_vdmw2")
 viewport_size = Vector2(1280, 720)
-
-[node name="Viewport2Din3D3" parent="." instance=ExtResource("5_walll")]
 
 [node name="GKSaveSound" parent="." instance=ExtResource("25_ge1wd")]
 

@@ -39,10 +39,10 @@ func checkball(body):
 	elif name == "playerarea":
 		ball = body
 		#print("Entered ball")
-		if body.name == "curve":
+		if body.name == "gravity":
 			Global.score += 1
 			Global.saves += 1
-			Global.time += 50
+			Global.time += 25
 			body.name = "balls"
 			Global.GK_save = true
 			await get_tree().create_timer(0.01).timeout

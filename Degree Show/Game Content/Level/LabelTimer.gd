@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 			if Global.timereset == true:
 				time_elapsed = 0.0
 				Global.timereset = false
-	
-		
+	if Global.startgame == false:
+		time_elapsed = 0.0
 		
 func reset() -> void:
 	time_elapsed = 0.0
