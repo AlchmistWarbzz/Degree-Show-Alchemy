@@ -48,7 +48,7 @@ func checkball(body):
 			body.name = "balls"
 			Global.GK_save = true
 			Global.save_sound = true
-			await get_tree().create_timer(0.01).timeout
+			await get_tree().create_timer(0.05).timeout
 			Global.save_sound = false
 		else:
 			Global.score += 1
@@ -56,6 +56,9 @@ func checkball(body):
 			Global.time += 20
 			body.name = "balls"
 			Global.GK_save = true
+			Global.save_sound = true
+			await get_tree().create_timer(0.05).timeout
+			Global.save_sound = false
 			
 		var direction = global_transform.origin - ball.global_transform.origin
 		# Reflect the ball's velocity around the normal of the collision surface
