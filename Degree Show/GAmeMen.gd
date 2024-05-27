@@ -19,7 +19,9 @@ func _process(delta):
 
 func _on_button_pressed():
 	Global.gameover = false
+	Global.countdown = true
 	await get_tree().create_timer(3).timeout
+	Global.countdown = false
 	Global.startgame = true
 	Global.goals = 0
 	Global.saves = 0

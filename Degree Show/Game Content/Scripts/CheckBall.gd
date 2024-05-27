@@ -36,6 +36,7 @@ func checkball(body):
 		Global.score -= 1
 		Global.goals += 1
 		body.name = "balls"
+		Global.GK_miss = true
 	elif name == "playerarea":
 		ball = body
 		#print("Entered ball")
@@ -46,13 +47,12 @@ func checkball(body):
 			Global.time += 25
 			body.name = "balls"
 			Global.GK_save = true
-			await get_tree().create_timer(0.01).timeout
-			Global.GK_save = false
 		else:
 			Global.score += 1
 			Global.saves += 1
 			Global.time += 20
 			body.name = "balls"
+			Global.GK_save = true
 			
 		var direction = global_transform.origin - ball.global_transform.origin
 		# Reflect the ball's velocity around the normal of the collision surface

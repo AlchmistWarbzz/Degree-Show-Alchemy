@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		if Global.startgame == true:
 			if Global.timereset == false:
 				time_elapsed += delta
-				self.text = str("Time :",time_elapsed).pad_decimals(0)
+				self.text = str("Time: ",time_elapsed).pad_decimals(0)
 			if Global.timereset == true:
 				time_elapsed = 0.0
 				Global.timereset = false
