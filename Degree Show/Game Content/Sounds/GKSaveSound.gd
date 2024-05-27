@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Global.GK_save == true:
+	if Global.save_sound == true:
 		$AudioStreamPlayer3D.play()

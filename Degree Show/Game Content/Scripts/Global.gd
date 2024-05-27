@@ -13,6 +13,7 @@ var next_ball
 var GK_save = false
 var GK_miss = false
 var ball_sound = false
+var save_sound = false
 var countdown = false
 # Called when the node enters the scene tree for the first time.
 func _ready():

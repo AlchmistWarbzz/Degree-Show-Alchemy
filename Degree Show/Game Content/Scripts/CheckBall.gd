@@ -47,6 +47,9 @@ func checkball(body):
 			Global.time += 25
 			body.name = "balls"
 			Global.GK_save = true
+			Global.save_sound = true
+			await get_tree().create_timer(0.01).timeout
+			Global.save_sound = false
 		else:
 			Global.score += 1
 			Global.saves += 1
