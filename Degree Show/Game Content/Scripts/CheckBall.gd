@@ -39,6 +39,7 @@ func checkball(body):
 	elif name == "playerarea":
 		ball = body
 		#print("Entered ball")
+		Input.vibrate_handheld(500)
 		if body.name == "gravity":
 			Global.score += 1
 			Global.saves += 1
@@ -52,6 +53,7 @@ func checkball(body):
 			Global.saves += 1
 			Global.time += 20
 			body.name = "balls"
+			
 		var direction = global_transform.origin - ball.global_transform.origin
 		# Reflect the ball's velocity around the normal of the collision surface
 		var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())

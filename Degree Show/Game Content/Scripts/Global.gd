@@ -22,6 +22,4 @@ func _process(delta):
 	if time < 0:
 		startgame = false
 		gameover = true
-	
-
 

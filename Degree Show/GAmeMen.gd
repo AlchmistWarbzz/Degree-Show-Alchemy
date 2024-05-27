@@ -3,7 +3,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	Global.gameover = true
 	 # Replace with function body.
 
 
@@ -11,14 +11,16 @@ func _ready():
 func _process(delta):
 	if Global.gameover == true:
 		self.visible = true
-		 
-	
+		Global.time = 100
+	if Global.gameover == false:
+		self.visible = false 
+		Global.timereset = false
+		
 
 func _on_button_pressed():
-	Global.startgame = true
 	Global.gameover = false
-	self.visible = false
-	Global.time = 100
+	await get_tree().create_timer(3).timeout
+	Global.startgame = true
 	Global.goals = 0
 	Global.saves = 0
 	Global.timereset = true

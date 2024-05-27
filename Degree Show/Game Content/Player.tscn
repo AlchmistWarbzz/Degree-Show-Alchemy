@@ -29,6 +29,7 @@ tracker = &"left_hand"
 transform = Transform3D(0.999783, 0.0208203, 0, -0.0208203, 0.999783, 0, 0, 0, 1, -0.024955, -0.0506546, 0.14668)
 
 [node name="MovementDirect" parent="XROrigin3D/LeftHand" instance=ExtResource("7_85bgq")]
+max_speed = 1.0
 strafe = true
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
