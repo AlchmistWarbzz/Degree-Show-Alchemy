@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://bfjiboeairj5l" path="res://Game Content/Assets/ModularKit/New model/Modkit_Wall_L.res" id="11_p2bne"]
 [ext_resource type="ArrayMesh" uid="uid://b17rpi3dnii6m" path="res://Game Content/Assets/ModularKit/New model/Modkit_Window.res" id="12_nnifb"]
-[ext_resource type="Texture2D" uid="uid://b3my3bl6a2d5m" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
+[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://csr3thsgaxn03" path="res://Game Content/Assets/ModularKit/New model/Modkit_Goal.res" id="13_cehqg"]
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="13_uvo44"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="14_my4n2"]
@@ -26,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://cb33rojt1cakx" path="res://Game Content/UI/BallTypes.tscn" id="23_vdmw2"]
 [ext_resource type="PackedScene" uid="uid://d3qitgxcyhre5" path="res://Game Content/Sounds/GKSaveSound.tscn" id="25_ge1wd"]
 [ext_resource type="PackedScene" uid="uid://f223pdu1mefe" path="res://Game Content/Sounds/SpawnBallSound.tscn" id="26_b6631"]
-[ext_resource type="PackedScene" uid="uid://cj6qwvwjy3of1" path="res://Saves&Misses.tscn" id="27_j7664"]
-[ext_resource type="PackedScene" uid="uid://c8incou8pqmmm" path="res://Game Content/UI/Countdown.tscn" id="28_b65xy"]
+[ext_resource type="PackedScene" uid="uid://bvn8w0ahakosr" path="res://Saves&Misses.tscn" id="27_j7664"]
+[ext_resource type="PackedScene" path="res://Game Content/UI/Countdown.tscn" id="28_b65xy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
 size = Vector3(4.00089, 3.613, 0.622)
@@ -108,7 +108,7 @@ points = PackedVector3Array(0, -1, 0, 0, 0, 0, 4, -1, 0, 0, -1, 3.99995, 0, 0, 3
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_syu2w"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="GameController" type="Node" parent="." groups=["Player"]]
 
@@ -802,11 +802,13 @@ viewport_size = Vector2(1280, 720)
 
 [node name="Viewport2Din3D3" parent="." instance=ExtResource("5_walll")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20741, 2.94498, -2.02287)
+collision_layer = 5242880
 scene = ExtResource("27_j7664")
 viewport_size = Vector2(1280, 720)
 
 [node name="Viewport2Din3D4" parent="." instance=ExtResource("5_walll")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 1.98748, 2.45587, 4.57229)
+collision_layer = 5242880
 scene = ExtResource("28_b65xy")
 viewport_size = Vector2(1280, 720)
 
