@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crokhlqjmoow0"]
 
-[ext_resource type="Texture2D" uid="uid://3rbouyejc3k" path="res://Game Content/UI/SciFiScreen_BySOULDraws.png" id="1_o4rua"]
-[ext_resource type="Script" path="res://Game Content/Level/TimeBar.gd" id="3_g3ekn"]
+[ext_resource type="Texture2D" uid="uid://eawjx5spsmsh" path="res://Game Content/UI/SciFiScreen_BySOULDraws.png" id="1_o4rua"]
+[ext_resource type="Script" path="res://Game Content/Scripts/TimeBar.gd" id="3_g3ekn"]
 
 [node name="Score" type="Control"]
 layout_mode = 3

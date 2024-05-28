@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://e1xvghmd53qr"]
-
-[ext_resource type="PackedScene" uid="uid://cp6urv78o8ujk" path="res://Import GLTF/Gravity.gltf" id="1_mkc1d"]
-[ext_resource type="Material" uid="uid://mvs46v5752th" path="res://Game Content/Materials/BallEmissive2.tres" id="2_n52ll"]
-
-[node name="Gravity" instance=ExtResource("1_mkc1d")]
-
-[node name="Ball" parent="." index="0"]
-surface_material_override/3 = ExtResource("2_n52ll")
