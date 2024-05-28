@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=13 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
@@ -14,6 +14,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8q7k7"]
 size = Vector3(0.425, 1, 0.24)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mtnsw"]
+radius = 0.185
+
 [node name="Player" type="Node3D"]
 script = ExtResource("1_nf6al")
 
@@ -23,15 +26,18 @@ script = ExtResource("1_nf6al")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 script = ExtResource("2_ry12l")
 
-[node name="playerarea2" parent="XROrigin3D/XRCamera3D" instance=ExtResource("4_8p8eq")]
-transform = Transform3D(1.355, 0, 0, 0, 1.355, 0, 0, 0, 1.355, 0, 0, 0.166744)
-
 [node name="Area3D" type="Area3D" parent="XROrigin3D/XRCamera3D"]
 script = ExtResource("4_lcsh3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.548373, 0)
 shape = SubResource("BoxShape3D_8q7k7")
+
+[node name="Area3D2" type="Area3D" parent="XROrigin3D/XRCamera3D"]
+script = ExtResource("4_lcsh3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D2"]
+shape = SubResource("SphereShape3D_mtnsw")
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
