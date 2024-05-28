@@ -5,7 +5,7 @@ var score = 0
 var highest_score = 0
 var player_pos
 # Access the controller
-var input_controller = null
+var input_controller = null 
 var scored:bool 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,7 +42,9 @@ func checkball(body):
 		ball = body
 		#print("Entered ball")
 		Input.vibrate_handheld(500)
+		# Checks if the ball has scored 
 		if scored == false:
+			#adds score, saves and time
 			if body.name == "gravity":
 				score_system(1, 1, 25)
 			elif body.name == "curve":
@@ -51,18 +53,24 @@ func checkball(body):
 				score_system(1, 1, 25)
 			elif body.name == "ball":
 				score_system(1, 1, 20)
+		# Set scored bool to true
 		scored = true
+		# Activates deflect code
 		deflect()
+		# 2 second delay then set scored to false 
 		await get_tree().create_timer(2).timeout
 		scored = false
+	
 	# Trigger vibration
 		if input_controller:
 			input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
+	# Check to see if the ball has enter the goal
 	elif name == "Goal":
-		#ball.set_physics_process(false)
+		# Deletes the ball
 		ball.queue_free()
-		print("hit")
-	
+		#print("hit")
+
+# Score system code
 func score_system(score, save, time):
 	Global.score += score
 	Global.saves += save
@@ -72,6 +80,7 @@ func score_system(score, save, time):
 	await get_tree().create_timer(0.02).timeout
 	Global.save_sound = false
 
+#Deflect code
 func deflect():
 	var direction = global_transform.origin - ball.global_transform.origin
 # Reflect the ball's velocity around the normal of the collision surface
