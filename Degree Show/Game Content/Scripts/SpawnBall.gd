@@ -56,7 +56,7 @@ func _process(_delta):
 	spawn_timer_elapsed += _delta
 	Global.next_ball = ball_instances
 	# Print the next ball type
-	print("Next ball node: ", ball_scene_names.get(ball_instances, "Unknown Ball"))
+	#print("Next ball node: ", ball_scene_names.get(ball_instances, "Unknown Ball"))
 	if Global.startgame == false:
 		reset_angle()
 		first_ball()
@@ -92,7 +92,7 @@ func select_next_ball():
 			ball_instances = speed_scene
 		else:
 			ball_instances = gravity_scene
-		print("Selected ball type: ", ball_instances)
+		#print("Selected ball type: ", ball_instances)
 		return ball_instances
 func first_ball():
 	ball_instances = normal_scene
@@ -138,7 +138,7 @@ func gravity(Gmin, Gmax):
 		height_offset = randf_range(0.1, 0.2)
 		speed_offset = randf_range(0.6, 0.7)
 	ball_instance.gravity_scale = gravity_scale
-	print("gravity ", gravity) 
+	#print("gravity ", gravity) 
 	return height_offset
 func aim_towrad_player():
 	var launch_position = player_pos + launch_offset
@@ -171,5 +171,5 @@ func set_angle(Amin, Amax, emin, emax):
 	return launch_offset
 
 func setheight(offset):
-	player_height = Global.player_height + randf_range(0.4, 0.55) + offset
+	player_height = Global.player_height + randf_range(0.5, 0.55) + offset
 	return player_height
