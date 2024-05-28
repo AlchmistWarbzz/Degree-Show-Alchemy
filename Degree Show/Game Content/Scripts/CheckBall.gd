@@ -6,9 +6,10 @@ var highest_score = 0
 var player_pos
 # Access the controller
 var input_controller = null
-var scored:bool
+var scored:bool 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	scored = false
 	# Access the input controller
 	if Engine.has_singleton("OVRInput"):
 		input_controller = Engine.get_singleton("OVRInput")
@@ -41,7 +42,7 @@ func checkball(body):
 		ball = body
 		#print("Entered ball")
 		Input.vibrate_handheld(500)
-		if score == false:
+		if scored == false:
 			if body.name == "gravity":
 				score_system(1, 1, 25)
 			elif body.name == "curve":
@@ -52,7 +53,8 @@ func checkball(body):
 				score_system(1, 1, 20)
 		scored = true
 		deflect()
-
+		await get_tree().create_timer(2).timeout
+		scored = false
 	# Trigger vibration
 		if input_controller:
 			input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
