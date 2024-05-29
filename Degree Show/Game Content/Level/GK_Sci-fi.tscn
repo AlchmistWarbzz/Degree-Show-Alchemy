@@ -682,9 +682,4 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.9860
 scene = ExtResource("28_ouehc")
 viewport_size = Vector2(1280, 720)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85924, 1.4995, 8.68738)
-current = true
-fov = 120.0
-
 [connection signal="body_entered" from="GameController/missed" to="GameController/missed" method="_on_body_entered"]
