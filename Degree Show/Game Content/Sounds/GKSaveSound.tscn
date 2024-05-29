@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3qitgxcyhre5"]
 
 [ext_resource type="Script" path="res://Game Content/Sounds/GKSaveSound.gd" id="1_em7xo"]
-[ext_resource type="AudioStream" uid="uid://bnojukv6cjbr2" path="res://Game Content/Sounds/zapsplat_sport_football_soccer_ball_slightly_flat_defalted_set_down_concrete_101829.mp3" id="2_m4uc2"]
-[ext_resource type="AudioStream" uid="uid://8l5266ts1l47" path="res://Game Content/Sounds/Save.mp3" id="3_cexmm"]
-[ext_resource type="AudioStream" uid="uid://4x35moo50brb" path="res://Game Content/Sounds/Game Over.mp3" id="4_bcv7m"]
-[ext_resource type="AudioStream" uid="uid://biaa4la4hk7c5" path="res://Game Content/Sounds/Cosmic_Love_-_Bruno_E..mp3" id="5_ywbg1"]
-[ext_resource type="AudioStream" uid="uid://dqj7ynob1v0u1" path="res://Game Content/Sounds/Ambience.mp3" id="6_h7kwt"]
+[ext_resource type="AudioStream" uid="uid://dur3o0l8pini1" path="res://Game Content/Sounds/zapsplat_sport_football_soccer_ball_slightly_flat_defalted_set_down_concrete_101829.mp3" id="2_m4uc2"]
+[ext_resource type="AudioStream" uid="uid://b72w6o3wnnnfj" path="res://Game Content/Sounds/Save.mp3" id="3_cexmm"]
+[ext_resource type="AudioStream" uid="uid://itoy42i1pdp5" path="res://Game Content/Sounds/Game Over.mp3" id="4_bcv7m"]
+[ext_resource type="AudioStream" uid="uid://cb52a02rfqyrb" path="res://Game Content/Sounds/Cosmic_Love_-_Bruno_E..mp3" id="5_ywbg1"]
+[ext_resource type="AudioStream" uid="uid://buqpjsoa1nd5v" path="res://Game Content/Sounds/Ambience.mp3" id="6_h7kwt"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_em7xo")

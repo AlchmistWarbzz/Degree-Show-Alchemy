@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://diformlhwutr5"]
+
+[ext_resource type="Script" path="res://Game Content/Scripts/crowd_side.gd" id="1_xrn3w"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_syu2w"]
+
+[node name="CrowdSide" type="Node3D"]
+transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, 8.27566, 2.37102, -1.56169)
+script = ExtResource("1_xrn3w")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204581, 0, 1.22734)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0286303, 0.193163, 2.44428)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0286298, 0.0646958, 3.83928)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175787, 0.0646958, 5.4159)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434998, -0.0813463, 6.79871)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16537, 0.0748537, 8.27362)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.56754, -1.23786, 8.47478)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.36296, -1.23786, 7.24744)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.53891, -1.0447, 6.03051)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.53891, -1.17316, 4.63551)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.39175, -1.17316, 3.05889)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.13254, -1.31921, 1.67607)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.40217, -1.16301, 0.201167)
+mesh = SubResource("CapsuleMesh_syu2w")
+skeleton = NodePath("../..")
