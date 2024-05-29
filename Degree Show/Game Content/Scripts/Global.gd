@@ -20,12 +20,8 @@ var speed_ball = false
 var glide_ball = false
 var rebound_ball = false
 
-
-
 signal ball_saved
-
-
-
+signal crowd_cheer
 
 
 # Called when the node enters the scene tree for the first time.
