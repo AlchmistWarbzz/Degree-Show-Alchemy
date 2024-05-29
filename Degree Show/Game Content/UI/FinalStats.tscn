@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgswnf5ukk4we"]
 
-[ext_resource type="Texture2D" uid="uid://b2t1emnluqbuy" path="res://Game Content/UI/ScoreScreen_BySOULDraws.png" id="1_33r3y"]
-[ext_resource type="Script" path="res://Game Content/Level/LabelTimer.gd" id="1_208wq"]
-[ext_resource type="Script" path="res://Game Content/Level/LabelSaves.gd" id="2_wclmd"]
-[ext_resource type="Script" path="res://Game Content/Level/LabelGoals.gd" id="3_1re17"]
+[ext_resource type="Texture2D" uid="uid://dknrcjo5gif1m" path="res://Game Content/UI/ScoreScreen_BySOULDraws.png" id="1_33r3y"]
+[ext_resource type="Script" path="res://Game Content/Scripts/LabelTimer.gd" id="1_208wq"]
+[ext_resource type="Script" path="res://Game Content/Scripts/LabelSaves.gd" id="2_wclmd"]
+[ext_resource type="Script" path="res://Game Content/Scripts/LabelGoals.gd" id="3_1re17"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

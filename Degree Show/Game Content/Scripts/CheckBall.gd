@@ -11,8 +11,8 @@ var scored:bool
 func _ready():
 	scored = false
 	# Access the input controller
-	if Engine.has_singleton("OVRInput"):
-		input_controller = Engine.get_singleton("OVRInput")
+	#if Engine.has_singleton("OVRInput"):
+		#input_controller = Engine.get_singleton("OVRInput")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -41,7 +41,7 @@ func checkball(body):
 	elif name == "playerarea":
 		ball = body
 		#print("Entered ball")
-		Input.vibrate_handheld(500)
+		#Input.vibrate_handheld(500)
 		# Checks if the ball has scored 
 		if scored == false:
 			#adds score, saves and time
@@ -54,11 +54,11 @@ func checkball(body):
 			elif body.name == "ball":
 				score_system(1, 1, 20)
 		# Set scored bool to true
+		deflect()
 		scored = true
 		# Activates deflect code
-		deflect()
+		
 		# 2 second delay then set scored to false 
-		await get_tree().create_timer(2).timeout
 		scored = false
 	
 	# Trigger vibration
