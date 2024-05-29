@@ -27,6 +27,7 @@ var speed
 var current_min_angle:float
 var current_max_angle:float
 var ball_array
+var SaveSound = "res://Game Content/Sounds/GKSaveSound.gd"
 
 func _ready():
 	# Set heigh offset to 0
@@ -100,12 +101,14 @@ func spawn_ball():
 		launch_offset = set_angle(current_min_angle, current_max_angle, 90, 99)
 		aim_towrad_player()
 		launch(speed)
+		SaveSound.NormalBall()
 		#print("player height - ", player_height)
 	elif ball_scene == curve_scene:
 		setheight(0)
 		launch_offset = set_angle(45, 140, 48, 135)
 		aim_towrad_player()
 		launch(speed)
+		SaveSound.CurveBall()
 		#print("player height - ", player_height)
 	elif ball_scene == gravity_scene:
 		gravity(0.3, 0.4)
@@ -114,6 +117,7 @@ func spawn_ball():
 		aim_towrad_player()
 		launch(speed * speed_offset)
 		height_offset = 0
+		SaveSound.GravityBall()
 		#print("player height - ", player_height)
 	if ball_scene == speed_scene:
 		setheight(0)
@@ -121,6 +125,7 @@ func spawn_ball():
 		aim_towrad_player()
 		addspeed(1.1, 1.2)
 		launch(speed * speed_offset)
+		SaveSound.SpeedBall()
 		#print("player height - ", player_height)
 	select_next_ball()
 

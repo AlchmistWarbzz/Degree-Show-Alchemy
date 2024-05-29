@@ -3,8 +3,8 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AudioStreamPlayer3D4.play()
-	$AudioStreamPlayer3D5.play() # Replace with function body.
+	$Music.play()
+	$Ambience.play() # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,14 +35,24 @@ func _process(delta):
 		Game_Over()
 		
 func _on_play_ball_sound():
-	$AudioStreamPlayer3D.play()
+	$Saves.play()
 	Global.ball_sound == false
 	
 func _on_play_sound():
-	$AudioStreamPlayer3D2.play()
+	$Cheers.play()
 	Global.save_sound == false
 	
 func Game_Over():
-	$AudioStreamPlayer3D3.play()
+	$Boos.play()
 
-
+func SpeedBall():
+	$"Speed Ball".play()
+	
+func NormalBall():
+	$"Normal Ball".play()
+	
+func GravityBall():
+	$"Glide Ball".play()
+	
+func CurveBall():
+	$"Rebound Ball".play()
