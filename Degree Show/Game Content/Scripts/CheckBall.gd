@@ -47,12 +47,16 @@ func checkball(body):
 			#adds score, saves and time
 		if body.name == "gravity":
 			score_system(1, 1, 25)
+			body.name = "balls"
 		elif body.name == "curve":
 			score_system(1, 1, 30)
+			body.name = "balls"
 		elif body.name == "speed":
 			score_system(1, 1, 25)
+			body.name = "balls"
 		elif body.name == "ball":
 			score_system(1, 1, 20)
+			body.name = "balls"
 		# Set scored bool to true
 		deflect()
 		#scored = true
@@ -79,6 +83,7 @@ func score_system(score, save, time):
 	Global.save_sound = true
 	await get_tree().create_timer(0.02).timeout
 	Global.save_sound = false
+	
 
 #Deflect code
 func deflect():
