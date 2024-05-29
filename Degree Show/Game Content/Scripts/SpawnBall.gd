@@ -125,7 +125,7 @@ func spawn_ball():
 	select_next_ball()
 
 func setheight(offset):
-	player_height = Global.player_height + randf_range(0.5, 0.55) + offset
+	player_height = Global.player_height + randf_range(0.4, 0.55) + offset
 	return player_height
 
 func set_angle(Amin, Amax, emin, emax):
