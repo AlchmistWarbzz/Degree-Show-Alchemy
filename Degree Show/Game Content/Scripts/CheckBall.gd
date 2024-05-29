@@ -81,8 +81,7 @@ func score_system(score, save, time):
 	Global.time += time
 	Global.GK_save = true
 	Global.save_sound = true
-	await get_tree().create_timer(0.02).timeout
-	Global.save_sound = false
+	Global.ball_saved.emit()
 	
 
 #Deflect code

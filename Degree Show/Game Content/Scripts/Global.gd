@@ -20,6 +20,14 @@ var speed_ball = false
 var glide_ball = false
 var rebound_ball = false
 
+
+
+signal ball_saved
+
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
