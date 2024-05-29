@@ -124,21 +124,9 @@ func spawn_ball():
 		#print("player height - ", player_height)
 	select_next_ball()
 
-func setheight(gravity_height):
-	var set_height
-
-	if Global.player_height  < 1.70:
-		set_height = 1.85
-		offset(0.35, 0.4)
-	else:
-		set_height = Global.player_height
-		offset(0.4, 0.5)
-	player_height = set_height + offset + gravity_height
-
-
-func offset(low, min):
-	var offset = randf_range(0.35, 0.5)
-	return offset
+func setheight(offset):
+	player_height = Global.player_height + randf_range(0.4, 0.55) + offset
+	return player_height
 
 func set_angle(Amin, Amax, emin, emax):
 	min_angle = deg_to_rad(Amin)  # Minimum angle in radians
