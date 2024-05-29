@@ -11,6 +11,8 @@ var ball
 		#var max_angle = deg_to_rad(105)  # Maximum angle in radians
 		#var angle = randf_range(min_angle, max_angle)
 		#ball.set_linear_velocity(-ball.get_linear_velocity() + angle)
+
+
 func _on_body_entered(body):
 	#print("has worked")
 	if body is RigidBody3D:

@@ -9,8 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Global.save_sound == true:
-		_on_play_save_sound()
+	if Global.ball_sound == true:
+		_on_play_ball_sound()
 	if Global.saves == 9:
 		_on_play_sound()
 	if Global.saves == 19:
@@ -34,12 +34,13 @@ func _process(delta):
 	if Global.gameover == false:
 		Game_Over()
 		
-func _on_play_save_sound():
+func _on_play_ball_sound():
 	$AudioStreamPlayer3D.play()
+	Global.ball_sound == false
 	
 func _on_play_sound():
 	$AudioStreamPlayer3D2.play()
-	Global.savesound == false
+	Global.save_sound == false
 	
 func Game_Over():
 	$AudioStreamPlayer3D3.play()
