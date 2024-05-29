@@ -43,23 +43,24 @@ func checkball(body):
 		#print("Entered ball")
 		#Input.vibrate_handheld(500)
 		# Checks if the ball has scored 
-		if scored == false:
+		#if scored == false:
 			#adds score, saves and time
-			if body.name == "gravity":
-				score_system(1, 1, 25)
-			elif body.name == "curve":
-				score_system(1, 1, 30)
-			elif body.name == "speed":
-				score_system(1, 1, 25)
-			elif body.name == "ball":
-				score_system(1, 1, 20)
+		
+		if body.name == "gravity":
+			score_system(1, 1, 25)
+		elif body.name == "curve":
+			score_system(1, 1, 30)
+		elif body.name == "speed":
+			score_system(1, 1, 25)
+		elif body.name == "ball":
+			score_system(1, 1, 20)
 		# Set scored bool to true
 		deflect()
-		scored = true
+		#scored = true
 		# Activates deflect code
 		
 		# 2 second delay then set scored to false 
-		scored = false
+		#scored = false
 	
 	# Trigger vibration
 		if input_controller:
