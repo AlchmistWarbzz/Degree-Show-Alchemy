@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://t2g1ud48u5in"]
+[gd_scene load_steps=54 format=3 uid="uid://t2g1ud48u5in"]
 
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_0r2yx"]
 [ext_resource type="PackedScene" uid="uid://cptxo88fdy80i" path="res://Game Content/Scripts/SubScenes/no_aim.tscn" id="4_y1v0d"]
@@ -7,12 +7,11 @@
 [ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="5_x4qth"]
 [ext_resource type="PackedScene" uid="uid://crokhlqjmoow0" path="res://Game Content/Level/Score.tscn" id="6_jbvtd"]
 [ext_resource type="PackedScene" uid="uid://cqasb7iimw3a8" path="res://Game Content/Level/StartGameMenu.tscn" id="7_bh4eu"]
-[ext_resource type="Script" path="res://Game Content/Level/wall_colour.gd" id="9_btunw"]
+[ext_resource type="Script" path="res://Game Content/Scripts/wall_colour.gd" id="9_btunw"]
 [ext_resource type="ArrayMesh" uid="uid://cfiax3h2vj1q" path="res://Game Content/Assets/ModularKit/New model/Modkit_Bridge.res" id="9_nqqyu"]
-[ext_resource type="Script" path="res://Game Content/Level/Saves.gd" id="11_4d2th"]
+[ext_resource type="Script" path="res://Game Content/Scripts/Saves.gd" id="11_4d2th"]
 [ext_resource type="ArrayMesh" uid="uid://bfjiboeairj5l" path="res://Game Content/Assets/ModularKit/New model/Modkit_Wall_L.res" id="11_p2bne"]
 [ext_resource type="ArrayMesh" uid="uid://b17rpi3dnii6m" path="res://Game Content/Assets/ModularKit/New model/Modkit_Window.res" id="12_nnifb"]
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="12_xxstv"]
 [ext_resource type="ArrayMesh" uid="uid://csr3thsgaxn03" path="res://Game Content/Assets/ModularKit/New model/Modkit_Goal.res" id="13_cehqg"]
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="13_uvo44"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="14_my4n2"]
@@ -26,21 +25,20 @@
 [ext_resource type="PackedScene" uid="uid://cb33rojt1cakx" path="res://Game Content/UI/BallTypes.tscn" id="23_vdmw2"]
 [ext_resource type="PackedScene" uid="uid://d3qitgxcyhre5" path="res://Game Content/Sounds/GKSaveSound.tscn" id="25_ge1wd"]
 [ext_resource type="PackedScene" uid="uid://f223pdu1mefe" path="res://Game Content/Sounds/SpawnBallSound.tscn" id="26_b6631"]
-[ext_resource type="PackedScene" uid="uid://bvn8w0ahakosr" path="res://Saves&Misses.tscn" id="27_j7664"]
-[ext_resource type="PackedScene" path="res://Game Content/UI/Countdown.tscn" id="28_b65xy"]
+[ext_resource type="PackedScene" uid="uid://bvn8w0ahakosr" path="res://Game Content/Scripts/SubScenes/Saves&Misses.tscn" id="27_j7664"]
+[ext_resource type="PackedScene" uid="uid://c8incou8pqmmm" path="res://Game Content/UI/Countdown.tscn" id="28_b65xy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmuwd"]
 size = Vector3(4.00089, 3.613, 0.622)
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1cdgx"]
-panorama = ExtResource("12_xxstv")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bgm82"]
 
-[sub_resource type="Sky" id="Sky_jvq5j"]
-sky_material = SubResource("PanoramaSkyMaterial_1cdgx")
+[sub_resource type="Sky" id="Sky_uxx3p"]
+sky_material = SubResource("ProceduralSkyMaterial_bgm82")
 
 [sub_resource type="Environment" id="Environment_3jbm2"]
 background_mode = 2
-sky = SubResource("Sky_jvq5j")
+sky = SubResource("Sky_uxx3p")
 sdfgi_bounce_feedback = 0.81
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kvrc2"]
