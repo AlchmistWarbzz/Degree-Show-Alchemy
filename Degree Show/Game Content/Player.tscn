@@ -26,17 +26,17 @@ script = ExtResource("1_nf6al")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 script = ExtResource("2_ry12l")
 
-[node name="Area3D" type="Area3D" parent="XROrigin3D/XRCamera3D"]
+[node name="playerarea" type="Area3D" parent="XROrigin3D/XRCamera3D"]
 script = ExtResource("4_lcsh3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/playerarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.548373, 0)
 shape = SubResource("BoxShape3D_8q7k7")
 
-[node name="Area3D2" type="Area3D" parent="XROrigin3D/XRCamera3D"]
+[node name="playerarea2" type="Area3D" parent="XROrigin3D/XRCamera3D"]
 script = ExtResource("4_lcsh3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/playerarea2"]
 shape = SubResource("SphereShape3D_mtnsw")
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
@@ -69,3 +69,6 @@ laser_length = 1
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
 enabled = false
+
+[connection signal="body_entered" from="XROrigin3D/XRCamera3D/playerarea" to="XROrigin3D/XRCamera3D/playerarea" method="_on_body_entered"]
+[connection signal="body_entered" from="XROrigin3D/XRCamera3D/playerarea2" to="XROrigin3D/XRCamera3D/playerarea2" method="_on_body_entered"]
