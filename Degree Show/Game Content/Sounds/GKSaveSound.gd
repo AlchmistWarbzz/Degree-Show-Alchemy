@@ -44,11 +44,11 @@ func _process(delta):
 
 func _on_play_ball_sound():
 	$Saves.play()
-	#Global.ball_sound == false
+	Global.ball_sound = false
 	
 func _on_play_sound():
 	$Cheers.play()
-	Global.save_sound == false
+	Global.save_sound = false
 	
 func Game_Over():
 	$Boos.play()
