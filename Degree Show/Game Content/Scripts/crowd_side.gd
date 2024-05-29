@@ -16,8 +16,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (Input.is_action_just_pressed("Enter")):
-		_on_ball_saved()
 	
 	var is_tween_active := false
 	if (cheer_tweens.size() > 0):
