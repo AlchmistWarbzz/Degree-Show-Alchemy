@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bndt6catsod58"]
 
-[ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
+[ext_resource type="Script" path="res://Game Content/Scripts/VRStart2.gd" id="1_cjmls"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
 [ext_resource type="Script" path="res://Game Content/Scripts/GetHeight.gd" id="2_ry12l"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
@@ -16,7 +16,7 @@ radius = 0.33
 height = 1.69155
 
 [node name="Player" type="Node3D"]
-script = ExtResource("1_nf6al")
+script = ExtResource("1_cjmls")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 

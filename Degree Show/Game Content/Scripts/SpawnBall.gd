@@ -125,22 +125,28 @@ func spawn_ball():
 	select_next_ball()
 
 func setheight(gravity_height):
-	player_height = Global.player_height 
-	if player_height <= 1.60:
-		offset(0.45, 0.5)
-	elif player_height > 1.60 and player_height <= 1.70:
+	var set_height
+	if Global.player_height  <= 1.60:
 		offset(0.4, 0.45)
-	elif player_height > 1.70 and player_height <= 1.80:
+		set_height = 1.85
+	elif Global.player_height  > 1.60 and player_height <= 1.70:
+		set_height = 1.85
+		offset(0.4, 0.45)
+	elif Global.player_height  > 1.70 and player_height <= 1.80:
+		set_height = 1.85
 		offset(0.35, 0.4)
-	elif player_height > 1.80 and player_height <= 1.90:
-		offset(0.35, 0.5)
-	elif player_height > 1.90 and player_height <= 2.00:
-		offset(0.35, 0.5)
-	elif player_height > 2.00 and player_height <= 2.10:
+	elif Global.player_height  > 1.80 and player_height <= 1.90:
+		set_height = 1.87
+		offset(0.4, 0.5)
+	elif Global.player_height  > 1.90 and player_height <= 2.00:
+		set_height = 1.94
+		offset(0.4, 0.5)
+	elif Global.player_height  > 2.00 and player_height <= 2.10:
+		set_height = 2
 		offset(0.55, 0.65)
-	elif player_height > 2.10 and player_height <= 2.20:
+	elif Global.player_height  > 2.10 and player_height <= 2.20:
 		offset(0.60, 0.70)
-	player_height = player_height + offset + gravity_height
+	player_height = set_height + offset + gravity_height
 
 
 func offset(low, min):
