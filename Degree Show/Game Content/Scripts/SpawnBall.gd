@@ -27,6 +27,7 @@ var speed
 var current_min_angle:float
 var current_max_angle:float
 var ball_array
+var SaveSound
 
 func _ready():
 	# Set heigh offset to 0
@@ -38,6 +39,7 @@ func _ready():
 	gravity_scene = preload("res://Game Content/Scripts/SubScenes/gravity.tscn")
 	curve_scene = preload("res://Game Content/Scripts/SubScenes/curve.tscn")
 	speed_scene = preload("res://Game Content/Scripts/SubScenes/speed.tscn")
+	SaveSound = ("res://Game Content/Sounds/GKSaveSound.gd")
 	
 	# Gets Raycast node
 	raycast = get_node("RayCast3D")
@@ -100,12 +102,14 @@ func spawn_ball():
 		launch_offset = set_angle(current_min_angle, current_max_angle, 90, 99)
 		aim_towrad_player()
 		launch(speed)
+		Global.normal_ball = true
 		#print("player height - ", player_height)
 	elif ball_scene == curve_scene:
 		setheight(0)
 		launch_offset = set_angle(45, 140, 48, 135)
 		aim_towrad_player()
 		launch(speed)
+		Global.rebound_ball = true
 		#print("player height - ", player_height)
 	elif ball_scene == gravity_scene:
 		gravity(0.3, 0.4)
@@ -114,6 +118,7 @@ func spawn_ball():
 		aim_towrad_player()
 		launch(speed * speed_offset)
 		height_offset = 0
+		Global.glide_ball = true
 		#print("player height - ", player_height)
 	if ball_scene == speed_scene:
 		setheight(0)
@@ -121,6 +126,7 @@ func spawn_ball():
 		aim_towrad_player()
 		addspeed(1.1, 1.2)
 		launch(speed * speed_offset)
+		Global.speed_ball = true
 		#print("player height - ", player_height)
 	select_next_ball()
 
