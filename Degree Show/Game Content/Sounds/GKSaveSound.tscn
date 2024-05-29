@@ -16,31 +16,37 @@ script = ExtResource("1_em7xo")
 
 [node name="Saves" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_m4uc2")
-volume_db = 13.837
+volume_db = 20.0
 
 [node name="Cheers" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_cexmm")
+volume_db = -10.0
 
 [node name="Boos" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_bcv7m")
 attenuation_model = 1
+volume_db = -15.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ywbg1")
-volume_db = -17.545
+volume_db = -5.0
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_h7kwt")
-volume_db = -16.434
+volume_db = -12.0
 
 [node name="Normal Ball" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_8ng1j")
+volume_db = -15.0
 
 [node name="Speed Ball" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_pjg8e")
+volume_db = 5.0
 
 [node name="Glide Ball" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_e3xs5")
+volume_db = -15.0
 
 [node name="Rebound Ball" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_it88e")
+volume_db = -15.0

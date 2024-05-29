@@ -33,10 +33,18 @@ func _process(delta):
 		_on_play_sound()
 	if Global.gameover == false:
 		Game_Over()
-		
+	if Global.normal_ball == true:
+		NormalBall()
+	if Global.speed_ball == true:
+		SpeedBall()
+	if Global.glide_ball == true:
+		GlideBall()
+	if Global.rebound_ball == true:
+		ReboundBall()
+
 func _on_play_ball_sound():
 	$Saves.play()
-	Global.ball_sound == false
+	#Global.ball_sound == false
 	
 func _on_play_sound():
 	$Cheers.play()
@@ -47,12 +55,16 @@ func Game_Over():
 
 func SpeedBall():
 	$"Speed Ball".play()
+	Global.speed_ball = false
 	
 func NormalBall():
 	$"Normal Ball".play()
+	Global.normal_ball = false
 	
-func GravityBall():
+func GlideBall():
 	$"Glide Ball".play()
+	Global.glide_ball = false
 	
-func CurveBall():
+func ReboundBall():
 	$"Rebound Ball".play()
+	Global.rebound_ball = false

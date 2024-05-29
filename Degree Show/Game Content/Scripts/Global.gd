@@ -15,6 +15,10 @@ var GK_miss = false
 var ball_sound = false
 var save_sound = false
 var countdown = false
+var normal_ball = false
+var speed_ball = false
+var glide_ball = false
+var rebound_ball = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
