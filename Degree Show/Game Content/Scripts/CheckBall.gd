@@ -92,3 +92,4 @@ func deflect():
 	var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())
 		# Apply the reflected velocity to the ball
 	ball.set_linear_velocity(reflection * ball.linear_velocity.length())
+	ball.mass = 1
