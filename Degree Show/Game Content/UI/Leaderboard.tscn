@@ -1,0 +1,159 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbkj3xwj4podu"]
+
+[ext_resource type="Texture2D" uid="uid://3rbouyejc3k" path="res://Game Content/UI/SciFiScreen_BySOULDraws.png" id="1_jafea"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.5
+offset_top = 1.0
+offset_right = 358.5
+offset_bottom = 138.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 100
+text = "LEADERBOARD"
+
+[node name="SciFiScreenBySoulDraws" type="Sprite2D" parent="."]
+position = Vector2(573, 374)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_jafea")
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_top = 153.0
+offset_right = -125.0
+offset_bottom = 256.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "TIME
+"
+
+[node name="Time1st" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -276.0
+offset_top = 246.0
+offset_right = -147.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "1st
+"
+
+[node name="Time2nd" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -274.0
+offset_top = 339.0
+offset_right = -127.0
+offset_bottom = 442.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "2nd
+"
+
+[node name="Time3rd" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.0
+offset_top = 433.0
+offset_right = -143.0
+offset_bottom = 536.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "3rd
+"
+
+[node name="Saves" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 106.0
+offset_top = 153.0
+offset_right = 327.0
+offset_bottom = 256.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "SAVES
+"
+
+[node name="Saves1st" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 167.0
+offset_top = 246.0
+offset_right = 296.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "1st
+"
+
+[node name="Saves2nd" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 169.0
+offset_top = 339.0
+offset_right = 316.0
+offset_bottom = 442.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "2nd
+"
+
+[node name="Saves3rd" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 173.0
+offset_top = 433.0
+offset_right = 300.0
+offset_bottom = 536.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 75
+text = "3rd
+"
