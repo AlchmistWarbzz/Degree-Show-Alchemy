@@ -43,27 +43,31 @@ func checkball(body):
 		#print("Entered ball")
 		#Input.vibrate_handheld(500)
 		# Checks if the ball has scored 
-		if scored == false:
+		#if scored == false:
 			#adds score, saves and time
-			if body.name == "gravity":
-				score_system(1, 1, 25)
-			elif body.name == "curve":
-				score_system(1, 1, 30)
-			elif body.name == "speed":
-				score_system(1, 1, 25)
-			elif body.name == "ball":
-				score_system(1, 1, 20)
+		if body.name == "gravity":
+			score_system(1, 1, 25)
+			body.name = "balls"
+		elif body.name == "curve":
+			score_system(1, 1, 30)
+			body.name = "balls"
+		elif body.name == "speed":
+			score_system(1, 1, 25)
+			body.name = "balls"
+		elif body.name == "ball":
+			score_system(1, 1, 20)
+			body.name = "balls"
 		# Set scored bool to true
 		deflect()
-		scored = true
+		#scored = true
 		# Activates deflect code
 		
 		# 2 second delay then set scored to false 
-		scored = false
+		#scored = false
 	
 	# Trigger vibration
-		if input_controller:
-			input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
+		#if input_controller:
+			#input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
 	# Check to see if the ball has enter the goal
 	elif name == "Goal":
 		# Deletes the ball
@@ -79,6 +83,7 @@ func score_system(score, save, time):
 	Global.save_sound = true
 	await get_tree().create_timer(0.02).timeout
 	Global.save_sound = false
+	
 
 #Deflect code
 func deflect():
