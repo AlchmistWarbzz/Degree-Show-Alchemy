@@ -45,7 +45,6 @@ func checkball(body):
 		# Checks if the ball has scored 
 		#if scored == false:
 			#adds score, saves and time
-		
 		if body.name == "gravity":
 			score_system(1, 1, 25)
 		elif body.name == "curve":
@@ -63,8 +62,8 @@ func checkball(body):
 		#scored = false
 	
 	# Trigger vibration
-		if input_controller:
-			input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
+		#if input_controller:
+			#input_controller.triggerHapticPulse(0, 0.5) # Adjust the intensity as needed
 	# Check to see if the ball has enter the goal
 	elif name == "Goal":
 		# Deletes the ball
