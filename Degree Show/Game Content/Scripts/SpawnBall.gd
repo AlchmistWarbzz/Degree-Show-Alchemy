@@ -103,7 +103,7 @@ func spawn_ball():
 		#print("player height - ", player_height)
 	elif ball_scene == curve_scene:
 		setheight(0)
-		launch_offset = set_angle(45, 140, 48, 135)
+		launch_offset = set_angle(40, 145, 45, 140)
 		aim_towrad_player()
 		launch(speed)
 		#print("player height - ", player_height)
