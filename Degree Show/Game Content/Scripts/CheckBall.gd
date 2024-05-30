@@ -47,7 +47,7 @@ func checkball(body):
 			score_system(1, 25)
 			body.name = "balls"
 		elif body.name == "curve":
-			score_system(1, 30)
+			score_system(1, 40)
 			body.name = "balls"
 		elif body.name == "speed":
 			score_system(1, 25)

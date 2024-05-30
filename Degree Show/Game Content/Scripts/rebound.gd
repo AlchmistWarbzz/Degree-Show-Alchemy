@@ -21,7 +21,7 @@ func rebound_to_player():
 	var speed = linear_velocity.length()
 	# Calculate the impulse vector
 	var impulse = player_direction * speed * mass
-	gravity_scale = randf_range(1.5, 2)
+	gravity_scale = randf_range(1.4, 1.7)
 	# Apply the impulse to the ball
 	apply_impulse(Vector3.ZERO, impulse)
 	mass = 1
