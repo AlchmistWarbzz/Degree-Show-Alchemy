@@ -96,6 +96,7 @@ func first_ball():
 
 func spawn_ball():
 	ball_node = ball_scene.instantiate()
+	ball_node.gravity_scale = 0.7
 	# Long If statement to decide what to do depending on which ball the array has chosen
 	if ball_scene == normal_scene:
 		setheight(0) 
@@ -106,7 +107,7 @@ func spawn_ball():
 		#print("player height - ", player_height)
 	elif ball_scene == curve_scene:
 		setheight(0)
-		launch_offset = set_angle(45, 140, 48, 135)
+		launch_offset = set_angle(40, 145, 45, 140)
 		aim_towrad_player()
 		launch(speed)
 		Global.rebound_ball = true
@@ -174,6 +175,7 @@ func gravity(Gmin, Gmax):
 
 
 func launch(speed):
+	ball_node.mass = 0.26
 	add_child(ball_node)
 	ball_node.global_transform.origin = raycast.global_transform.origin
 	ball_node.apply_impulse(speed)

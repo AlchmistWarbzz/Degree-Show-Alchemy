@@ -9,6 +9,7 @@ var hits = 0
 var time = 100
 var time_elapsed:int = 0
 var player_height: float
+var player_pos
 var startgame = false
 var gameover = false
 var timereset = false

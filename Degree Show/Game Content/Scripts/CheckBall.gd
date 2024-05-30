@@ -25,9 +25,10 @@ func _on_body_entered(body):
 			checkball(body)
 		elif body.name == "curve":
 				checkball(body)
-				
-			
-
+		elif body.name == "speed":
+				checkball(body)
+		elif body.name == "gravity":
+				checkball(body)
 func checkball(body):
 	if name == "missed":
 		print("MISSED")
@@ -82,8 +83,10 @@ func score_system(save, time):
 
 #Deflect code
 func deflect():
+	ball.gravity_scale = 1.5
 	var direction = global_transform.origin - ball.global_transform.origin
 # Reflect the ball's velocity around the normal of the collision surface
 	var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())
 		# Apply the reflected velocity to the ball
 	ball.set_linear_velocity(reflection * ball.linear_velocity.length())
+	

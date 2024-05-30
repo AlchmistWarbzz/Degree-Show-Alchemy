@@ -24,6 +24,9 @@ script = ExtResource("1_nf6al")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Node3D" type="Node3D" parent="XROrigin3D/XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.771808)
 script = ExtResource("2_ry12l")
 
 [node name="Area3D" type="Area3D" parent="XROrigin3D/XRCamera3D"]

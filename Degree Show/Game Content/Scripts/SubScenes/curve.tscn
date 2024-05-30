@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhp52ysb3fv6v"]
 
-[ext_resource type="Script" path="res://Game Content/Scripts/Ball.gd" id="1_ivd0o"]
+[ext_resource type="Script" path="res://Game Content/Scripts/rebound.gd" id="1_ur0a3"]
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="2_840ff"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="3_mq2e8"]
 [ext_resource type="Material" uid="uid://bn8hue15ey1jp" path="res://Game Content/Materials/Highlights_colour.tres" id="4_q020q"]
@@ -114,7 +114,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vs0pn")
 
-[node name="ball" type="RigidBody3D"]
+[node name="curve" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 3
 collision_mask = 3
@@ -124,7 +124,7 @@ gravity_scale = 0.7
 continuous_cd = true
 max_contacts_reported = 10
 contact_monitor = true
-script = ExtResource("1_ivd0o")
+script = ExtResource("1_ur0a3")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_ofdhu")
