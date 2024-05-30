@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="2_840ff"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="3_mq2e8"]
 [ext_resource type="Material" uid="uid://bn8hue15ey1jp" path="res://Game Content/Materials/Highlights_colour.tres" id="4_q020q"]
-[ext_resource type="Material" uid="uid://c6d7rl70pswrq" path="res://Game Content/Materials/BallEmissive.tres" id="5_1tvlp"]
+[ext_resource type="Material" path="res://Game Content/Materials/BallEmissive.tres" id="5_1tvlp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hmja0"]
 bounce = 5.0

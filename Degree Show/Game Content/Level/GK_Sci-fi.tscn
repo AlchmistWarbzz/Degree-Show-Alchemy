@@ -679,6 +679,7 @@ viewport_size = Vector2(1280, 720)
 
 [node name="Viewport2Din3D5" parent="." instance=ExtResource("5_walll")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.98601, 1.5698, 9.27786)
+collision_layer = 5242880
 scene = ExtResource("28_ouehc")
 viewport_size = Vector2(1280, 720)
 

@@ -4,8 +4,8 @@
 [ext_resource type="Material" uid="uid://bmsx8cldbncgv" path="res://Game Content/Materials/Main_colour.tres" id="2_mqc3t"]
 [ext_resource type="Material" uid="uid://dqnxckl2gqgya" path="res://Game Content/Materials/Dark_colour.tres" id="3_etmxj"]
 [ext_resource type="Material" uid="uid://bn8hue15ey1jp" path="res://Game Content/Materials/Highlights_colour.tres" id="4_h0o01"]
-[ext_resource type="Material" uid="uid://c6d7rl70pswrq" path="res://Game Content/Materials/BallEmissive.tres" id="5_wr8ec"]
-[ext_resource type="Material" uid="uid://bl8eph1myy8h8" path="res://Game Content/Materials/BallEmissive1.tres" id="6_aq5v4"]
+[ext_resource type="Material" path="res://Game Content/Materials/BallEmissive.tres" id="5_wr8ec"]
+[ext_resource type="Material" path="res://Game Content/Materials/BallEmissive1.tres" id="6_aq5v4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hmja0"]
 bounce = 5.0
@@ -115,7 +115,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j6732")
 
-[node name="ball" type="RigidBody3D"]
+[node name="gravity" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 3
 collision_mask = 3
