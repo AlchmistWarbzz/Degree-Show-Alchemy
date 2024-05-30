@@ -145,6 +145,18 @@ collision_layer = 5242888
 scene = ExtResource("7_bh4eu")
 viewport_size = Vector2(1280, 720)
 
+[node name="Viewport2Din3D5" parent="." instance=ExtResource("5_walll")]
+transform = Transform3D(1, 1.06581e-14, 1.84604e-14, 0, 0.866025, -0.5, -2.13163e-14, 0.5, 0.866025, 1.98601, 2.71452, 5.4913)
+collision_layer = 5242880
+scene = ExtResource("28_ouehc")
+viewport_size = Vector2(1280, 720)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Viewport2Din3D5"]
+transform = Transform3D(1, -2.05899e-14, 5.51706e-15, 1.06581e-14, 0.258819, -0.965926, 1.84604e-14, 0.965926, 0.258819, -0.105293, -0.944075, 0.146732)
+light_energy = 3.0
+spot_range = 2.22607
+spot_angle = 51.0644
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3jbm2")
 
@@ -639,12 +651,6 @@ light_energy = 4.0
 spot_range = 1.80875
 spot_angle = 59.7289
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.258819, -0.965926, 0, 0.965926, -0.258819, 1.98191, 0.517153, 8.72674)
-light_energy = 3.0
-spot_range = 2.22607
-spot_angle = 51.0644
-
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0890665, 0.843127, -2.36122)
 light_energy = 3.0
@@ -675,12 +681,6 @@ viewport_size = Vector2(1280, 720)
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 1.98748, 2.45587, 4.57229)
 collision_layer = 5242880
 scene = ExtResource("28_b65xy")
-viewport_size = Vector2(1280, 720)
-
-[node name="Viewport2Din3D5" parent="." instance=ExtResource("5_walll")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.98601, 1.5698, 9.27786)
-collision_layer = 5242880
-scene = ExtResource("28_ouehc")
 viewport_size = Vector2(1280, 720)
 
 [connection signal="body_entered" from="GameController/missed" to="GameController/missed" method="_on_body_entered"]
