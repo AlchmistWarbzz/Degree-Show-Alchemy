@@ -16,10 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if score > highest_score:
-		highest_score = score
-	elif Global.score < 0:
-		Global.score = 0
+	pass
 
 func _on_body_entered(body):
 	if body is RigidBody3D:
@@ -28,9 +25,10 @@ func _on_body_entered(body):
 			checkball(body)
 		elif body.name == "curve":
 				checkball(body)
-				
-			
-
+		elif body.name == "speed":
+				checkball(body)
+		elif body.name == "gravity":
+				checkball(body)
 func checkball(body):
 	if name == "missed":
 		print("MISSED")
@@ -46,16 +44,16 @@ func checkball(body):
 		#if scored == false:
 			#adds score, saves and time
 		if body.name == "gravity":
-			score_system(1, 1, 25)
+			score_system(1, 25)
 			body.name = "balls"
 		elif body.name == "curve":
-			score_system(1, 1, 30)
+			score_system(1, 30)
 			body.name = "balls"
 		elif body.name == "speed":
-			score_system(1, 1, 25)
+			score_system(1, 25)
 			body.name = "balls"
 		elif body.name == "ball":
-			score_system(1, 1, 20)
+			score_system(1, 20)
 			body.name = "balls"
 		# Set scored bool to true
 		deflect()
@@ -75,8 +73,7 @@ func checkball(body):
 		#print("hit")
 
 # Score system code
-func score_system(score, save, time):
-	Global.score += score
+func score_system(save, time):
 	Global.saves += save
 	Global.time += time
 	Global.GK_save = true
@@ -86,8 +83,10 @@ func score_system(score, save, time):
 
 #Deflect code
 func deflect():
+	ball.gravity_scale = 1.5
 	var direction = global_transform.origin - ball.global_transform.origin
 # Reflect the ball's velocity around the normal of the collision surface
 	var reflection = direction.normalized().reflect(ball.linear_velocity.normalized())
 		# Apply the reflected velocity to the ball
 	ball.set_linear_velocity(reflection * ball.linear_velocity.length())
+	
