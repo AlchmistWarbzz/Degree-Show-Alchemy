@@ -1,4 +1,4 @@
-extends Node3D
+extends XRCamera3D
 
 
 func set_height():
