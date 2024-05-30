@@ -19,6 +19,9 @@ func _process(delta: float) -> void:
 				time_elapsed = 0.0
 				Global.timereset = false
 	if Global.startgame == false:
+		Global.on_gameover.emit()
+		Global.time_elapsed = time_elapsed
+		Global.highest_saves = Global.saves
 		time_elapsed = 0.0
 		
 func reset() -> void:

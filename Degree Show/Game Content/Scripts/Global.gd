@@ -1,10 +1,13 @@
 extends Node
 
-var score = 5
+var highest_saved = 0
+var highest_time = 0
+var highest_saves: int = 0
 var saves = 0
 var goals = 0
 var hits = 0
 var time = 100
+var time_elapsed:int = 0
 var player_height: float
 var startgame = false
 var gameover = false
@@ -23,14 +26,13 @@ var rebound_ball = false
 
 
 signal ball_saved
+signal on_gameover
+signal save_game
+signal load_game
 
 
 
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
