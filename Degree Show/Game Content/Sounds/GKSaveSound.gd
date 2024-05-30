@@ -3,6 +3,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.ball_saved.connect(_on_ball_saved)
 	$Music.play()
 	$Ambience.play() # Replace with function body.
 
@@ -11,6 +12,29 @@ func _ready():
 func _process(delta):
 	if Global.ball_sound == true:
 		_on_play_ball_sound()
+	
+	if Global.gameover == false:
+		Game_Over()
+	if Global.normal_ball == true:
+		NormalBall()
+	if Global.speed_ball == true:
+		SpeedBall()
+	if Global.glide_ball == true:
+		GlideBall()
+	if Global.rebound_ball == true:
+		ReboundBall()
+
+func _on_play_ball_sound():
+	$Saves.play()
+	Global.ball_sound = false
+	
+func _on_play_sound():
+	$Cheers.play()
+	Global.save_sound = false
+	Global.crowd_cheer.emit()
+
+
+func _on_ball_saved():
 	if Global.saves == 9:
 		_on_play_sound()
 	if Global.saves == 19:
@@ -31,26 +55,8 @@ func _process(delta):
 		_on_play_sound()
 	if Global.saves == 99:
 		_on_play_sound()
-	if Global.gameover == false:
-		Game_Over()
-	if Global.normal_ball == true:
-		NormalBall()
-	if Global.speed_ball == true:
-		SpeedBall()
-	if Global.glide_ball == true:
-		GlideBall()
-	if Global.rebound_ball == true:
-		ReboundBall()
 
-func _on_play_ball_sound():
-	$Saves.play()
-	Global.ball_sound = false
-	
-func _on_play_sound():
-	$Cheers.play()
-	Global.save_sound = false
-	Global.crowd_cheer.emit()
-	
+
 func Game_Over():
 	$Boos.play()
 

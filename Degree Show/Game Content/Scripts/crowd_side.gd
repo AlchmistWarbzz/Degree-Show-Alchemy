@@ -26,21 +26,20 @@ func _process(delta):
 			if (tween.is_running()):
 				is_tween_active = true
 		
-		if (not is_tween_active):
+		if (not is_tween_active):# all cheer tweens finished
 			kill_cheer_tweens()
 			create_idle_tweens()
 			is_cheering = false
 
 
 func _on_crowd_cheer():
-	kill_idle_tweens()
-	create_cheer_tweens()
-	is_cheering = true
+	if (not is_cheering):
+		kill_idle_tweens()
+		create_cheer_tweens()
+		is_cheering = true
 
 
 func create_idle_tweens():
-	if (not is_cheering):
-		pass
 	for mesh : Node3D in get_children():
 		var tween = mesh.create_tween()
 		tween.set_loops()# infinite
@@ -60,8 +59,6 @@ func kill_idle_tweens():
 
 
 func create_cheer_tweens():
-	if (is_cheering):
-		pass
 	for mesh : Node3D in get_children():
 		var tween = mesh.create_tween()
 		tween.set_loops(4)
