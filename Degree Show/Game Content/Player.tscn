@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=10 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Game Content/Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
@@ -6,16 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
 [ext_resource type="PackedScene" uid="uid://s41nxn2sv730" path="res://Game Content/Scripts/SubScenes/HandTrigger.tscn" id="4_8p8eq"]
-[ext_resource type="Script" path="res://Game Content/Scripts/CheckBall.gd" id="4_lcsh3"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="7_85bgq"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_cv80x"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="11_u7skv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8q7k7"]
-size = Vector3(0.425, 1, 0.24)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_mtnsw"]
-radius = 0.185
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_nf6al")
@@ -24,23 +17,7 @@ script = ExtResource("1_nf6al")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-
-[node name="Node3D" type="Node3D" parent="XROrigin3D/XRCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.771808)
 script = ExtResource("2_ry12l")
-
-[node name="Area3D" type="Area3D" parent="XROrigin3D/XRCamera3D"]
-script = ExtResource("4_lcsh3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.548373, 0)
-shape = SubResource("BoxShape3D_8q7k7")
-
-[node name="Area3D2" type="Area3D" parent="XROrigin3D/XRCamera3D"]
-script = ExtResource("4_lcsh3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D2"]
-shape = SubResource("SphereShape3D_mtnsw")
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
