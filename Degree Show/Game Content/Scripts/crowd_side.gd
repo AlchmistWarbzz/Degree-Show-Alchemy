@@ -7,6 +7,7 @@ extends Node3D
 
 var idle_tweens : Array[Tween]
 var cheer_tweens : Array[Tween]
+var is_cheering := false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,14 +29,18 @@ func _process(delta):
 		if (not is_tween_active):
 			kill_cheer_tweens()
 			create_idle_tweens()
+			is_cheering = false
 
 
 func _on_crowd_cheer():
 	kill_idle_tweens()
 	create_cheer_tweens()
+	is_cheering = true
 
 
 func create_idle_tweens():
+	if (not is_cheering):
+		pass
 	for mesh : Node3D in get_children():
 		var tween = mesh.create_tween()
 		tween.set_loops()# infinite
@@ -55,6 +60,8 @@ func kill_idle_tweens():
 
 
 func create_cheer_tweens():
+	if (is_cheering):
+		pass
 	for mesh : Node3D in get_children():
 		var tween = mesh.create_tween()
 		tween.set_loops(4)
