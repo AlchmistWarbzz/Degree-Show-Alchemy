@@ -49,6 +49,7 @@ func _on_play_ball_sound():
 func _on_play_sound():
 	$Cheers.play()
 	Global.save_sound = false
+	Global.crowd_cheer.emit()
 	
 func Game_Over():
 	$Boos.play()
